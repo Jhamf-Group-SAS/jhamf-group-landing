@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ChevronRight, Sparkles, ArrowRight, RefreshCcw, Send } from 'lucide-react';
+import { X, ChevronRight, Sparkles, RefreshCcw, Send, Copy, Check } from 'lucide-react';
 import { diagnosticQuestions, getResultCategory } from '../../data/diagnosticData';
 
 interface DiagnosticWizardProps {
@@ -17,7 +17,10 @@ const DiagnosticWizard = ({ isOpen, onClose }: DiagnosticWizardProps) => {
     const [answerLabels, setAnswerLabels] = useState<Record<number, string>>({});
     const [showResult, setShowResult] = useState(false);
     const [sending, setSending] = useState(false);
+    const [showDetails, setShowDetails] = useState(false);
+    const [copied, setCopied] = useState(false);
 
+    const maxScore = diagnosticQuestions.reduce((acc, q) => acc + Math.max(...q.options.map(o => o.score)), 0);
     const progress = ((currentStep + 1) / diagnosticQuestions.length) * 100;
 
     const handleOptionSelect = (score: number, label: string) => {
@@ -95,13 +98,15 @@ const DiagnosticWizard = ({ isOpen, onClose }: DiagnosticWizardProps) => {
         setTimeout(() => setSending(false), 1000);
     };
 
-    const logResults = () => {
-        console.log('RESULTADOS:', {
-            total: calculateTotalScore(),
-            categoria: getResultCategory(calculateTotalScore()),
-            respuestas: getIndividualAnswers()
-        });
+    const handleCopyReport = () => {
+        const textToCopy = `RESULTADOS DIAGNÓSTICO IA\n\nTotal: ${calculateTotalScore()} / ${maxScore}\nCategoría: ${getResultCategory(calculateTotalScore())?.title}\n\n${Object.values(getIndividualAnswers()).map((a: any) => `- ${a.pregunta}: ${a.respuesta} (${a.puntuacion} pts)`).join('\n')}`;
+
+        navigator.clipboard.writeText(textToCopy);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
     };
+
+
 
     if (!isOpen) return null;
 
@@ -182,22 +187,98 @@ const DiagnosticWizard = ({ isOpen, onClose }: DiagnosticWizardProps) => {
                                     </button>
 
                                     <button
-                                        onClick={logResults}
-                                        className="w-full py-4 bg-white/5 text-gray-300 rounded-xl"
+                                        onClick={() => setShowDetails(!showDetails)}
+                                        className="w-full py-4 bg-white/5 text-gray-300 rounded-xl hover:bg-white/10 transition-colors flex items-center justify-center gap-2"
                                     >
-                                        Ver detalle en consola <ArrowRight className="inline w-4 h-4" />
+                                        {showDetails ? 'Ocultar Informe Técnico' : 'Ver Informe Técnico y Desglose'}
+                                        <ChevronRight className={`w-4 h-4 transition-transform ${showDetails ? 'rotate-90' : ''}`} />
                                     </button>
+
+                                    <AnimatePresence>
+                                        {showDetails && (
+                                            <motion.div
+                                                initial={{ height: 0, opacity: 0 }}
+                                                animate={{ height: 'auto', opacity: 1 }}
+                                                exit={{ height: 0, opacity: 0 }}
+                                                className="overflow-hidden"
+                                            >
+                                                <div className="bg-black/40 rounded-xl p-6 mt-4 border border-white/10 space-y-6">
+                                                    {/* Score Visualization */}
+                                                    <div>
+                                                        <div className="flex justify-between items-end mb-2">
+                                                            <span className="text-gray-400 text-sm uppercase tracking-wider font-semibold">Nivel de Madurez Digital</span>
+                                                            <span className={`text-2xl font-bold ${result?.color}`}>
+                                                                {calculateTotalScore()} <span className="text-gray-500 text-lg">/ {maxScore} pts</span>
+                                                            </span>
+                                                        </div>
+                                                        <div className="h-4 w-full bg-white/5 rounded-full overflow-hidden border border-white/5">
+                                                            <motion.div
+                                                                initial={{ width: 0 }}
+                                                                animate={{ width: `${(calculateTotalScore() / maxScore) * 100}%` }}
+                                                                transition={{ duration: 1, ease: "easeOut" }}
+                                                                className={`h-full ${result?.color.replace('text-', 'bg-')}`}
+                                                            />
+                                                        </div>
+                                                        <div className="flex justify-between mt-1 text-xs text-gray-500 font-mono">
+                                                            <span>Inicial</span>
+                                                            <span>Líder</span>
+                                                        </div>
+                                                    </div>
+
+                                                    {/* Detailed Answers with Badges */}
+                                                    <div className="space-y-4">
+                                                        <h4 className="text-white font-semibold flex items-center gap-2">
+                                                            <Sparkles className="w-4 h-4 text-yellow-400" />
+                                                            Análisis de Factores
+                                                        </h4>
+                                                        <div className="grid gap-3">
+                                                            {diagnosticQuestions.map((q, idx) => {
+                                                                const userAnswer = answerLabels[idx];
+                                                                const userScore = answers[idx];
+                                                                const maxQScore = Math.max(...q.options.map(o => o.score));
+
+                                                                let statusColor = "text-yellow-400 border-yellow-400/30 bg-yellow-400/10";
+                                                                if (userScore === maxQScore) statusColor = "text-green-400 border-green-400/30 bg-green-400/10";
+                                                                if (userScore <= 1) statusColor = "text-red-400 border-red-400/30 bg-red-400/10";
+
+                                                                return (
+                                                                    <div key={idx} className="p-3 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
+                                                                        <p className="text-xs text-gray-400 mb-1 line-clamp-1">{q.question}</p>
+                                                                        <div className="flex justify-between items-center gap-4">
+                                                                            <span className="text-sm text-gray-200 font-medium truncate">{userAnswer}</span>
+                                                                            <span className={`text-xs px-2 py-1 rounded-full border ${statusColor} font-mono whitespace-nowrap`}>
+                                                                                +{userScore} pts
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                );
+                                                            })}
+                                                        </div>
+                                                    </div>
+
+                                                    {/* Copy Action */}
+                                                    <button
+                                                        onClick={handleCopyReport}
+                                                        className="w-full py-3 bg-white/5 hover:bg-white/10 text-gray-300 rounded-lg flex items-center justify-center gap-2 text-sm transition-colors border border-white/5"
+                                                    >
+                                                        {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
+                                                        {copied ? '¡Copiado al portapapeles!' : 'Copiar Informe Técnico'}
+                                                    </button>
+                                                </div>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
 
                                     <button
                                         onClick={onClose}
-                                        className="w-full py-3 text-gray-400"
+                                        className="w-full py-3 text-gray-400 hover:text-white transition-colors"
                                     >
                                         Cerrar
                                     </button>
 
                                     <button
                                         onClick={resetWizard}
-                                        className="text-xs text-gray-600 flex justify-center gap-1"
+                                        className="text-xs text-gray-600 hover:text-gray-400 flex justify-center gap-1 transition-colors"
                                     >
                                         <RefreshCcw className="w-3 h-3" /> Reiniciar Test
                                     </button>
