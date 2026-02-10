@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import SEOHead from '../components/seo/SEOHead';
 import Navbar from '../components/layout/Navbar';
 import Hero from '../components/sections/Hero';

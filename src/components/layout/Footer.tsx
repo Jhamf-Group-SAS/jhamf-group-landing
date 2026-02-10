@@ -27,6 +27,8 @@ const Footer = () => {
                         <li><a href="#" className="hover:text-neon-cyan transition-colors">Cloud Architecture</a></li>
                         <li><a href="#" className="hover:text-neon-cyan transition-colors">Intelligent Automation</a></li>
                         <li><a href="#" className="hover:text-neon-cyan transition-colors">AI Solutions</a></li>
+                        <li><Link to="/casos-de-exito" className="hover:text-neon-cyan transition-colors">Casos de Éxito</Link></li>
+                        <li><Link to="/ia-cali" className="hover:text-neon-cyan transition-colors">IA en Cali</Link></li>
                     </ul>
                 </div>
 

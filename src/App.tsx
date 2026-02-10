@@ -6,6 +6,7 @@ import AzurePage from './pages/AzurePage';
 import AutomationPage from './pages/AutomationPage';
 import BlueprintPage from './pages/BlueprintPage';
 import CaseStudiesPage from './pages/CaseStudiesPage';
+import IACaliPage from './pages/IACaliPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/politica-privacidad" element={<PrivacyPolicyPage />} />
         <Route path="/blueprint" element={<BlueprintPage />} />
         <Route path="/casos-de-exito" element={<CaseStudiesPage />} />
+        <Route path="/ia-cali" element={<IACaliPage />} />
       </Routes>
     </Router>
   );
