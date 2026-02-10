@@ -24,6 +24,7 @@ const Navbar = ({ onOpenWizard }: NavbarProps) => {
     const navLinks = [
         { name: 'Evolución', href: '/#evolution' },
         { name: 'Servicios', href: '/#services' },
+        { name: 'Casos de Éxito', href: '/casos-de-exito' },
         { name: 'Nosotros', href: '/#nosotros' },
         { name: 'Contacto', href: '/#contact' },
     ];

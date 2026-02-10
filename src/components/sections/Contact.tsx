@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Footer from '../layout/Footer';
 
 const Contact = () => {
@@ -36,17 +37,20 @@ const Contact = () => {
                                 Agendar Consultoría Gratuita
                                 <ArrowRight className="w-5 h-5" />
                             </a>
-                            <button className="px-8 py-4 bg-transparent border border-white/20 text-white font-medium rounded-lg hover:bg-white/5 transition-colors">
+                            <Link
+                                to="/casos-de-exito"
+                                className="px-8 py-4 bg-transparent border border-white/20 text-white font-medium rounded-lg hover:bg-white/5 transition-colors"
+                            >
                                 Ver Casos de Éxito
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </motion.div>
-            </div>
+            </div >
 
             {/* Footer */}
-            <Footer />
-        </section>
+            < Footer />
+        </section >
     );
 };
 

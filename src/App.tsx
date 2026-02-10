@@ -5,6 +5,7 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import AzurePage from './pages/AzurePage';
 import AutomationPage from './pages/AutomationPage';
 import BlueprintPage from './pages/BlueprintPage';
+import CaseStudiesPage from './pages/CaseStudiesPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/pqrs" element={<PQRSPage />} />
         <Route path="/politica-privacidad" element={<PrivacyPolicyPage />} />
         <Route path="/blueprint" element={<BlueprintPage />} />
+        <Route path="/casos-de-exito" element={<CaseStudiesPage />} />
       </Routes>
     </Router>
   );
