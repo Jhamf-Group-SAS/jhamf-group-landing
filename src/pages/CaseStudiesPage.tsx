@@ -12,7 +12,7 @@ import CaseStudiesCTA from '../components/sections/cases/CaseStudiesCTA';
 const CaseStudiesPage: React.FC = () => {
     const [isWizardOpen, setIsWizardOpen] = useState(false);
 
-    const [isWizardOpen, setIsWizardOpen] = useState(false);
+
 
     return (
         <div className="bg-obsidian min-h-screen selection:bg-azure/30">

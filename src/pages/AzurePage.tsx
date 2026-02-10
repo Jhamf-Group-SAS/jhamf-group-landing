@@ -13,7 +13,7 @@ import AzureContact from '../components/sections/azure/AzureContact';
 const AzurePage: React.FC = () => {
     const [isWizardOpen, setIsWizardOpen] = useState(false);
 
-    const [isWizardOpen, setIsWizardOpen] = useState(false);
+
 
     return (
         <div className="bg-obsidian min-h-screen">

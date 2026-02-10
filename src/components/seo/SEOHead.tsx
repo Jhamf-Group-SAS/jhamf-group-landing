@@ -7,6 +7,7 @@ interface SEOHeadProps {
     url?: string;
     image?: string;
     type?: string;
+    jsonLd?: Record<string, any>;
 }
 
 const SEOHead = ({
@@ -15,7 +16,8 @@ const SEOHead = ({
     keywords = "JHAMF Group, IA Colombia, Azure Colombia, Automatización de Procesos, Soporte TI Cali",
     url = "https://www.jhamf.com/",
     image = "https://www.jhamf.com/og-image.jpg",
-    type = "website"
+    type = "website",
+    jsonLd
 }: SEOHeadProps) => {
     return (
         <Helmet>
@@ -41,6 +43,15 @@ const SEOHead = ({
 
             {/* Canonical */}
             <link rel="canonical" href={url} />
+            {/* Canonical */}
+            <link rel="canonical" href={url} />
+
+            {/* JSON-LD */}
+            {jsonLd && (
+                <script type="application/ld+json">
+                    {JSON.stringify(jsonLd)}
+                </script>
+            )}
         </Helmet>
     );
 };

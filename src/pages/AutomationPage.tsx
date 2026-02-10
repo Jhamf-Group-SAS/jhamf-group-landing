@@ -13,7 +13,7 @@ import AutomationCTA from '../components/sections/automation/AutomationCTA';
 const AutomationPage: React.FC = () => {
     const [isWizardOpen, setIsWizardOpen] = useState(false);
 
-    const [isWizardOpen, setIsWizardOpen] = useState(false);
+
 
     return (
         <div className="bg-obsidian min-h-screen">
