@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import SEOHead from '../components/seo/SEOHead';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import DiagnosticWizard from '../components/diagnostic/DiagnosticWizard';
@@ -12,13 +13,16 @@ import AzureContact from '../components/sections/azure/AzureContact';
 const AzurePage: React.FC = () => {
     const [isWizardOpen, setIsWizardOpen] = useState(false);
 
-    useEffect(() => {
-        document.title = "Microsoft Azure Partner Colombia | Jhamf Group - Servicios Cloud Corporativos";
-        window.scrollTo(0, 0);
-    }, []);
+    const [isWizardOpen, setIsWizardOpen] = useState(false);
 
     return (
         <div className="bg-obsidian min-h-screen">
+            <SEOHead
+                title="Consultoría Microsoft Azure Colombia | Servicios Cloud & Migración"
+                description="Expertos en Microsoft Azure en Colombia. Migración a la nube, optimización de costos, arquitecturas serverless y soluciones híbridas para empresas."
+                keywords="Microsoft Azure Colombia, Consultoría Azure, Cloud Computing, Migración Nube, Azure DevOps, Arquitectura Cloud"
+                url="https://www.jhamf.com/azure"
+            />
             <Navbar onOpenWizard={() => setIsWizardOpen(true)} />
             <main>
                 <AzureHero />
