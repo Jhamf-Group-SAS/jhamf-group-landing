@@ -73,6 +73,15 @@ const Hero = ({ onOpenWizard }: HeroProps) => {
                         </span>
                     </button>
 
+                    <a
+                        href="https://form.typeform.com/to/gxR8JkE0"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-8 py-4 bg-gradient-to-r from-neon-purple to-pink-600 text-white font-bold rounded-lg shadow-lg hover:shadow-[0_0_30px_rgba(123,44,191,0.6)] transition-all hover:scale-105 border border-white/10"
+                    >
+                        Agendar Consultoría
+                    </a>
+
                     <button
                         onClick={() => {
                             const servicesSection = document.getElementById('services');
@@ -82,7 +91,7 @@ const Hero = ({ onOpenWizard }: HeroProps) => {
                                 window.dispatchEvent(new CustomEvent('highlight-services'));
                             }
                         }}
-                        className="px-8 py-4 bg-transparent border border-white/10 hover:border-neon-cyan/50 text-white font-medium rounded-lg backdrop-blur-sm transition-all hover:bg-white/5"
+                        className="px-8 py-4 bg-[#00EFFF] border border-[#00EFFF] text-obsidian font-bold rounded-lg shadow-lg hover:shadow-[0_0_30px_rgba(0,239,255,0.6)] transition-all hover:scale-105 hover:bg-[#00EFFF]/90"
                     >
                         Explorar Soluciones
                     </button>
