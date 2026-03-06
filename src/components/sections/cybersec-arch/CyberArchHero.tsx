@@ -61,7 +61,7 @@ const CyberArchHero: React.FC = () => {
                             <span className="relative z-10">{t('hero.primary_cta')}</span>
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
                         </a>
-                        <a href="https://wa.me/573000000000" target="_blank" rel="noreferrer" className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white rounded-lg transition-all flex items-center justify-center gap-2 font-medium border border-white/10 group">
+                        <a href="https://wa.me/573022388714" target="_blank" rel="noreferrer" className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white rounded-lg transition-all flex items-center justify-center gap-2 font-medium border border-white/10 group">
                             <span className="relative z-10">{t('hero.secondary_cta')}</span>
                             <PhoneCall className="w-5 h-5 text-gray-400 group-hover:text-neon-cyan transition-colors relative z-10" />
                         </a>
