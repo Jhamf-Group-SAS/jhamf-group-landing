@@ -1,0 +1,88 @@
+{
+    "seo": {
+        "title": "Ciberseguridad Arquitectura y Protección | JHAMF Group",
+        "description": "Protección integral de infraestructura, identidades y datos mediante arquitectura moderna de seguridad y monitoreo continuo basado en Zero-Trust.",
+        "keywords": "ciberseguridad empresarial, arquitectura zero-trust, protección de datos, monitoreo de seguridad, gestión de identidades, iso 27001 colombia"
+    },
+    "hero": {
+        "title": "Ciberseguridad Empresarial Basada en Zero-Trust",
+        "description": "Protección integral de infraestructura, identidades y datos mediante arquitectura moderna de seguridad y monitoreo continuo.",
+        "primary_cta": "Solicitar Evaluación de Seguridad",
+        "secondary_cta": "Hablar con un Especialista"
+    },
+    "capabilities": {
+        "title": "Capacidades de Seguridad",
+        "items": [
+            {
+                "title": "Arquitectura Zero-Trust",
+                "description": "Implementación de modelos de seguridad donde ningún usuario o dispositivo es confiable por defecto."
+            },
+            {
+                "title": "Detección y Respuesta a Amenazas",
+                "description": "Monitoreo de eventos de seguridad, análisis de incidentes y respuesta temprana ante ataques."
+            },
+            {
+                "title": "Auditorías de Cumplimiento (ISO / NIST)",
+                "description": "Evaluaciones de seguridad basadas en estándares internacionales y marcos de cumplimiento."
+            },
+            {
+                "title": "Gestión de Identidad y Acceso",
+                "description": "Control centralizado de identidades, autenticación fuerte y administración de privilegios."
+            }
+        ]
+    },
+    "benefits": {
+        "title": "Beneficios de Protección",
+        "items": [
+            {
+                "title": "Mitigación",
+                "label": "Reducción del riesgo de ciberataques"
+            },
+            {
+                "title": "Control",
+                "label": "Control total de accesos e identidades"
+            },
+            {
+                "title": "Protección",
+                "label": "Protección de datos empresariales"
+            },
+            {
+                "title": "Regulación",
+                "label": "Cumplimiento normativo estricto"
+            },
+            {
+                "title": "Monitoreo",
+                "label": "Visibilidad completa de seguridad"
+            }
+        ]
+    },
+    "model": {
+        "title": "Modelo de Protección Integral",
+        "pillars": [
+            {
+                "name": "Identidad",
+                "desc": "Verificación multifactor y roles estrictos."
+            },
+            {
+                "name": "Dispositivos",
+                "desc": "Control de endpoints y MDM."
+            },
+            {
+                "name": "Red",
+                "desc": "Microsegmentación y firewalls de próxima generación."
+            },
+            {
+                "name": "Aplicaciones",
+                "desc": "Auditorías de código y protección WAF."
+            },
+            {
+                "name": "Datos",
+                "desc": "Cifrado en reposo y en tránsito (DLP)."
+            }
+        ]
+    },
+    "cta": {
+        "title": "Proteja su infraestructura antes de que ocurra un incidente",
+        "button": "Solicitar Auditoría de Seguridad"
+    }
+}

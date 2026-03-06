@@ -1,0 +1,75 @@
+{
+    "seo": {
+        "title": "Soporte Empresarial 24/7 | JHAMF Group",
+        "description": "Garantizamos continuidad operativa mediante monitoreo constante, soporte técnico especializado y gestión proactiva de incidentes TI para infraestructura crítica.",
+        "keywords": "soporte ti 24/7, soporte empresarial, mesa de ayuda, help desk colombia, mantenimiento preventivo, gestión de incidentes ti"
+    },
+    "hero": {
+        "title": "Soporte Empresarial 24/7 para Infraestructura Crítica",
+        "description": "Garantizamos continuidad operativa mediante monitoreo constante, soporte técnico especializado y gestión proactiva de incidentes TI.",
+        "primary_cta": "Solicitar Evaluación de Infraestructura",
+        "secondary_cta": "Hablar con un Ingeniero"
+    },
+    "services": {
+        "title": "Capacidades del Servicio",
+        "items": [
+            {
+                "title": "Mesa de Ayuda y Soporte en Sitio 24/7",
+                "description": "Centro de atención especializado para resolver incidentes técnicos de usuarios y sistemas, con capacidad de soporte remoto y presencial."
+            },
+            {
+                "title": "Mantenimiento Preventivo y Correctivo",
+                "description": "Monitoreo continuo de infraestructura, actualizaciones programadas y resolución de fallos antes de que afecten la operación."
+            },
+            {
+                "title": "Gestión de Operaciones TI",
+                "description": "Administración centralizada de infraestructura, servidores, redes y plataformas empresariales."
+            },
+            {
+                "title": "Tiempos de Respuesta respaldados por SLA",
+                "description": "Acuerdos de servicio con tiempos de respuesta garantizados y métricas de desempeño monitoreadas."
+            }
+        ]
+    },
+    "benefits": {
+        "title": "Beneficios Estratégicos",
+        "items": [
+            "Reducción del tiempo de inactividad",
+            "Resolución rápida de incidentes",
+            "Continuidad operativa garantizada",
+            "Soporte especializado permanente",
+            "Gestión proactiva de infraestructura"
+        ],
+        "metric_value": "< 15m",
+        "metric_label": "Tiempo medio de respuesta"
+    },
+    "process": {
+        "title": "Cómo Funciona",
+        "steps": [
+            {
+                "step": "01",
+                "title": "Diagnóstico inicial",
+                "description": "Evaluamos el estado actual de su infraestructura y definimos las líneas base de operación."
+            },
+            {
+                "step": "02",
+                "title": "Implementación de monitoreo y mesa de ayuda",
+                "description": "Desplegamos herramientas de monitoreo, creamos accesos y establecemos los canales de atención."
+            },
+            {
+                "step": "03",
+                "title": "Gestión continua de incidentes",
+                "description": "Operación 24/7 resolviendo incidencias e implementando cambios según acuerdos de servicio."
+            },
+            {
+                "step": "04",
+                "title": "Mejora y optimización continua",
+                "description": "Análisis de reportes mensuales para optimizar procesos y prevenir fallas futuras."
+            }
+        ]
+    },
+    "cta": {
+        "title": "Proteja la continuidad operativa de su empresa",
+        "button": "Solicitar Diagnóstico de Infraestructura"
+    }
+}

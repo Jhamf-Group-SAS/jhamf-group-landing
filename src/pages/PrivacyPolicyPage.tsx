@@ -44,7 +44,7 @@ const PrivacyPolicyPage = () => {
                                 href="/Politica-Tratamiento-de-datos-002.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-full md:w-auto px-8 py-3 bg-azure hover:bg-neon-blue text-white rounded-lg transition-all flex items-center justify-center gap-2 font-medium group"
+                                className="w-full md:w-auto px-8 py-3 bg-azure hover:bg-electric-glow text-white rounded-lg transition-all flex items-center justify-center gap-2 font-medium group"
                             >
                                 <Download className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
                                 {t('document.download')}

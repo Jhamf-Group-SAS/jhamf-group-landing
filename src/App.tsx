@@ -11,6 +11,8 @@ import CaseStudiesPage from './pages/CaseStudiesPage';
 import IACaliPage from './pages/IACaliPage';
 import InfrastructurePage from './pages/InfrastructurePage';
 import AssetsPage from './pages/AssetsPage';
+import SupportPage from './pages/SupportPage';
+import CyberArchPage from './pages/CyberArchPage';
 import { SUPPORTED_LANGUAGES } from './i18n';
 import type { SupportedLanguage } from './i18n';
 
@@ -72,6 +74,14 @@ function LocalizedRoutes() {
         <Route path="infrastructure-networks" element={<InfrastructurePage />} />
         <Route path="activos-licencias" element={<AssetsPage />} />
         <Route path="it-assets-licensing" element={<AssetsPage />} />
+        {/* Nuevas Subpáginas de Servicios */}
+        <Route path="servicios-ti-gestionados/soporte-empresarial-24-7" element={<SupportPage />} />
+        <Route path="managed-it-services/24-7-enterprise-support" element={<SupportPage />} />
+
+        {/* Nueva Subpágina Ciberseguridad */}
+        <Route path="ciberseguridad/arquitectura-y-proteccion" element={<CyberArchPage />} />
+        <Route path="cybersecurity/architecture-and-protection" element={<CyberArchPage />} />
+
         <Route path="*" element={<Navigate to="." replace />} />
       </Routes>
     </>

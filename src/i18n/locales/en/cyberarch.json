@@ -1,0 +1,88 @@
+{
+    "seo": {
+        "title": "Cybersecurity Architecture and Protection | JHAMF Group",
+        "description": "Comprehensive infrastructure, identity, and data protection through modern security architecture and continuous Zero-Trust monitoring.",
+        "keywords": "enterprise cybersecurity, zero-trust architecture, data protection, security monitoring, identity management, iso 27001"
+    },
+    "hero": {
+        "title": "Enterprise Cybersecurity Built on Zero-Trust",
+        "description": "Comprehensive protection of infrastructure, identities, and data through modern security architecture and continuous monitoring.",
+        "primary_cta": "Request Security Evaluation",
+        "secondary_cta": "Speak with a Specialist"
+    },
+    "capabilities": {
+        "title": "Security Capabilities",
+        "items": [
+            {
+                "title": "Zero-Trust Architecture",
+                "description": "Implementation of security models where no user or device is trusted by default."
+            },
+            {
+                "title": "Threat Detection & Response",
+                "description": "Security event monitoring, incident analysis, and early response to cyberattacks."
+            },
+            {
+                "title": "Compliance Audits (ISO / NIST)",
+                "description": "Security evaluations based on international standards and compliance frameworks."
+            },
+            {
+                "title": "Identity & Access Management",
+                "description": "Centralized identity control, strong authentication, and privilege administration."
+            }
+        ]
+    },
+    "benefits": {
+        "title": "Protection Benefits",
+        "items": [
+            {
+                "title": "Mitigation",
+                "label": "Reduction of cyberattack risk"
+            },
+            {
+                "title": "Control",
+                "label": "Total control over access and identities"
+            },
+            {
+                "title": "Protection",
+                "label": "Protection of enterprise data"
+            },
+            {
+                "title": "Regulation",
+                "label": "Strict regulatory compliance"
+            },
+            {
+                "title": "Monitoring",
+                "label": "Complete security visibility"
+            }
+        ]
+    },
+    "model": {
+        "title": "Comprehensive Protection Model",
+        "pillars": [
+            {
+                "name": "Identity",
+                "desc": "Multi-factor authentication and strict roles."
+            },
+            {
+                "name": "Devices",
+                "desc": "Endpoint control and MDM."
+            },
+            {
+                "name": "Network",
+                "desc": "Microsegmentation and next-generation firewalls."
+            },
+            {
+                "name": "Apps",
+                "desc": "Code audits and WAF protection."
+            },
+            {
+                "name": "Data",
+                "desc": "Encryption at rest and in transit (DLP)."
+            }
+        ]
+    },
+    "cta": {
+        "title": "Protect your infrastructure before an incident occurs",
+        "button": "Request Security Audit"
+    }
+}

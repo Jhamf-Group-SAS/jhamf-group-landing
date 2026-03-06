@@ -339,7 +339,7 @@ const PQRSPage = () => {
                                     className={`w-full py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 transition-all
                     ${isSubmitting || !formData.acceptedPolicy
                                             ? 'bg-gray-700 text-gray-400 cursor-not-allowed'
-                                            : 'bg-gradient-to-r from-azure to-neon-blue hover:shadow-lg hover:shadow-neon-cyan/25 text-white'
+                                            : 'bg-gradient-to-r from-azure to-electric-glow hover:shadow-lg hover:shadow-neon-cyan/25 text-white'
                                         }`}
                                 >
                                     {isSubmitting ? (

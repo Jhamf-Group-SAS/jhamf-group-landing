@@ -1,0 +1,75 @@
+{
+    "seo": {
+        "title": "24/7 Enterprise IT Support | JHAMF Group",
+        "description": "We ensure operational continuity through constant monitoring, specialized technical support, and proactive IT incident management for critical infrastructure.",
+        "keywords": "24/7 it support, enterprise support, help desk, preventive maintenance, it incident management"
+    },
+    "hero": {
+        "title": "24/7 Enterprise Support for Critical Infrastructure",
+        "description": "We ensure operational continuity through constant monitoring, specialized technical support, and proactive IT incident management.",
+        "primary_cta": "Request Infrastructure Evaluation",
+        "secondary_cta": "Talk to an Engineer"
+    },
+    "services": {
+        "title": "Service Capabilities",
+        "items": [
+            {
+                "title": "24/7 Help Desk & On-Site Support",
+                "description": "Specialized service center to resolve technical incidents for users and systems, with remote and on-site support capabilities."
+            },
+            {
+                "title": "Preventive & Corrective Maintenance",
+                "description": "Continuous infrastructure monitoring, scheduled updates, and failure resolution before they affect operations."
+            },
+            {
+                "title": "IT Operations Management",
+                "description": "Centralized administration of enterprise infrastructure, servers, networks, and platforms."
+            },
+            {
+                "title": "SLA-Backed Response Times",
+                "description": "Service level agreements with guaranteed response times and monitored performance metrics."
+            }
+        ]
+    },
+    "benefits": {
+        "title": "Strategic Benefits",
+        "items": [
+            "Reduction of downtime",
+            "Rapid incident resolution",
+            "Guaranteed operational continuity",
+            "Permanent specialized support",
+            "Proactive infrastructure management"
+        ],
+        "metric_value": "< 15m",
+        "metric_label": "Avg response time"
+    },
+    "process": {
+        "title": "How It Works",
+        "steps": [
+            {
+                "step": "01",
+                "title": "Initial Diagnostic",
+                "description": "We evaluate the current state of your infrastructure and define operational baselines."
+            },
+            {
+                "step": "02",
+                "title": "Monitoring & Help Desk Implementation",
+                "description": "We deploy monitoring tools, create secure access, and establish service channels."
+            },
+            {
+                "step": "03",
+                "title": "Continuous Incident Management",
+                "description": "24/7 operation resolving incidents and implementing agile changes based on SLAs."
+            },
+            {
+                "step": "04",
+                "title": "Continuous Improvement",
+                "description": "Analysis of monthly reports to optimize processes and proactively prevent future failures."
+            }
+        ]
+    },
+    "cta": {
+        "title": "Protect your company's operational continuity",
+        "button": "Request Infrastructure Diagnostic"
+    }
+}

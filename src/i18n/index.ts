@@ -11,6 +11,8 @@ import esInfrastructure from './locales/es/infrastructure.json';
 import esAssets from './locales/es/assets.json';
 import esPqrs from './locales/es/pqrs.json';
 import esPrivacy from './locales/es/privacy.json';
+import esSupport from './locales/es/support.json';
+import esCyberarch from './locales/es/cyberarch.json';
 
 // EN translations
 import enCommon from './locales/en/common.json';
@@ -21,6 +23,8 @@ import enInfrastructure from './locales/en/infrastructure.json';
 import enAssets from './locales/en/assets.json';
 import enPqrs from './locales/en/pqrs.json';
 import enPrivacy from './locales/en/privacy.json';
+import enSupport from './locales/en/support.json';
+import enCyberarch from './locales/en/cyberarch.json';
 
 export const SUPPORTED_LANGUAGES = ['es', 'en'] as const;
 export type SupportedLanguage = typeof SUPPORTED_LANGUAGES[number];
@@ -40,6 +44,8 @@ i18n
                 assets: esAssets,
                 pqrs: esPqrs,
                 privacy: esPrivacy,
+                support: esSupport,
+                cyberarch: esCyberarch,
             },
             en: {
                 common: enCommon,
@@ -50,12 +56,14 @@ i18n
                 assets: enAssets,
                 pqrs: enPqrs,
                 privacy: enPrivacy,
+                support: enSupport,
+                cyberarch: enCyberarch,
             },
         },
         lng: DEFAULT_LANGUAGE,
         fallbackLng: 'es',
         defaultNS: 'common',
-        ns: ['common', 'home', 'services', 'about', 'infrastructure', 'assets', 'pqrs', 'privacy'],
+        ns: ['common', 'home', 'services', 'about', 'infrastructure', 'assets', 'pqrs', 'privacy', 'support', 'cyberarch'],
         interpolation: {
             escapeValue: false, // React already escapes
         },

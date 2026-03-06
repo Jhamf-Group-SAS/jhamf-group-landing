@@ -46,7 +46,7 @@ const Services = () => {
             title: tSvc('cards.cyber.title'),
             subtitle: tSvc('cards.cyber.subtitle'),
             description: tSvc('cards.cyber.description'),
-            link: undefined,
+            link: lang === 'es' ? `/${lang}/ciberseguridad/arquitectura-y-proteccion` : `/${lang}/cybersecurity/architecture-and-protection`,
             items: tSvc('cards.cyber.items', { returnObjects: true }) as string[],
         },
         {
@@ -58,7 +58,7 @@ const Services = () => {
             title: tSvc('cards.managed.title'),
             subtitle: tSvc('cards.managed.subtitle'),
             description: tSvc('cards.managed.description'),
-            link: undefined,
+            link: lang === 'es' ? `/${lang}/servicios-ti-gestionados/soporte-empresarial-24-7` : `/${lang}/managed-it-services/24-7-enterprise-support`,
             items: tSvc('cards.managed.items', { returnObjects: true }) as string[],
         },
         {
