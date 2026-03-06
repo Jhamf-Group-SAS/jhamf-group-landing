@@ -8,7 +8,6 @@ import { useLocale } from '../../hooks/useLocale';
 const Services = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const navigate = useNavigate();
-    const { t: tHome } = useTranslation('home');
     const { t: tSvc } = useTranslation('services');
     const { t: tCommon } = useTranslation('common');
     const { lang } = useLocale();
