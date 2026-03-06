@@ -6,16 +6,16 @@ import { useTranslation } from 'react-i18next';
 // Security score ring — no user-visible text; receives translated labels as props
 const SecurityScoreRing = ({ scoreLabel, protectedLabel }: { scoreLabel: string; protectedLabel: string }) => (
     <div className="flex flex-col items-center gap-3" aria-hidden="true">
-        <div className="relative w-40 h-40">
+        <div className="relative w-48 h-48">
             <svg viewBox="0 0 160 160" className="w-full h-full -rotate-90">
                 {/* Track */}
-                <circle cx="80" cy="80" r="64" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="10" />
+                <circle cx="80" cy="80" r="64" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="8" />
                 {/* Score arc ~94% */}
                 <circle
                     cx="80" cy="80" r="64"
                     fill="none"
                     stroke="url(#scoreGrad)"
-                    strokeWidth="10"
+                    strokeWidth="8"
                     strokeLinecap="round"
                     strokeDasharray={`${0.94 * 402} ${402}`}
                 />
@@ -26,9 +26,9 @@ const SecurityScoreRing = ({ scoreLabel, protectedLabel }: { scoreLabel: string;
                     </linearGradient>
                 </defs>
             </svg>
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="text-4xl font-display font-bold text-white">94</span>
-                <span className="text-xs text-steel font-medium">{scoreLabel}</span>
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 px-3">
+                <span className="text-4xl font-display font-bold text-white leading-none">94</span>
+                <span className="text-[10px] text-steel font-medium text-center leading-tight">{scoreLabel}</span>
             </div>
         </div>
         <div className="flex items-center gap-2">
