@@ -3,14 +3,17 @@ import { Download, FileText } from 'lucide-react';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import SEO from '../components/seo/SEO';
+import { useTranslation } from 'react-i18next';
 
 const PrivacyPolicyPage = () => {
+    const { t } = useTranslation('privacy');
+
     return (
         <div className="bg-obsidian min-h-screen text-white font-sans flex flex-col">
             <SEO
-                title="Política de Privacidad y Tratamiento de Datos"
-                description="Conozca nuestra política de privacidad y tratamiento de datos personales. En Jhamf Group SAS protegemos su información conforme a la ley."
-                keywords="Política de privacidad, Tratamiento de datos Jhamf, Protección de datos personales Colombia"
+                title={t('seo.title')}
+                description={t('seo.description')}
+                keywords={t('seo.keywords')}
             />
             <Navbar onOpenWizard={() => { }} />
 
@@ -21,9 +24,9 @@ const PrivacyPolicyPage = () => {
                     transition={{ duration: 0.5 }}
                 >
                     <div className="text-center mb-16">
-                        <span className="text-neon-cyan font-mono mb-4 block">JHAMF GROUP SAS</span>
-                        <h1 className="text-4xl md:text-5xl font-bold mb-6">Política de Privacidad y Tratamiento de Datos</h1>
-                        <p className="text-gray-400">Última actualización: {new Date().getFullYear()}</p>
+                        <span className="text-neon-cyan font-mono mb-4 block">{t('header.subtitle')}</span>
+                        <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('header.title')}</h1>
+                        <p className="text-gray-400">{t('header.updated')} {new Date().getFullYear()}</p>
                     </div>
 
                     <div className="bg-white/5 border border-white/10 rounded-2xl p-8 mb-12 backdrop-blur-sm">
@@ -33,8 +36,8 @@ const PrivacyPolicyPage = () => {
                                     <FileText className="w-8 h-8 text-neon-cyan" />
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold text-white mb-1">Documento Oficial</h3>
-                                    <p className="text-gray-400 text-sm">Política Tratamiento de Datos Personales.pdf</p>
+                                    <h3 className="text-xl font-bold text-white mb-1">{t('document.title')}</h3>
+                                    <p className="text-gray-400 text-sm">{t('document.filename')}</p>
                                 </div>
                             </div>
                             <a
@@ -44,41 +47,30 @@ const PrivacyPolicyPage = () => {
                                 className="w-full md:w-auto px-8 py-3 bg-azure hover:bg-neon-blue text-white rounded-lg transition-all flex items-center justify-center gap-2 font-medium group"
                             >
                                 <Download className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
-                                Descargar PDF
+                                {t('document.download')}
                             </a>
                         </div>
                     </div>
 
                     <div className="prose prose-invert prose-lg max-w-none text-gray-300">
-                        <p>
-                            En JHAMF GROUP SAS, estamos comprometidos con la protección de la privacidad y los datos personales de nuestros clientes,
-                            usuarios y socios. Esta política describe cómo recolectamos, usamos y protegemos su información.
-                        </p>
+                        <p>{t('content.intro')}</p>
 
-                        <h3>1. Responsable del Tratamiento</h3>
-                        <p>
-                            JHAMF GROUP SAS, sociedad legalmente constituida, es la responsable del tratamiento de los datos personales.
-                        </p>
+                        <h3>{t('content.section1.title')}</h3>
+                        <p>{t('content.section1.text')}</p>
 
-                        <h3>2. Finalidad del Tratamiento</h3>
-                        <p>
-                            Sus datos personales serán utilizados para:
-                        </p>
+                        <h3>{t('content.section2.title')}</h3>
+                        <p>{t('content.section2.text')}</p>
                         <ul>
-                            <li>Prestación de servicios de consultoría y tecnología.</li>
-                            <li>Comunicación sobre novedades, eventos y servicios.</li>
-                            <li>Cumplimiento de obligaciones legales y contractuales.</li>
-                            <li>Mejora de nuestros servicios a través de análisis y estadísticas.</li>
+                            {(t('content.section2.list', { returnObjects: true }) as string[]).map((item, idx) => (
+                                <li key={idx}>{item}</li>
+                            ))}
                         </ul>
 
-                        <h3>3. Derechos de los Titulares</h3>
-                        <p>
-                            Como titular de los datos, usted tiene derecho a conocer, actualizar, rectificar y suprimir su información personal,
-                            así como a revocar la autorización otorgada para su tratamiento.
-                        </p>
+                        <h3>{t('content.section3.title')}</h3>
+                        <p>{t('content.section3.text')}</p>
 
                         <p className="text-sm text-gray-500 mt-8 italic border-t border-white/10 pt-4">
-                            Nota: Este es un resumen informativo. Para conocer todos los detalles legales, por favor descargue el documento oficial PDF utilizando el botón superior.
+                            {t('content.note')}
                         </p>
                     </div>
                 </motion.div>

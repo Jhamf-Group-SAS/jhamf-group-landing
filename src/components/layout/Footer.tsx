@@ -51,8 +51,8 @@ const Footer = () => {
                 <div>
                     <h4 className="text-white font-bold mb-6">{t('footer.col_legal')}</h4>
                     <ul className="space-y-3 text-sm text-gray-400">
-                        <li><Link to="/pqrs" className="hover:text-electric transition-colors">{t('footer.link_pqrs')}</Link></li>
-                        <li><Link to="/politica-privacidad" className="hover:text-electric transition-colors">{t('footer.link_privacy')}</Link></li>
+                        <li><Link to={lang === 'es' ? `/${lang}/pqrs` : `/${lang}/support`} className="hover:text-electric transition-colors">{t('footer.link_pqrs')}</Link></li>
+                        <li><Link to={lang === 'es' ? `/${lang}/politica-privacidad` : `/${lang}/privacy-policy`} className="hover:text-electric transition-colors">{t('footer.link_privacy')}</Link></li>
                     </ul>
                 </div>
             </div>

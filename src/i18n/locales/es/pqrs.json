@@ -1,0 +1,66 @@
+{
+    "seo": {
+        "title": "Radicar PQRS - Jhamf Group",
+        "description": "Canal oficial para radicar Peticiones, Quejas, Reclamos y Sugerencias (PQRS) de Jhamf Group SAS. Estamos comprometidos con la mejora continua.",
+        "keywords": "PQRS, Servicio al cliente Jhamf, Peticiones Quejas Reclamos, Soporte Jhamf Group"
+    },
+    "hero": {
+        "title": "Centro de Atención PQRS",
+        "description": "Estamos comprometidos con la excelencia. Utilice este canal para radicar sus Peticiones, Quejas, Reclamos y Sugerencias. Su opinión es fundamental para nuestra mejora continua.",
+        "response_time": "Tiempo de respuesta: 3-5 días hábiles"
+    },
+    "form": {
+        "section_1": "Información del Solicitante",
+        "section_2": "Detalle de la Solicitud",
+        "fields": {
+            "fullname": "Nombre Completo *",
+            "company": "Empresa *",
+            "email": "Correo Electrónico *",
+            "phone": "Teléfono (Opcional)",
+            "type": "Tipo de Solicitud *",
+            "service": "Servicio Relacionado *",
+            "description": "Descripción Detallada *",
+            "description_placeholder": "Por favor describa su solicitud con el mayor detalle posible..."
+        },
+        "types": {
+            "placeholder": "Seleccione el tipo",
+            "peticion": "Petición (Información general)",
+            "queja": "Queja (Inconformidad con conducta)",
+            "reclamo": "Reclamo (Inconformidad con servicio)",
+            "sugerencia": "Sugerencia (Mejora)"
+        },
+        "services": {
+            "placeholder": "Seleccione el servicio",
+            "consultoria": "Consultoría IT",
+            "ciberseguridad": "Ciberseguridad",
+            "cloud": "Cloud Computing",
+            "infraestructura": "Infraestructura",
+            "otro": "Otro"
+        },
+        "attachments": {
+            "title": "Adjuntar Archivos (Opcional)",
+            "subtitle": "PDF, JPG, PNG hasta 5MB"
+        },
+        "policy": {
+            "text1": "He leído y acepto la ",
+            "link": "Política de Tratamiento de Datos Personales",
+            "text2": " y autorizo el uso de mis datos para el trámite de esta solicitud."
+        },
+        "submit": "Radicar Solicitud",
+        "submitting": "Enviando..."
+    },
+    "messages": {
+        "success": {
+            "title": "¡Solicitud Radicada con Éxito!",
+            "desc1": "Hemos recibido su solicitud correctamente. Se ha enviado un correo de confirmación a ",
+            "desc2": ".",
+            "ref": "Número de Radicado",
+            "new_request": "Nueva Solicitud"
+        },
+        "error": {
+            "title": "Error al Enviar",
+            "desc": "Hubo un problema al enviar su solicitud. Por favor intente nuevamente.",
+            "retry": "Intentar Nuevamente"
+        }
+    }
+}

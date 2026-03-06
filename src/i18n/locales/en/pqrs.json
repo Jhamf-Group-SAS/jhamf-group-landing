@@ -1,0 +1,66 @@
+{
+    "seo": {
+        "title": "Submit PQRS - Jhamf Group",
+        "description": "Official channel to submit Petitions, Complaints, Claims, and Suggestions (PQRS) to Jhamf Group SAS. We are committed to continuous improvement.",
+        "keywords": "PQRS, Customer Service Jhamf, Petitions Complaints Claims, Support Jhamf Group"
+    },
+    "hero": {
+        "title": "PQRS Service Center",
+        "description": "We are committed to excellence. Use this channel to submit your Petitions, Complaints, Claims, and Suggestions. Your feedback is essential for our continuous improvement.",
+        "response_time": "Response time: 3-5 business days"
+    },
+    "form": {
+        "section_1": "Applicant Information",
+        "section_2": "Request Details",
+        "fields": {
+            "fullname": "Full Name *",
+            "company": "Company *",
+            "email": "Email Address *",
+            "phone": "Phone (Optional)",
+            "type": "Request Type *",
+            "service": "Related Service *",
+            "description": "Detailed Description *",
+            "description_placeholder": "Please describe your request in as much detail as possible..."
+        },
+        "types": {
+            "placeholder": "Select the type",
+            "peticion": "Petition (General information)",
+            "queja": "Complaint (Dissatisfaction with conduct)",
+            "reclamo": "Claim (Dissatisfaction with service)",
+            "sugerencia": "Suggestion (Improvement)"
+        },
+        "services": {
+            "placeholder": "Select the service",
+            "consultoria": "IT Consulting",
+            "ciberseguridad": "Cybersecurity",
+            "cloud": "Cloud Computing",
+            "infraestructura": "Infrastructure",
+            "otro": "Other"
+        },
+        "attachments": {
+            "title": "Attach Files (Optional)",
+            "subtitle": "PDF, JPG, PNG up to 5MB"
+        },
+        "policy": {
+            "text1": "I have read and accept the ",
+            "link": "Personal Data Processing Policy",
+            "text2": " and I authorize the use of my data to process this request."
+        },
+        "submit": "Submit Request",
+        "submitting": "Submitting..."
+    },
+    "messages": {
+        "success": {
+            "title": "Request Successfully Submitted!",
+            "desc1": "We have received your request correctly. A confirmation email has been sent to ",
+            "desc2": ".",
+            "ref": "Reference Number",
+            "new_request": "New Request"
+        },
+        "error": {
+            "title": "Error Sending",
+            "desc": "There was a problem sending your request. Please try again.",
+            "retry": "Try Again"
+        }
+    }
+}

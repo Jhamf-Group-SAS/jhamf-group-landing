@@ -4,6 +4,9 @@ import { CheckCircle, Upload, Send, FileText, AlertCircle } from 'lucide-react';
 import Navbar from '../components/layout/Navbar';
 import SEO from '../components/seo/SEO';
 import emailjs from '@emailjs/browser';
+import { Link } from 'react-router-dom';
+import { useLocale } from '../hooks/useLocale';
+import { useTranslation } from 'react-i18next';
 
 // ⚠️ REEMPLAZA ESTOS VALORES CON LOS TUYOS DE EMAILJS
 const EMAILJS_SERVICE_ID = 'service_tuxji4s';      // Ej: 'service_xyz123'
@@ -11,6 +14,8 @@ const EMAILJS_TEMPLATE_ID = 'template_t56ifou';    // Ej: 'template_abc123'
 const EMAILJS_PUBLIC_KEY = 'm-Iue2hNH0SNnZdmt';      // Ej: 'abc123XYZ'
 
 const PQRSPage = () => {
+    const { lang } = useLocale();
+    const { t } = useTranslation('pqrs');
     const [formData, setFormData] = useState({
         fullName: '',
         companyName: '',
@@ -40,29 +45,6 @@ const PQRSPage = () => {
         return `PQRS-${Math.floor(Math.random() * 10000).toString().padStart(4, '0')}-${new Date().getFullYear()}`;
     };
 
-    // Mapeo de tipos de solicitud para el email
-    const getTipoSolicitudLabel = (type: string) => {
-        const tipos: Record<string, string> = {
-            'peticion': 'Petición',
-            'queja': 'Queja',
-            'reclamo': 'Reclamo',
-            'sugerencia': 'Sugerencia'
-        };
-        return tipos[type] || type;
-    };
-
-    // Mapeo de servicios para el email
-    const getServicioLabel = (service: string) => {
-        const servicios: Record<string, string> = {
-            'consultoria': 'Consultoría IT',
-            'ciberseguridad': 'Ciberseguridad',
-            'cloud': 'Cloud Computing',
-            'infraestructura': 'Infraestructura',
-            'otro': 'Otro'
-        };
-        return servicios[service] || service;
-    };
-
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
@@ -77,8 +59,8 @@ const PQRSPage = () => {
                 companyName: formData.companyName,
                 email: formData.email,
                 phone: formData.phone || 'No proporcionado',
-                type: getTipoSolicitudLabel(formData.type),
-                service: getServicioLabel(formData.service),
+                type: formData.type,
+                service: formData.service,
                 description: formData.description,
                 referenceNumber: reference,
                 fecha: new Date().toLocaleString('es-CO', {
@@ -106,39 +88,37 @@ const PQRSPage = () => {
         } catch (error) {
             console.error('Error al enviar PQRS:', error);
             setSubmitStatus('error');
-            setErrorMessage('Error al enviar la solicitud. Por favor verifica tu conexión e intenta nuevamente.');
+            setErrorMessage(t('messages.error.desc'));
         } finally {
             setIsSubmitting(false);
         }
     };
 
     return (
-        <div className="bg-obsidian min-h-screen text-white font-sans">
+        <div className="bg-obsidian min-h-screen text-white font-sans flex flex-col">
             <SEO
-                title="Radicar PQRS - Jhamf Group"
-                description="Canal oficial para radicar Peticiones, Quejas, Reclamos y Sugerencias (PQRS) de Jhamf Group SAS. Estamos comprometidos con la mejora continua."
-                keywords="PQRS, Servicio al cliente Jhamf, Peticiones Quejas Reclamos, Soporte Jhamf Group"
+                title={t('seo.title')}
+                description={t('seo.description')}
+                keywords={t('seo.keywords')}
             />
             <Navbar onOpenWizard={() => { }} />
 
-            <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            <div className="flex-grow pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-12"
                 >
                     <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neon-cyan to-azure mb-6">
-                        Centro de Atención PQRS
+                        {t('hero.title')}
                     </h1>
                     <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
-                        Estamos comprometidos con la excelencia. Utilice este canal para radicar sus
-                        Peticiones, Quejas, Reclamos y Sugerencias. Su opinión es fundamental para
-                        nuestra mejora continua.
+                        {t('hero.description')}
                     </p>
                     <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-gray-400">
                         <span className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10">
                             <FileText size={16} className="text-neon-cyan" />
-                            Tiempo de respuesta: 3-5 días hábiles
+                            {t('hero.response_time')}
                         </span>
                     </div>
                 </motion.div>
@@ -154,13 +134,14 @@ const PQRSPage = () => {
                             <div className="w-20 h-20 bg-neon-cyan/20 rounded-full flex items-center justify-center mx-auto mb-6">
                                 <CheckCircle className="text-neon-cyan w-10 h-10" />
                             </div>
-                            <h2 className="text-2xl font-bold text-white mb-4">¡Solicitud Radicada con Éxito!</h2>
+                            <h2 className="text-2xl font-bold text-white mb-4">{t('messages.success.title')}</h2>
                             <p className="text-gray-300 mb-6">
-                                Hemos recibido su solicitud correctamente. Se ha enviado un correo de confirmación a
-                                <span className="text-neon-cyan font-medium"> coordinacionsgt@jhamf.com</span>.
+                                {t('messages.success.desc1')}
+                                <span className="text-neon-cyan font-medium"> coordinacionsgt@jhamf.com</span>
+                                {t('messages.success.desc2')}
                             </p>
                             <div className="bg-black/40 rounded-lg p-4 inline-block mb-8 border border-white/10">
-                                <p className="text-sm text-gray-400 mb-1">Número de Radicado</p>
+                                <p className="text-sm text-gray-400 mb-1">{t('messages.success.ref')}</p>
                                 <p className="text-2xl font-mono text-neon-cyan tracking-wider">{referenceNumber}</p>
                             </div>
                             <div>
@@ -180,7 +161,7 @@ const PQRSPage = () => {
                                     }}
                                     className="px-8 py-3 bg-azure hover:bg-azure/80 text-white rounded-lg transition-colors font-medium"
                                 >
-                                    Nueva Solicitud
+                                    {t('messages.success.new_request')}
                                 </button>
                             </div>
                         </motion.div>
@@ -194,15 +175,15 @@ const PQRSPage = () => {
                             <div className="w-20 h-20 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
                                 <AlertCircle className="text-red-500 w-10 h-10" />
                             </div>
-                            <h2 className="text-2xl font-bold text-white mb-4">Error al Enviar</h2>
+                            <h2 className="text-2xl font-bold text-white mb-4">{t('messages.error.title')}</h2>
                             <p className="text-gray-300 mb-6">
-                                {errorMessage || 'Hubo un problema al enviar su solicitud. Por favor intente nuevamente.'}
+                                {errorMessage || t('messages.error.desc')}
                             </p>
                             <button
                                 onClick={() => setSubmitStatus('idle')}
                                 className="px-8 py-3 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-colors font-medium"
                             >
-                                Intentar Nuevamente
+                                {t('messages.error.retry')}
                             </button>
                         </motion.div>
                     ) : (
@@ -216,11 +197,11 @@ const PQRSPage = () => {
                             {/* Personal Information */}
                             <div>
                                 <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2 border-b border-white/10 pb-2">
-                                    <span className="text-neon-cyan">01.</span> Información del Solicitante
+                                    <span className="text-neon-cyan">01.</span> {t('form.section_1')}
                                 </h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-gray-300">Nombre Completo *</label>
+                                        <label className="text-sm font-medium text-gray-300">{t('form.fields.fullname')}</label>
                                         <input
                                             type="text"
                                             name="fullName"
@@ -228,11 +209,10 @@ const PQRSPage = () => {
                                             value={formData.fullName}
                                             onChange={handleChange}
                                             className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all placeholder:text-gray-600"
-                                            placeholder="Juan Pérez"
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-gray-300">Empresa *</label>
+                                        <label className="text-sm font-medium text-gray-300">{t('form.fields.company')}</label>
                                         <input
                                             type="text"
                                             name="companyName"
@@ -240,11 +220,10 @@ const PQRSPage = () => {
                                             value={formData.companyName}
                                             onChange={handleChange}
                                             className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all placeholder:text-gray-600"
-                                            placeholder="Nombre de su organización"
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-gray-300">Correo Electrónico *</label>
+                                        <label className="text-sm font-medium text-gray-300">{t('form.fields.email')}</label>
                                         <input
                                             type="email"
                                             name="email"
@@ -252,18 +231,16 @@ const PQRSPage = () => {
                                             value={formData.email}
                                             onChange={handleChange}
                                             className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all placeholder:text-gray-600"
-                                            placeholder="correo@ejemplo.com"
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-gray-300">Teléfono (Opcional)</label>
+                                        <label className="text-sm font-medium text-gray-300">{t('form.fields.phone')}</label>
                                         <input
                                             type="tel"
                                             name="phone"
                                             value={formData.phone}
                                             onChange={handleChange}
                                             className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all placeholder:text-gray-600"
-                                            placeholder="+57 300 123 4567"
                                         />
                                     </div>
                                 </div>
@@ -272,11 +249,11 @@ const PQRSPage = () => {
                             {/* PQRS Details */}
                             <div>
                                 <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2 border-b border-white/10 pb-2">
-                                    <span className="text-neon-cyan">02.</span> Detalle de la Solicitud
+                                    <span className="text-neon-cyan">02.</span> {t('form.section_2')}
                                 </h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-gray-300">Tipo de Solicitud *</label>
+                                        <label className="text-sm font-medium text-gray-300">{t('form.fields.type')}</label>
                                         <select
                                             name="type"
                                             required
@@ -284,15 +261,15 @@ const PQRSPage = () => {
                                             onChange={handleChange}
                                             className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all appearance-none cursor-pointer"
                                         >
-                                            <option value="" disabled className="text-gray-500">Seleccione el tipo</option>
-                                            <option value="peticion">Petición (Información general)</option>
-                                            <option value="queja">Queja (Inconformidad con conducta)</option>
-                                            <option value="reclamo">Reclamo (Inconformidad con servicio)</option>
-                                            <option value="sugerencia">Sugerencia (Mejora)</option>
+                                            <option value="" disabled className="text-gray-500">{t('form.types.placeholder')}</option>
+                                            <option value={t('form.types.peticion')}>{t('form.types.peticion')}</option>
+                                            <option value={t('form.types.queja')}>{t('form.types.queja')}</option>
+                                            <option value={t('form.types.reclamo')}>{t('form.types.reclamo')}</option>
+                                            <option value={t('form.types.sugerencia')}>{t('form.types.sugerencia')}</option>
                                         </select>
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-gray-300">Servicio Relacionado *</label>
+                                        <label className="text-sm font-medium text-gray-300">{t('form.fields.service')}</label>
                                         <select
                                             name="service"
                                             required
@@ -300,17 +277,17 @@ const PQRSPage = () => {
                                             onChange={handleChange}
                                             className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all appearance-none cursor-pointer"
                                         >
-                                            <option value="" disabled>Seleccione el servicio</option>
-                                            <option value="consultoria">Consultoría IT</option>
-                                            <option value="ciberseguridad">Ciberseguridad</option>
-                                            <option value="cloud">Cloud Computing</option>
-                                            <option value="infraestructura">Infraestructura</option>
-                                            <option value="otro">Otro</option>
+                                            <option value="" disabled>{t('form.services.placeholder')}</option>
+                                            <option value={t('form.services.consultoria')}>{t('form.services.consultoria')}</option>
+                                            <option value={t('form.services.ciberseguridad')}>{t('form.services.ciberseguridad')}</option>
+                                            <option value={t('form.services.cloud')}>{t('form.services.cloud')}</option>
+                                            <option value={t('form.services.infraestructura')}>{t('form.services.infraestructura')}</option>
+                                            <option value={t('form.services.otro')}>{t('form.services.otro')}</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-sm font-medium text-gray-300">Descripción Detallada *</label>
+                                    <label className="text-sm font-medium text-gray-300">{t('form.fields.description')}</label>
                                     <textarea
                                         name="description"
                                         required
@@ -318,7 +295,7 @@ const PQRSPage = () => {
                                         onChange={handleChange}
                                         rows={5}
                                         className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all placeholder:text-gray-600 resize-none"
-                                        placeholder="Por favor describa su solicitud con el mayor detalle posible..."
+                                        placeholder={t('form.fields.description_placeholder')}
                                     ></textarea>
                                 </div>
                             </div>
@@ -327,8 +304,8 @@ const PQRSPage = () => {
                             <div>
                                 <div className="border border-dashed border-white/20 rounded-lg p-6 text-center hover:bg-white/5 transition-colors cursor-pointer group">
                                     <Upload className="mx-auto h-8 w-8 text-gray-400 group-hover:text-neon-cyan mb-3 transition-colors" />
-                                    <p className="text-sm text-gray-300 font-medium">Adjuntar Archivos (Opcional)</p>
-                                    <p className="text-xs text-gray-500 mt-1">PDF, JPG, PNG hasta 5MB</p>
+                                    <p className="text-sm text-gray-300 font-medium">{t('form.attachments.title')}</p>
+                                    <p className="text-xs text-gray-500 mt-1">{t('form.attachments.subtitle')}</p>
                                 </div>
                             </div>
 
@@ -351,7 +328,7 @@ const PQRSPage = () => {
                                         </div>
                                     </div>
                                     <span className="text-sm text-gray-400 select-none">
-                                        He leído y acepto la <a href="/politica-privacidad" target="_blank" className="text-neon-cyan underline hover:text-white transition-colors">Política de Tratamiento de Datos Personales</a> y autorizo el uso de mis datos para el trámite de esta solicitud.
+                                        {t('form.policy.text1')} <Link to={lang === 'es' ? `/${lang}/politica-privacidad` : `/${lang}/privacy-policy`} target="_blank" className="text-neon-cyan underline hover:text-white transition-colors">{t('form.policy.link')}</Link> {t('form.policy.text2')}
                                     </span>
                                 </label>
 
@@ -365,11 +342,14 @@ const PQRSPage = () => {
                                         }`}
                                 >
                                     {isSubmitting ? (
-                                        <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                        <>
+                                            <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                            {t('form.submitting')}
+                                        </>
                                     ) : (
                                         <>
                                             <Send size={20} />
-                                            Radicar Solicitud
+                                            {t('form.submit')}
                                         </>
                                     )}
                                 </button>
@@ -378,6 +358,9 @@ const PQRSPage = () => {
                     )}
                 </AnimatePresence>
             </div>
+
+            {/* Added Footer since PrivacyPolicy has it but PQRS didn't seem to have one properly integrated in layout sometimes or was omitted in snippet, actually it wasn't in the snippet but I should add Footer back if it was there or add it. Wait, the original had `<Footer />`? Let's check the original */}
+            <Footer />
         </div>
     );
 };

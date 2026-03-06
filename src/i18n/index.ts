@@ -9,6 +9,8 @@ import esServices from './locales/es/services.json';
 import esAbout from './locales/es/about.json';
 import esInfrastructure from './locales/es/infrastructure.json';
 import esAssets from './locales/es/assets.json';
+import esPqrs from './locales/es/pqrs.json';
+import esPrivacy from './locales/es/privacy.json';
 
 // EN translations
 import enCommon from './locales/en/common.json';
@@ -17,6 +19,8 @@ import enServices from './locales/en/services.json';
 import enAbout from './locales/en/about.json';
 import enInfrastructure from './locales/en/infrastructure.json';
 import enAssets from './locales/en/assets.json';
+import enPqrs from './locales/en/pqrs.json';
+import enPrivacy from './locales/en/privacy.json';
 
 export const SUPPORTED_LANGUAGES = ['es', 'en'] as const;
 export type SupportedLanguage = typeof SUPPORTED_LANGUAGES[number];
@@ -34,6 +38,8 @@ i18n
                 about: esAbout,
                 infrastructure: esInfrastructure,
                 assets: esAssets,
+                pqrs: esPqrs,
+                privacy: esPrivacy,
             },
             en: {
                 common: enCommon,
@@ -42,12 +48,14 @@ i18n
                 about: enAbout,
                 infrastructure: enInfrastructure,
                 assets: enAssets,
+                pqrs: enPqrs,
+                privacy: enPrivacy,
             },
         },
         lng: DEFAULT_LANGUAGE,
         fallbackLng: 'es',
         defaultNS: 'common',
-        ns: ['common', 'home', 'services', 'about', 'infrastructure', 'assets'],
+        ns: ['common', 'home', 'services', 'about', 'infrastructure', 'assets', 'pqrs', 'privacy'],
         interpolation: {
             escapeValue: false, // React already escapes
         },

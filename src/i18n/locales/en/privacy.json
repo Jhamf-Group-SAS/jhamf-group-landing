@@ -1,0 +1,39 @@
+{
+    "seo": {
+        "title": "Privacy Policy and Data Processing",
+        "description": "Learn about our privacy policy and personal data processing. At Jhamf Group SAS, we protect your information in accordance with the law.",
+        "keywords": "Privacy policy, Data processing Jhamf, Personal data protection Colombia"
+    },
+    "header": {
+        "subtitle": "JHAMF GROUP SAS",
+        "title": "Privacy Policy and Data Processing",
+        "updated": "Last updated:"
+    },
+    "document": {
+        "title": "Official Document",
+        "filename": "Personal Data Processing Policy.pdf",
+        "download": "Download PDF"
+    },
+    "content": {
+        "intro": "At JHAMF GROUP SAS, we are committed to protecting the privacy and personal data of our customers, users, and partners. This policy describes how we collect, use, and protect your information.",
+        "section1": {
+            "title": "1. Data Controller",
+            "text": "JHAMF GROUP SAS, a legally constituted company, is responsible for the processing of personal data."
+        },
+        "section2": {
+            "title": "2. Purpose of Processing",
+            "text": "Your personal data will be used for:",
+            "list": [
+                "Provision of consulting and technology services.",
+                "Communication about news, events, and services.",
+                "Compliance with legal and contractual obligations.",
+                "Improvement of our services through analysis and statistics."
+            ]
+        },
+        "section3": {
+            "title": "3. Rights of the Data Subjects",
+            "text": "As the data subject, you have the right to know, update, rectify, and delete your personal information, as well as to revoke the authorization granted for its processing."
+        },
+        "note": "Note: This is an informative summary. To learn all the legal details, please download the official PDF document using the button above."
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "seo": {
+        "title": "Política de Privacidad y Tratamiento de Datos",
+        "description": "Conozca nuestra política de privacidad y tratamiento de datos personales. En Jhamf Group SAS protegemos su información conforme a la ley.",
+        "keywords": "Política de privacidad, Tratamiento de datos Jhamf, Protección de datos personales Colombia"
+    },
+    "header": {
+        "subtitle": "JHAMF GROUP SAS",
+        "title": "Política de Privacidad y Tratamiento de Datos",
+        "updated": "Última actualización:"
+    },
+    "document": {
+        "title": "Documento Oficial",
+        "filename": "Política Tratamiento de Datos Personales.pdf",
+        "download": "Descargar PDF"
+    },
+    "content": {
+        "intro": "En JHAMF GROUP SAS, estamos comprometidos con la protección de la privacidad y los datos personales de nuestros clientes, usuarios y socios. Esta política describe cómo recolectamos, usamos y protegemos su información.",
+        "section1": {
+            "title": "1. Responsable del Tratamiento",
+            "text": "JHAMF GROUP SAS, sociedad legalmente constituida, es la responsable del tratamiento de los datos personales."
+        },
+        "section2": {
+            "title": "2. Finalidad del Tratamiento",
+            "text": "Sus datos personales serán utilizados para:",
+            "list": [
+                "Prestación de servicios de consultoría y tecnología.",
+                "Comunicación sobre novedades, eventos y servicios.",
+                "Cumplimiento de obligaciones legales y contractuales.",
+                "Mejora de nuestros servicios a través de análisis y estadísticas."
+            ]
+        },
+        "section3": {
+            "title": "3. Derechos de los Titulares",
+            "text": "Como titular de los datos, usted tiene derecho a conocer, actualizar, rectificar y suprimir su información personal, así como a revocar la autorización otorgada para su tratamiento."
+        },
+        "note": "Nota: Este es un resumen informativo. Para conocer todos los detalles legales, por favor descargue el documento oficial PDF utilizando el botón superior."
+    }
+}
