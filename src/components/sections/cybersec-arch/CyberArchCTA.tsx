@@ -24,7 +24,7 @@ const CyberArchCTA: React.FC = () => {
                         {t('cta.title')}
                     </h2>
 
-                    <a href="#contact" className="inline-flex items-center gap-2 px-8 py-4 bg-neon-cyan text-obsidian rounded-lg font-bold text-lg hover:bg-white hover:shadow-[0_0_30px_rgba(0,255,157,0.3)] transition-all group relative z-10">
+                    <a href="https://form.typeform.com/to/gxR8JkE0" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 bg-neon-cyan text-obsidian rounded-lg font-bold text-lg hover:bg-white hover:shadow-[0_0_30px_rgba(0,255,157,0.3)] transition-all group relative z-10">
                         {t('cta.button')}
                         <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                     </a>
