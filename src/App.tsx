@@ -15,6 +15,7 @@ import SupportPage from './pages/SupportPage';
 import CyberArchPage from './pages/CyberArchPage';
 import { SUPPORTED_LANGUAGES } from './i18n';
 import type { SupportedLanguage } from './i18n';
+import { useHashScroll } from './hooks/useHashScroll';
 
 /** Syncs the <html lang> attribute and i18n language to the :lang URL param */
 function LangSync({ lang }: { lang: string }) {
@@ -33,27 +34,34 @@ function LangSync({ lang }: { lang: string }) {
   return null;
 }
 
+function AppContent() {
+  useHashScroll();
+  return (
+    <Routes>
+      {/* Root: redirect to Spanish (primary) */}
+      <Route path="/" element={<Navigate to="/es/" replace />} />
+
+      {/* Global redirects without language prefix */}
+      <Route path="/pqrs" element={<Navigate to="/es/pqrs" replace />} />
+      <Route path="/support" element={<Navigate to="/es/support" replace />} />
+      <Route path="/politica-privacidad" element={<Navigate to="/es/politica-privacidad" replace />} />
+      <Route path="/privacy-policy" element={<Navigate to="/es/privacy-policy" replace />} />
+      <Route path="/casos-de-exito" element={<Navigate to="/es/casos-de-exito" replace />} />
+      <Route path="/ia-cali" element={<Navigate to="/es/ia-cali" replace />} />
+
+      {/* Language-prefixed routes */}
+      <Route path="/:lang/*" element={<LocalizedRoutes />} />
+
+      {/* Fallback */}
+      <Route path="*" element={<Navigate to="/es/" replace />} />
+    </Routes>
+  );
+}
+
 function App() {
   return (
     <Router>
-      <Routes>
-        {/* Root: redirect to Spanish (primary) */}
-        <Route path="/" element={<Navigate to="/es/" replace />} />
-
-        {/* Global redirects without language prefix */}
-        <Route path="/pqrs" element={<Navigate to="/es/pqrs" replace />} />
-        <Route path="/support" element={<Navigate to="/es/support" replace />} />
-        <Route path="/politica-privacidad" element={<Navigate to="/es/politica-privacidad" replace />} />
-        <Route path="/privacy-policy" element={<Navigate to="/es/privacy-policy" replace />} />
-        <Route path="/casos-de-exito" element={<Navigate to="/es/casos-de-exito" replace />} />
-        <Route path="/ia-cali" element={<Navigate to="/es/ia-cali" replace />} />
-
-        {/* Language-prefixed routes */}
-        <Route path="/:lang/*" element={<LocalizedRoutes />} />
-
-        {/* Fallback */}
-        <Route path="*" element={<Navigate to="/es/" replace />} />
-      </Routes>
+      <AppContent />
     </Router>
   );
 }

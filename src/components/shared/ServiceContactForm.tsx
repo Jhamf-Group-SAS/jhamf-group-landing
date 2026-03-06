@@ -1,5 +1,5 @@
-import React from 'react';
-import { Send, Phone, Mail, MessageSquare } from 'lucide-react';
+import React, { useState } from 'react';
+import { Send, Phone, Mail, MessageSquare, CheckCircle } from 'lucide-react';
 
 export interface ServiceContactFormProps {
     title: React.ReactNode;
@@ -14,7 +14,6 @@ export interface ServiceContactFormProps {
     formInputs?: { type: string; placeholder: string }[];
     formSelect?: { placeholder: string; options: string[] };
     formCtaText: string;
-    formCtaLink?: string;
     bgClass?: string;
     glowClass?: string;
     buttonClass?: string;
@@ -36,11 +35,24 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({
     ],
     formSelect,
     formCtaText,
-    formCtaLink = "https://form.typeform.com/to/gxR8JkE0",
     bgClass = "bg-gradient-to-b from-obsidian to-black",
     glowClass = "bg-azure/10",
     buttonClass = "bg-azure hover:bg-azure-glow"
 }) => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        // Simulate emailjs or API submission
+        setTimeout(() => {
+            setIsSubmitting(false);
+            setIsSuccess(true);
+            setTimeout(() => { setIsSuccess(false); }, 5000); // Reset after 5s
+        }, 1500);
+    };
+
     return (
         <section id="contact" className={`py-24 relative overflow-hidden ${bgClass}`}>
             {/* Glow effect */}
@@ -85,13 +97,14 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({
                             </a>
                         </div>
 
-                        <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                        <form className="space-y-4" onSubmit={handleSubmit}>
                             {formInputs.map((input, idx) => (
                                 <div key={idx}>
                                     <label htmlFor={`input-${idx}`} className="sr-only">{input.placeholder}</label>
                                     <input
                                         id={`input-${idx}`}
                                         type={input.type}
+                                        required
                                         placeholder={input.placeholder}
                                         className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-azure transition-colors"
                                     />
@@ -100,7 +113,7 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({
                             {formSelect && (
                                 <div>
                                     <label htmlFor="form-select" className="sr-only">{formSelect.placeholder}</label>
-                                    <select id="form-select" className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-gray-300 focus:outline-none focus:border-azure transition-colors">
+                                    <select required id="form-select" className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-gray-300 focus:outline-none focus:border-azure transition-colors">
                                         <option value="" disabled selected>{formSelect.placeholder}</option>
                                         {formSelect.options.map((opt, idx) => (
                                             <option key={idx} value={opt}>{opt}</option>
@@ -109,15 +122,19 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({
                                 </div>
                             )}
 
-                            <a
-                                href={formCtaLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={`w-full text-white font-medium py-3 rounded-lg transition-all flex items-center justify-center gap-2 group ${buttonClass}`}
+                            <button
+                                type="submit"
+                                disabled={isSubmitting || isSuccess}
+                                className={`w-full text-white font-medium py-3 rounded-lg transition-all flex items-center justify-center gap-2 group ${buttonClass} disabled:opacity-75`}
                             >
-                                {formCtaText}
-                                <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                            </a>
+                                {isSubmitting ? (
+                                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                                ) : isSuccess ? (
+                                    <>¡Solicitud Enviada! <CheckCircle className="w-4 h-4 text-green-400" /></>
+                                ) : (
+                                    <>{formCtaText} <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" /></>
+                                )}
+                            </button>
                         </form>
                     </div>
                 </div>
