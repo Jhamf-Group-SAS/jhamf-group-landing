@@ -55,8 +55,8 @@
         "infra": {
             "num": "05",
             "title": "Infraestructura y Redes",
-            "subtitle": "Conectividad Empresarial",
-            "description": "Cableado estructurado, VPN, CCTV y servidores híbridos para una infraestructura de red segura y de alto rendimiento.",
+            "subtitle": "Cableado estructurado, VPN, CCTV, servidores híbridos",
+            "description": "Diseño e implementación de redes empresariales seguras y escalables, incluyendo cableado estructurado, VPN corporativas, sistemas de videovigilancia y servidores híbridos integrados con la nube.",
             "items": [
                 "Cableado Estructurado Certificado",
                 "Redes VPN y Conectividad Segura",
@@ -67,8 +67,8 @@
         "assets": {
             "num": "06",
             "title": "Activos Tecnológicos y Licencias",
-            "subtitle": "Gestión de Activos IT",
-            "description": "Adquisición de hardware, licenciamiento de software y gestión integral del ciclo de vida de activos tecnológicos.",
+            "subtitle": "Adquisición de hardware, licenciamiento de software, ciclo de vida de activos",
+            "description": "Gestión integral de activos tecnológicos, adquisición de hardware empresarial, licenciamiento de software y administración del ciclo de vida de infraestructura IT.",
             "items": [
                 "Adquisición Estratégica de Hardware",
                 "Licenciamiento de Software Empresarial",

@@ -55,8 +55,8 @@
         "infra": {
             "num": "05",
             "title": "Infrastructure & Networking",
-            "subtitle": "Enterprise Connectivity",
-            "description": "Structured cabling, VPN, CCTV, and hybrid servers for a secure, high-performance network infrastructure.",
+            "subtitle": "Structured cabling, VPN, CCTV, hybrid servers",
+            "description": "Design and implementation of secure, scalable enterprise networks, including structured cabling, corporate VPNs, video surveillance systems, and hybrid servers integrated with the cloud.",
             "items": [
                 "Certified Structured Cabling",
                 "VPN & Secure Connectivity",
@@ -67,8 +67,8 @@
         "assets": {
             "num": "06",
             "title": "Technology Assets & Licensing",
-            "subtitle": "IT Asset Management",
-            "description": "Hardware procurement, enterprise software licensing, and end-to-end IT asset lifecycle management.",
+            "subtitle": "Hardware procurement, software licensing, asset lifecycle",
+            "description": "Comprehensive IT asset management, enterprise hardware procurement, software licensing, and full lifecycle administration of IT infrastructure.",
             "items": [
                 "Strategic Hardware Procurement",
                 "Enterprise Software Licensing",
