@@ -1,0 +1,41 @@
+{
+    "nav": {
+        "services": "Servicios",
+        "ai_automation": "IA y Automatización",
+        "cloud": "Cloud",
+        "cybersecurity": "Ciberseguridad",
+        "clients": "Clientes",
+        "about": "Nosotros",
+        "contact": "Contacto",
+        "cta": "Diagnóstico IA",
+        "lang_switch_label": "Cambiar idioma"
+    },
+    "trust_badges": {
+        "azure": "Microsoft Azure Partner",
+        "iso": "ISO 27001",
+        "aws": "AWS Partner",
+        "google": "Google Cloud"
+    },
+    "footer": {
+        "tagline": "Socio de infraestructura TI con IA",
+        "rights": "Todos los derechos reservados.",
+        "col_solutions": "Soluciones",
+        "col_company": "Empresa",
+        "col_legal": "Legal y Soporte",
+        "link_cloud": "Arquitectura Cloud",
+        "link_automation": "Automatización Inteligente",
+        "link_ai": "Soluciones IA",
+        "link_cases": "Casos de Éxito",
+        "link_ia_cali": "IA en Cali",
+        "link_about": "Sobre Nosotros",
+        "link_careers": "Empleos",
+        "link_contact": "Contacto",
+        "link_pqrs": "PQRS",
+        "link_privacy": "Política de Privacidad"
+    },
+    "scroll_hint": "Descubra más",
+    "cta_schedule": "Agendar Consultoría",
+    "cta_diagnostic": "Iniciar Diagnóstico IA",
+    "learn_more": "Ver detalles",
+    "included": "Incluido"
+}

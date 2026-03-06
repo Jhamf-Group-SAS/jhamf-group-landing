@@ -1,0 +1,55 @@
+{
+    "headline": "Who We Are",
+    "subtext": "Jhamf Group S.A.S. is more than technology — we are your strategic partner in digital transformation, information security, and Cloud services. We simplify the path to modernization for SMBs seeking excellence without complexity.",
+    "tabs": {
+        "mission": "Mission",
+        "vision": "Vision",
+        "values": "Corporate Values",
+        "policy": "Quality Policy"
+    },
+    "mission": {
+        "text": "Jhamf Group S.A.S. drives SMBs, institutions, and organizations through their digital transformation process, offering comprehensive technology solutions, cybersecurity, cloud, and IT equipment — through strategic alliances with global leaders and qualified talent, ensuring operational continuity and secure digital environments to foster sustainable growth for our clients and contribute to regional development."
+    },
+    "vision": {
+        "text": "Our vision is to be a trusted reference of excellence in technology solutions for SMBs, institutions, and organizations, consolidating a local and regional presence while projecting toward the national level. We are distinguished by driving our clients' digital transformation through innovative, reliable, and high-quality services — contributing to the sustainable growth of our clients and partners and strengthening the business ecosystem."
+    },
+    "values": {
+        "items": [
+            {
+                "title": "We Are a Team",
+                "desc": "Collaborative work and continuous growth."
+            },
+            {
+                "title": "We Are Empathetic",
+                "desc": "Synergy and value-driven relationships with every client."
+            },
+            {
+                "title": "We Are Transparent",
+                "desc": "Clarity, trust, and commitment to agreements."
+            },
+            {
+                "title": "We Are Passionate",
+                "desc": "Innovation and flexibility toward new ideas."
+            },
+            {
+                "title": "We Are Warm",
+                "desc": "Harmonious relationships and human quality."
+            },
+            {
+                "title": "Flexible & Innovative",
+                "desc": "Effective solutions and a practical mindset."
+            }
+        ]
+    },
+    "policy": {
+        "text": "JHAMF GROUP S.A.S. is committed to providing comprehensive technology solutions, cybersecurity, cloud services, and IT equipment sales in order to satisfy our clients' needs — through qualified human talent, in compliance with current regulations, and with a commitment to the continuous improvement of our processes.",
+        "objectives_title": "Quality Objectives:",
+        "objectives": [
+            "Timely and high-quality customer service.",
+            "Continuous staff training.",
+            "Continuous evaluation and improvement of processes.",
+            "Data security and privacy.",
+            "Financial growth and sustainability."
+        ]
+    }
+}

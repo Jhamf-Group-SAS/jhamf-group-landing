@@ -1,0 +1,140 @@
+{
+    "hero": {
+        "badge": "AI-Powered IT Infrastructure Partner",
+        "headline_1": "Engineering the",
+        "headline_2": "Infrastructure",
+        "headline_3": "of Tomorrow",
+        "subtext": "We partner with enterprises to build resilient cloud infrastructure, deploy AI automation, and deliver enterprise-grade cybersecurity — all backed by certified experts and a 99.9% uptime commitment.",
+        "uptime_label": "Uptime Commitment",
+        "cta_primary": "Start AI Diagnostic",
+        "cta_secondary": "Schedule Consultation",
+        "scroll": "Discover more"
+    },
+    "stats": {
+        "deployments_value": "200+",
+        "deployments_label": "Enterprise Deployments",
+        "uptime_value": "99.9%",
+        "uptime_label": "Uptime SLA",
+        "support_value": "24/7",
+        "support_label": "Expert Support",
+        "countries_value": "5+",
+        "countries_label": "Countries Served"
+    },
+    "services": {
+        "eyebrow": "What We Do",
+        "headline_1": "Enterprise Solutions",
+        "headline_2": "Built to Scale",
+        "subtext": "From cloud architecture to AI automation, we deliver the technology stack modern enterprises need to compete."
+    },
+    "ai_automation": {
+        "eyebrow": "AI & Automation",
+        "headline_1": "Work Smarter,",
+        "headline_2": "Not Harder",
+        "subtext": "We automate repetitive operations and embed AI into your workflows — so your teams focus on strategy, not spreadsheets. From RPA bots to large language model integrations.",
+        "cta": "Explore AI Solutions",
+        "live_badge": "LIVE",
+        "tasks_badge": "tasks / hr",
+        "capabilities": [
+            {
+                "label": "Robotic Process Automation",
+                "desc": "Eliminate manual tasks with intelligent workflow bots."
+            },
+            {
+                "label": "Cognitive AI Agents",
+                "desc": "Deploy conversational agents that understand context and intent."
+            },
+            {
+                "label": "Predictive Analytics",
+                "desc": "Surface actionable forecasts from operational data streams."
+            },
+            {
+                "label": "Generative AI Integration",
+                "desc": "Embed LLMs into your products, workflows, and decision pipelines."
+            }
+        ]
+    },
+    "cloud": {
+        "eyebrow": "Cloud Infrastructure",
+        "headline_1": "Cloud Without",
+        "headline_2": "Compromise",
+        "subtext": "We design, migrate, and operate enterprise cloud environments on Microsoft Azure and multi-cloud platforms — with security, resilience, and cost efficiency at the core.",
+        "feature_1_title": "Hybrid & Multi-Cloud",
+        "feature_1_desc": "Architect resilient environments across Azure, AWS, and Google Cloud — with seamless on-premise integration.",
+        "feature_2_title": "Azure-Certified Team",
+        "feature_2_desc": "Our engineers hold Microsoft Azure certifications across architecture, security, data, and DevOps tracks.",
+        "feature_3_title": "Zero-Downtime Migration",
+        "feature_3_desc": "Migrate your workloads to cloud with no service interruptions using blue-green and canary deployment strategies.",
+        "stat_latency": "Avg. Latency",
+        "stat_sla": "Availability SLA",
+        "stat_regions": "Cloud Regions",
+        "stat_speed": "Faster Deployments",
+        "partner_label": "Microsoft Azure Certified Partner",
+        "partner_desc": "Verified expertise across architecture, security & DevOps",
+        "cta": "Explore Cloud Services"
+    },
+    "cyber": {
+        "eyebrow": "Cybersecurity",
+        "headline_1": "Defend What",
+        "headline_2": "Matters Most",
+        "subtext": "Enterprise-grade protection built on zero-trust principles. We monitor, detect, respond, and recover — so threats never become incidents.",
+        "score_label": "Security Score",
+        "protected": "Protected",
+        "pillar_1_title": "Threat Detection",
+        "pillar_1_desc": "Continuous monitoring with SIEM integration, behavioral analytics, and real-time alerts across your entire attack surface.",
+        "pillar_2_title": "Identity & Access Control",
+        "pillar_2_desc": "Zero-trust IAM with MFA, privileged access management, and conditional access policies for every user and device.",
+        "pillar_3_title": "Compliance Auditing",
+        "pillar_3_desc": "Automated compliance assessments for ISO 27001, NIST CSF, GDPR, and SOC 2 with actionable remediation plans.",
+        "pillar_4_title": "Incident Response",
+        "pillar_4_desc": "24/7 CSIRT team providing rapid containment, forensic analysis, and recovery for breach and ransomware events."
+    },
+    "clients": {
+        "eyebrow": "Client Success",
+        "headline_1": "Trusted by",
+        "headline_2": "50+ Enterprises",
+        "subtext": "From SMBs to large enterprises across Latin America and beyond.",
+        "testimonial_1_quote": "JHAMF transformed our cloud posture in under 90 days. Our Azure infrastructure now handles 3x the load at 40% lower cost.",
+        "testimonial_1_author": "Santiago R.",
+        "testimonial_1_role": "CTO, Retail Group",
+        "testimonial_2_quote": "The AI automation team eliminated 15 hours of weekly manual reporting. The ROI was visible within the first month.",
+        "testimonial_2_author": "Carolina M.",
+        "testimonial_2_role": "VP Operations, Financial Services",
+        "testimonial_3_quote": "Best-in-class cybersecurity posture. They achieved our ISO 27001 certification in record time with zero critical findings.",
+        "testimonial_3_author": "Andrés L.",
+        "testimonial_3_role": "CISO, Healthcare Institution"
+    },
+    "cta_banner": {
+        "badge": "Now Accepting Enterprise Clients",
+        "headline_1": "Ready to Transform",
+        "headline_2": "Your Infrastructure?",
+        "subtext": "Book a free 30-minute architecture review with our certified engineers. We'll analyze your current stack and deliver a tailored modernization roadmap — at no cost.",
+        "cta_primary": "Schedule Free Consultation",
+        "cta_secondary": "Contact Our Team",
+        "trust_line": "No commitment required · Reply within 24 hours · Microsoft Azure & Google Cloud certified"
+    },
+    "about": {
+        "eyebrow": "About Us",
+        "headline_1": "Who",
+        "headline_2": "We Are",
+        "subtext": "Jhamf Group S.A.S. is more than technology — we are your strategic partner in digital transformation, information security, and Cloud services.",
+        "tab_mission": "Mission",
+        "tab_vision": "Vision",
+        "tab_values": "Values",
+        "tab_quality": "Quality Policy"
+    },
+    "industries": {
+        "eyebrow": "Industries We Serve",
+        "healthcare": "Healthcare",
+        "smb": "SMBs",
+        "outsourcing": "IT Outsourcing",
+        "finance": "Financial Services",
+        "retail": "Retail",
+        "government": "Government",
+        "education": "Education",
+        "logistics": "Logistics",
+        "realestate": "Real Estate",
+        "legal": "Legal & Compliance",
+        "media": "Media & Publishing",
+        "manufacturing": "Manufacturing"
+    }
+}

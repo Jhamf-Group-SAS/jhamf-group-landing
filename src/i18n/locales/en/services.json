@@ -1,0 +1,66 @@
+{
+    "eyebrow": "What We Do",
+    "headline_1": "Enterprise Solutions",
+    "headline_2": "Built to Scale",
+    "subtext": "From cloud architecture to AI automation, we deliver the technology stack modern enterprises need to compete.",
+    "cards": {
+        "cloud": {
+            "num": "01",
+            "title": "Cloud Infrastructure",
+            "subtitle": "Microsoft Azure Partner",
+            "description": "Scalable, secure hybrid and multi-cloud architectures optimized for enterprise performance and cost efficiency.",
+            "items": [
+                "Microsoft Azure Architecture & Migration",
+                "Hybrid & Multi-cloud Environments",
+                "FinOps & Cost Optimization",
+                "Disaster Recovery & Business Continuity"
+            ]
+        },
+        "ai": {
+            "num": "02",
+            "title": "AI & Automation",
+            "subtitle": "Intelligent Operations",
+            "description": "Deploy cognitive agents, RPA workflows, and generative AI to eliminate repetitive processes and unlock insights.",
+            "items": [
+                "Robotic Process Automation (RPA)",
+                "AI Agents & Cognitive Chatbots",
+                "Predictive Analytics & BI",
+                "Generative AI Integration"
+            ]
+        },
+        "cyber": {
+            "num": "03",
+            "title": "Cybersecurity",
+            "subtitle": "Zero-Trust Defense",
+            "description": "Enterprise-grade protection for your digital assets: threat detection, compliance auditing, and incident response.",
+            "items": [
+                "Zero-Trust Architecture",
+                "Threat Detection & Response",
+                "Compliance Auditing (ISO/NIST)",
+                "Identity & Access Management"
+            ]
+        },
+        "managed": {
+            "num": "04",
+            "title": "Managed IT Services",
+            "subtitle": "24/7 Enterprise Support",
+            "description": "Fully managed helpdesk, on-site support, and proactive maintenance to keep your operations running without interruption.",
+            "items": [
+                "24/7 Help Desk & On-site Support",
+                "Preventive & Corrective Maintenance",
+                "IT Operations Management",
+                "SLA-backed Response Times"
+            ]
+        }
+    },
+    "secondary": {
+        "infra": {
+            "label": "Infrastructure & Networking",
+            "desc": "Structured cabling, VPN, CCTV, hybrid servers"
+        },
+        "assets": {
+            "label": "Technology Assets & Licensing",
+            "desc": "Hardware procurement, software licensing, asset lifecycle"
+        }
+    }
+}

@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { useLocale } from '../../hooks/useLocale';
+import LanguageSwitcher from './LanguageSwitcher';
 
 interface NavbarProps {
     onOpenWizard: () => void;
@@ -10,86 +13,106 @@ interface NavbarProps {
 const Navbar = ({ onOpenWizard }: NavbarProps) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const navigate = useNavigate();
     const location = useLocation();
+    const { t } = useTranslation('common');
+    const { lang } = useLocale();
+
+    // Nav links using translated labels and lang-prefixed hrefs
+    const navLinks = [
+        { key: 'services', name: t('nav.services'), id: 'services' },
+        { key: 'ai', name: t('nav.ai_automation'), id: 'ai-automation' },
+        { key: 'cloud', name: t('nav.cloud'), id: 'cloud' },
+        { key: 'cyber', name: t('nav.cybersecurity'), id: 'cybersecurity' },
+        { key: 'clients', name: t('nav.clients'), id: 'clients' },
+        { key: 'about', name: t('nav.about'), id: 'nosotros' },
+    ];
 
     useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
-        };
-        window.addEventListener('scroll', handleScroll);
+        const handleScroll = () => setIsScrolled(window.scrollY > 24);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const navLinks = [
-        { name: 'Evolución', href: '/#evolution' },
-        { name: 'Servicios', href: '/#services' },
-        { name: 'Casos de Éxito', href: '/casos-de-exito' },
-        { name: 'Nosotros', href: '/#nosotros' },
-        { name: 'Contacto', href: '/#contact' },
-    ];
-
-    const handleNavigation = (href: string) => {
+    // Close mobile menu on route change
+    useEffect(() => {
         setIsMobileMenuOpen(false);
-        if (href.startsWith('/#')) {
-            const hash = href.substring(2);
-            if (location.pathname !== '/') {
-                navigate('/');
-                setTimeout(() => {
-                    const element = document.getElementById(hash);
-                    if (element) element.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
-            } else {
-                const element = document.getElementById(hash);
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
-            }
+    }, [location.pathname]);
+
+    const handleNavAnchor = (id: string) => {
+        setIsMobileMenuOpen(false);
+        // Check if we're on the landing page for this lang
+        const landingPath = `/${lang}/`;
+        if (location.pathname !== landingPath && location.pathname !== `/${lang}`) {
+            window.location.href = `${landingPath}#${id}`;
         } else {
-            navigate(href);
-            window.scrollTo(0, 0);
+            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
         }
     };
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-obsidian/80 backdrop-blur-md border-b border-white/10' : 'bg-transparent'
+            role="navigation"
+            aria-label="Main navigation"
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+                    ? 'glass-elevated border-b border-white/5 shadow-[0_4px_24px_rgba(0,0,0,0.5)]'
+                    : 'bg-transparent'
                 }`}
         >
+            {/* Top accent line */}
+            <div className="h-px bg-gradient-to-r from-transparent via-electric/60 to-transparent" />
+
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-20">
-                    <div className="flex items-center gap-2">
+                <div className="flex items-center justify-between h-18 py-3">
+
+                    {/* Logo */}
+                    <button
+                        onClick={() => handleNavAnchor('hero')}
+                        className="flex items-center gap-3 group"
+                        aria-label="JHAMF Group — Home"
+                    >
                         <img
                             src="/jhamf-logo-white.png"
-                            alt="Jhamf Group Logo"
-                            className="h-12 w-auto object-contain cursor-pointer"
-                            onClick={() => handleNavigation('/')}
+                            alt="JHAMF Group"
+                            className="h-10 w-auto object-contain transition-opacity group-hover:opacity-80"
                         />
-                    </div>
+                    </button>
 
                     {/* Desktop Nav */}
-                    <div className="hidden md:flex items-center gap-8">
+                    <div className="hidden lg:flex items-center gap-7">
                         {navLinks.map((link) => (
                             <button
-                                key={link.name}
-                                onClick={() => handleNavigation(link.href)}
-                                className="text-gray-300 hover:text-neon-cyan transition-colors text-sm font-medium tracking-wide bg-transparent border-none cursor-pointer"
+                                key={link.key}
+                                onClick={() => handleNavAnchor(link.id)}
+                                className="text-sm font-medium text-steel hover:text-white transition-colors duration-200 bg-transparent border-none cursor-pointer tracking-wide"
                             >
                                 {link.name}
                             </button>
                         ))}
+                    </div>
+
+                    {/* Desktop CTA + Language Switcher */}
+                    <div className="hidden lg:flex items-center gap-3">
+                        <LanguageSwitcher />
+
                         <button
                             onClick={onOpenWizard}
-                            className="px-5 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white text-sm font-medium transition-all hover:scale-105 hover:border-azure/50"
+                            className="group flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white rounded-xl border border-electric/30 bg-electric/10 hover:bg-electric/20 hover:border-electric/60 transition-all duration-200 hover:shadow-electric focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric"
+                            aria-label="Open AI Diagnostic Wizard"
                         >
-                            Diagnóstico IA
+                            <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse-slow" aria-hidden="true" />
+                            {t('nav.cta')}
+                            <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
                         </button>
                     </div>
 
-                    {/* Mobile Button */}
+                    {/* Mobile hamburger */}
                     <button
-                        className="md:hidden text-white p-2"
+                        className="lg:hidden text-steel hover:text-white p-2 rounded-lg hover:bg-white/5 transition-colors"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+                        aria-expanded={isMobileMenuOpen}
                     >
-                        {isMobileMenuOpen ? <X /> : <Menu />}
+                        {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
                     </button>
                 </div>
             </div>
@@ -98,29 +121,39 @@ const Navbar = ({ onOpenWizard }: NavbarProps) => {
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        className="md:hidden absolute top-20 left-0 w-full bg-obsidian/95 backdrop-blur-xl border-b border-white/10 p-4 flex flex-col gap-4"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="lg:hidden glass-elevated border-t border-white/5 overflow-hidden"
                     >
-                        {navLinks.map((link) => (
-                            <button
-                                key={link.name}
-                                onClick={() => handleNavigation(link.href)}
-                                className="text-gray-300 hover:text-neon-cyan block py-2 text-base font-medium bg-transparent border-none text-left w-full cursor-pointer"
-                            >
-                                {link.name}
-                            </button>
-                        ))}
-                        <button
-                            onClick={() => {
-                                setIsMobileMenuOpen(false);
-                                onOpenWizard();
-                            }}
-                            className="w-full py-3 bg-azure/20 border border-azure/50 text-white rounded-lg font-medium"
-                        >
-                            Diagnóstico IA
-                        </button>
+                        <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
+                            {navLinks.map((link) => (
+                                <button
+                                    key={link.key}
+                                    onClick={() => handleNavAnchor(link.id)}
+                                    className="text-left px-4 py-3 text-sm font-medium text-steel hover:text-white hover:bg-white/5 rounded-lg transition-all bg-transparent border-none cursor-pointer w-full"
+                                >
+                                    {link.name}
+                                </button>
+                            ))}
+
+                            {/* Language switcher in mobile menu */}
+                            <div className="pt-3 mt-2 border-t border-white/5 flex items-center justify-between px-1">
+                                <span className="text-xs text-steel-dark font-medium">{t('nav.lang_switch_label')}</span>
+                                <LanguageSwitcher />
+                            </div>
+
+                            <div className="pt-2">
+                                <button
+                                    onClick={() => { setIsMobileMenuOpen(false); onOpenWizard(); }}
+                                    className="w-full flex items-center justify-center gap-2 py-3 text-sm font-semibold text-white rounded-xl border border-electric/40 bg-electric/10 hover:bg-electric/20 transition-all"
+                                >
+                                    <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse-slow" aria-hidden="true" />
+                                    {t('nav.cta')}
+                                </button>
+                            </div>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>

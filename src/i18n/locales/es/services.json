@@ -1,0 +1,66 @@
+{
+    "eyebrow": "Lo Que Hacemos",
+    "headline_1": "Soluciones Empresariales",
+    "headline_2": "Diseñadas para Escalar",
+    "subtext": "Desde arquitectura cloud hasta automatización con IA, entregamos el stack tecnológico que las empresas modernas necesitan para competir.",
+    "cards": {
+        "cloud": {
+            "num": "01",
+            "title": "Infraestructura Cloud",
+            "subtitle": "Microsoft Azure Partner",
+            "description": "Arquitecturas cloud híbridas y multi-cloud escalables, seguras y optimizadas para el rendimiento y eficiencia de costos empresarial.",
+            "items": [
+                "Arquitectura y Migración Microsoft Azure",
+                "Entornos Híbridos y Multi-cloud",
+                "FinOps y Optimización de Costos",
+                "Recuperación ante Desastres y Continuidad del Negocio"
+            ]
+        },
+        "ai": {
+            "num": "02",
+            "title": "IA y Automatización",
+            "subtitle": "Operaciones Inteligentes",
+            "description": "Despliegue agentes cognitivos, flujos RPA e IA generativa para eliminar procesos repetitivos y obtener insights.",
+            "items": [
+                "Automatización de Procesos Robóticos (RPA)",
+                "Agentes IA y Chatbots Cognitivos",
+                "Análisis Predictivo y BI",
+                "Integración de IA Generativa"
+            ]
+        },
+        "cyber": {
+            "num": "03",
+            "title": "Ciberseguridad",
+            "subtitle": "Defensa Zero-Trust",
+            "description": "Protección empresarial avanzada para sus activos digitales: detección de amenazas, auditoría de cumplimiento y respuesta a incidentes.",
+            "items": [
+                "Arquitectura Zero-Trust",
+                "Detección y Respuesta a Amenazas",
+                "Auditorías de Cumplimiento (ISO/NIST)",
+                "Gestión de Identidad y Acceso"
+            ]
+        },
+        "managed": {
+            "num": "04",
+            "title": "Servicios TI Gestionados",
+            "subtitle": "Soporte Empresarial 24/7",
+            "description": "Mesa de ayuda, soporte en sitio y mantenimiento proactivo para mantener sus operaciones sin interrupciones.",
+            "items": [
+                "Mesa de Ayuda y Soporte en Sitio 24/7",
+                "Mantenimiento Preventivo y Correctivo",
+                "Gestión de Operaciones TI",
+                "Tiempos de Respuesta respaldados por SLA"
+            ]
+        }
+    },
+    "secondary": {
+        "infra": {
+            "label": "Infraestructura y Redes",
+            "desc": "Cableado estructurado, VPN, CCTV, servidores híbridos"
+        },
+        "assets": {
+            "label": "Activos Tecnológicos y Licencias",
+            "desc": "Adquisición de hardware, licenciamiento de software, ciclo de vida de activos"
+        }
+    }
+}

@@ -1,200 +1,204 @@
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Server, Shield, Headphones, Monitor, ArrowRight, CheckCircle2, Cloud, BrainCircuit } from 'lucide-react';
+import { Cloud, BrainCircuit, Shield, Server, Headphones, Monitor, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-
-const services = [
-    {
-        icon: <Cloud className="w-8 h-8 text-azure" />,
-        title: "Infraestructura & Cloud",
-        subtitle: "Microsoft Azure Partners",
-        description: "Soluciones de nube híbrida y multi-cloud escalables, seguras y optimizadas para su negocio.",
-        gradient: "from-azure/20 to-transparent",
-        border: "group-hover:border-azure/50",
-        link: "/azure",
-        items: [
-            "Microsoft Azure Partners",
-            "Arquitectura Híbrida & Multi-cloud",
-            "Seguridad y Compliance",
-            "Migración y Modernización"
-        ]
-    },
-    {
-        icon: <BrainCircuit className="w-8 h-8 text-neon-purple" />,
-        title: "Automatización & IA",
-        subtitle: "Intelligent Solutions",
-        description: "Impulse la eficiencia operativa con agentes cognitivos y automatización inteligente de procesos.",
-        gradient: "from-neon-purple/20 to-transparent",
-        border: "group-hover:border-neon-purple/50",
-        link: "/automatizacion-ia",
-        items: [
-            "Automatización de Procesos (RPA)",
-            "Agentes Cognitivos & Chatbots",
-            "Análisis Predictivo de Datos",
-            "Integración de IA Generativa"
-        ]
-    },
-    {
-        icon: <Headphones className="w-8 h-8 text-neon-cyan" />,
-        title: "Managed IT Services",
-        subtitle: "& Outsourcing",
-        description: " Soporte integral y mantenimiento para garantizar la continuidad operativa de su negocio.",
-        gradient: "from-azure/20 to-transparent",
-        border: "group-hover:border-azure/50",
-        items: [
-            "Soporte técnico y Mesa de Ayuda (Help Desk)",
-            "Soporte en sitio y remoto 24/7",
-            "Mantenimiento preventivo y correctivo",
-            "Gestión de operaciones de TI"
-        ]
-    },
-    {
-        icon: <Server className="w-8 h-8 text-neon-cyan" />,
-        title: "Infrastructure",
-        subtitle: "& Connectivity",
-        description: "Diseño y gestión de redes robustas, servidores y entornos híbridos de alto rendimiento.",
-        gradient: "from-neon-cyan/20 to-transparent",
-        border: "group-hover:border-neon-cyan/50",
-        items: [
-            "Diseño y administración de infraestructura TI",
-            "Redes de voz y datos",
-            "Servidores, Nube y entornos híbridos",
-            "Cableado estructurado y conectividad",
-            "Sistemas de videovigilancia CCTV"
-        ]
-    },
-    {
-        icon: <Shield className="w-8 h-8 text-neon-purple" />,
-        title: "Ciberseguridad",
-        subtitle: "& Auditoría",
-        description: "Protección avanzada para sus activos digitales y físicos con tecnología de vanguardia.",
-        gradient: "from-neon-purple/20 to-transparent",
-        border: "group-hover:border-neon-purple/50",
-        items: [
-            "Ciberseguridad y seguridad de la información",
-            "Control de acceso y monitoreo",
-            "Prevención de riesgos y respuesta a incidentes",
-            "Auditorías de Ciberseguridad"
-        ]
-    },
-    {
-        icon: <Monitor className="w-8 h-8 text-white" />,
-        title: "Technology Assets",
-        subtitle: "& Licensing",
-        description: "Suministro estratégico de hardware y software para potenciar su productividad.",
-        gradient: "from-white/10 to-transparent",
-        border: "group-hover:border-white/30",
-        items: [
-            "Venta y renting de equipos de cómputo",
-            "Computadores, impresoras y periféricos",
-            "Licenciamiento de software y cumplimiento",
-            "Gestión del ciclo de vida de los activos"
-        ]
-    }
-];
+import { useTranslation } from 'react-i18next';
+import { useLocale } from '../../hooks/useLocale';
 
 const Services = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-    const [isHighlighted, setIsHighlighted] = useState(false);
     const navigate = useNavigate();
+    const { t: tHome } = useTranslation('home');
+    const { t: tSvc } = useTranslation('services');
+    const { t: tCommon } = useTranslation('common');
+    const { lang } = useLocale();
 
-    useEffect(() => {
-        const handleHighlight = () => {
-            setIsHighlighted(true);
-            setTimeout(() => setIsHighlighted(false), 2000);
-        };
+    // ✅ Defined INSIDE the component so t() is called in React scope and
+    //    re-evaluated on every language change.
+    const services = useMemo(() => [
+        {
+            num: tSvc('cards.cloud.num', '01'),
+            icon: Cloud,
+            iconColor: 'text-electric',
+            accentColor: 'rgba(0,102,255,0.15)',
+            borderColor: 'rgba(0,102,255,0.5)',
+            title: tSvc('cards.cloud.title'),
+            subtitle: tSvc('cards.cloud.subtitle'),
+            description: tSvc('cards.cloud.description'),
+            link: `/${lang}/azure`,
+            items: tSvc('cards.cloud.items', { returnObjects: true }) as string[],
+        },
+        {
+            num: tSvc('cards.ai.num', '02'),
+            icon: BrainCircuit,
+            iconColor: 'text-plasma-bright',
+            accentColor: 'rgba(139,92,246,0.15)',
+            borderColor: 'rgba(139,92,246,0.5)',
+            title: tSvc('cards.ai.title'),
+            subtitle: tSvc('cards.ai.subtitle'),
+            description: tSvc('cards.ai.description'),
+            link: lang === 'es' ? `/${lang}/automatizacion-ia` : `/${lang}/ai-automation`,
+            items: tSvc('cards.ai.items', { returnObjects: true }) as string[],
+        },
+        {
+            num: tSvc('cards.cyber.num', '03'),
+            icon: Shield,
+            iconColor: 'text-neon-ice',
+            accentColor: 'rgba(0,212,255,0.12)',
+            borderColor: 'rgba(0,212,255,0.4)',
+            title: tSvc('cards.cyber.title'),
+            subtitle: tSvc('cards.cyber.subtitle'),
+            description: tSvc('cards.cyber.description'),
+            link: undefined,
+            items: tSvc('cards.cyber.items', { returnObjects: true }) as string[],
+        },
+        {
+            num: tSvc('cards.managed.num', '04'),
+            icon: Headphones,
+            iconColor: 'text-signal',
+            accentColor: 'rgba(0,255,136,0.1)',
+            borderColor: 'rgba(0,255,136,0.35)',
+            title: tSvc('cards.managed.title'),
+            subtitle: tSvc('cards.managed.subtitle'),
+            description: tSvc('cards.managed.description'),
+            link: undefined,
+            items: tSvc('cards.managed.items', { returnObjects: true }) as string[],
+        },
+    ], [tSvc, lang]);
 
-        window.addEventListener('highlight-services', handleHighlight);
-        return () => window.removeEventListener('highlight-services', handleHighlight);
-    }, []);
-
-    const handleCardClick = (link?: string) => {
-        if (link) {
-            navigate(link);
-            window.scrollTo(0, 0);
-        }
-    };
+    const secondaryServices = useMemo(() => [
+        {
+            icon: Server,
+            label: tSvc('secondary.infra.label'),
+            desc: tSvc('secondary.infra.desc'),
+        },
+        {
+            icon: Monitor,
+            label: tSvc('secondary.assets.label'),
+            desc: tSvc('secondary.assets.desc'),
+        },
+    ], [tSvc]);
 
     return (
         <section
             id="services"
-            className={`relative py-24 bg-obsidian overflow-hidden transition-all duration-1000 ${isHighlighted ? 'shadow-[inset_0_0_100px_rgba(0,127,255,0.1)]' : ''}`}
+            className="relative py-28 overflow-hidden"
+            style={{ background: 'linear-gradient(180deg, var(--color-void) 0%, var(--color-navy) 100%)' }}
         >
-            {/* Highlight Overlay */}
-            <div className={`absolute inset-0 pointer-events-none transition-opacity duration-1000 ${isHighlighted ? 'opacity-100' : 'opacity-0'}`}>
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-azure to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-neon-purple to-transparent" />
-            </div>
-
-            {/* Background Decor */}
-            <div className="absolute top-0 right-0 -translate-y-1/2 w-96 h-96 bg-azure/10 rounded-full blur-3xl opacity-30 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 translate-y-1/2 w-96 h-96 bg-neon-purple/10 rounded-full blur-3xl opacity-30 pointer-events-none" />
+            {/* Background decoration */}
+            <div className="absolute inset-0 bg-dots opacity-100 pointer-events-none" aria-hidden="true" />
+            <div
+                className="orb absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none"
+                style={{ background: 'radial-gradient(circle, rgba(0,102,255,0.05) 0%, transparent 60%)' }}
+                aria-hidden="true"
+            />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+                {/* Section header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="mb-16 text-center"
+                    transition={{ duration: 0.6 }}
+                    className="mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-                        Nuestros <span className="text-transparent bg-clip-text bg-gradient-to-r from-azure to-neon-purple">Servicios</span>
+                    <span className="eyebrow-chip">{tSvc('eyebrow')}</span>
+                    <h2 className="mt-4 text-4xl md:text-5xl font-display font-bold tracking-tight">
+                        {tSvc('headline_1')} <br />
+                        <span className="text-gradient-electric">{tSvc('headline_2')}</span>
                     </h2>
-                    <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                        Soluciones tecnológicas integrales diseñadas para el mundo empresarial moderno.
-                        Cubrimos desde la infraestructura crítica hasta la gestión de activos.
+                    <p className="mt-4 text-lg text-steel max-w-xl leading-relaxed font-light">
+                        {tSvc('subtext')}
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-                    {services.map((service, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            onMouseEnter={() => setHoveredIndex(index)}
-                            onMouseLeave={() => setHoveredIndex(null)}
-                            onClick={() => handleCardClick(service.link)}
-                            className={`group relative p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all duration-300 ${service.border} h-full flex flex-col ${service.link ? 'cursor-pointer hover:bg-white/10' : ''}`}
-                        >
-                            {/* Hover Gradient */}
-                            <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none`} />
+                {/* Main services grid */}
+                <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+                    {services.map((service, index) => {
+                        const Icon = service.icon;
+                        const isHovered = hoveredIndex === index;
 
-                            <div className="relative z-10 flex flex-col h-full">
-                                <div className="w-14 h-14 bg-obsidian/50 rounded-xl flex items-center justify-center mb-6 border border-white/10 group-hover:scale-110 transition-transform duration-300">
-                                    {service.icon}
+                        return (
+                            <motion.article
+                                key={service.num}
+                                initial={{ opacity: 0, y: 32 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                onMouseEnter={() => setHoveredIndex(index)}
+                                onMouseLeave={() => setHoveredIndex(null)}
+                                onClick={() => { if (service.link) { navigate(service.link); window.scrollTo(0, 0); } }}
+                                className={`group relative flex flex-col p-6 rounded-2xl glass-card transition-all duration-300 ${service.link ? 'cursor-pointer' : ''}`}
+                                style={{
+                                    borderColor: isHovered ? service.borderColor : 'rgba(255,255,255,0.07)',
+                                    boxShadow: isHovered ? `0 0 40px ${service.accentColor}` : 'none',
+                                }}
+                                aria-label={`${service.title} — ${service.subtitle}`}
+                            >
+                                {/* Hover background */}
+                                <div
+                                    className="absolute inset-0 rounded-2xl transition-opacity duration-300 pointer-events-none"
+                                    style={{
+                                        background: `linear-gradient(135deg, ${service.accentColor} 0%, transparent 60%)`,
+                                        opacity: isHovered ? 1 : 0,
+                                    }}
+                                    aria-hidden="true"
+                                />
+
+                                {/* Number */}
+                                <span
+                                    className="font-mono text-xs font-bold tracking-widest mb-4"
+                                    style={{ color: 'rgba(255,255,255,0.15)' }}
+                                    aria-hidden="true"
+                                >
+                                    {service.num}
+                                </span>
+
+                                {/* Icon */}
+                                <div
+                                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
+                                    style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
+                                >
+                                    <Icon className={`w-6 h-6 ${service.iconColor}`} aria-hidden="true" />
                                 </div>
 
-                                <h3 className="text-xl font-bold text-white leading-tight">
-                                    {service.title} <br />
-                                    <span className="text-gray-400 font-normal text-lg">{service.subtitle}</span>
-                                </h3>
+                                {/* Title */}
+                                <div className="relative z-10">
+                                    <h3 className="text-lg font-display font-bold text-white leading-tight">
+                                        {service.title}
+                                    </h3>
+                                    <p className="text-sm text-steel-dark mt-0.5 font-medium">{service.subtitle}</p>
+                                </div>
 
-                                <div className="mt-4 pt-4 border-t border-white/5 flex-grow">
+                                {/* Content — description or feature list on hover */}
+                                <div className="mt-4 flex-1 relative z-10">
                                     <AnimatePresence mode="wait">
-                                        {hoveredIndex === index ? (
+                                        {isHovered ? (
                                             <motion.ul
-                                                initial={{ opacity: 0, height: 0 }}
-                                                animate={{ opacity: 1, height: 'auto' }}
-                                                exit={{ opacity: 0, height: 0 }}
-                                                className="space-y-2 overflow-hidden"
+                                                key="items"
+                                                initial={{ opacity: 0, y: 8 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                exit={{ opacity: 0, y: -8 }}
+                                                transition={{ duration: 0.2 }}
+                                                className="space-y-2"
+                                                role="list"
                                             >
-                                                {service.items.map((item, i) => (
-                                                    <li key={i} className="flex items-start gap-2 text-sm text-gray-300">
-                                                        <CheckCircle2 className="w-4 h-4 text-azure shrink-0 mt-0.5" />
+                                                {Array.isArray(service.items) && service.items.map((item, i) => (
+                                                    <li key={i} className="flex items-start gap-2 text-sm text-steel">
+                                                        <CheckCircle2 className="w-3.5 h-3.5 text-signal shrink-0 mt-0.5" aria-hidden="true" />
                                                         {item}
                                                     </li>
                                                 ))}
                                             </motion.ul>
                                         ) : (
                                             <motion.p
+                                                key="desc"
                                                 initial={{ opacity: 0 }}
                                                 animate={{ opacity: 1 }}
                                                 exit={{ opacity: 0 }}
-                                                className="text-gray-400 text-sm leading-relaxed"
+                                                transition={{ duration: 0.2 }}
+                                                className="text-sm text-steel leading-relaxed font-light"
                                             >
                                                 {service.description}
                                             </motion.p>
@@ -202,14 +206,51 @@ const Services = () => {
                                     </AnimatePresence>
                                 </div>
 
-                                <div className="mt-6 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-azure group-hover:text-white transition-colors cursor-pointer">
-                                    <span>Ver detalles</span>
-                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                {/* Footer link */}
+                                <div className="mt-6 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-steel-dark group-hover:text-electric transition-colors relative z-10">
+                                    <span>{service.link ? tCommon('learn_more') : tCommon('included')}</span>
+                                    {service.link && (
+                                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                                    )}
+                                </div>
+                            </motion.article>
+                        );
+                    })}
+                </div>
+
+                {/* Secondary services */}
+                <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="mt-6 grid md:grid-cols-2 gap-4"
+                >
+                    {secondaryServices.map((svc) => {
+                        const Icon = svc.icon;
+                        return (
+                            <div
+                                key={svc.label}
+                                className="flex items-center gap-4 p-5 rounded-xl"
+                                style={{
+                                    background: 'rgba(255,255,255,0.02)',
+                                    border: '1px solid rgba(255,255,255,0.05)',
+                                }}
+                            >
+                                <div
+                                    className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
+                                    style={{ background: 'rgba(255,255,255,0.05)' }}
+                                >
+                                    <Icon className="w-5 h-5 text-steel-dark" aria-hidden="true" />
+                                </div>
+                                <div>
+                                    <h4 className="text-sm font-semibold text-white">{svc.label}</h4>
+                                    <p className="text-xs text-steel-dark mt-0.5 font-light">{svc.desc}</p>
                                 </div>
                             </div>
-                        </motion.div>
-                    ))}
-                </div>
+                        );
+                    })}
+                </motion.div>
             </div>
         </section>
     );

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "skills": {
+    "frontend-design": {
+      "source": "buildermethods/design-os",
+      "sourceType": "github",
+      "computedHash": "7f012fa55792c05f7b046cd1bacdf3c2eb03a1f15f1d3275dd3102abff2bebea"
+    },
+    "interface-design": {
+      "source": "dammyjay93/interface-design",
+      "sourceType": "github",
+      "computedHash": "4d5fe1dacfebc0c1b3837b061405150ed2e4971c096543afc46c23161c5a4f7a"
+    },
+    "ui-design-system": {
+      "source": "hieutrtr/ai1-skills",
+      "sourceType": "github",
+      "computedHash": "c573b14b929c2acecd4d8843faab032dd4490dd652f7eec245efc765ff4332a9"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+    "nav": {
+        "services": "Services",
+        "ai_automation": "AI & Automation",
+        "cloud": "Cloud",
+        "cybersecurity": "Cybersecurity",
+        "clients": "Clients",
+        "about": "About",
+        "contact": "Contact",
+        "cta": "AI Diagnostic",
+        "lang_switch_label": "Switch language"
+    },
+    "trust_badges": {
+        "azure": "Microsoft Azure Partner",
+        "iso": "ISO 27001",
+        "aws": "AWS Partner",
+        "google": "Google Cloud"
+    },
+    "footer": {
+        "tagline": "AI-powered IT infrastructure and automation partner",
+        "rights": "All rights reserved.",
+        "col_solutions": "Solutions",
+        "col_company": "Company",
+        "col_legal": "Legal & Support",
+        "link_cloud": "Cloud Architecture",
+        "link_automation": "Intelligent Automation",
+        "link_ai": "AI Solutions",
+        "link_cases": "Case Studies",
+        "link_ia_cali": "AI in Cali",
+        "link_about": "About Us",
+        "link_careers": "Careers",
+        "link_contact": "Contact",
+        "link_pqrs": "PQRS",
+        "link_privacy": "Privacy Policy"
+    },
+    "scroll_hint": "Discover more",
+    "cta_schedule": "Schedule Consultation",
+    "cta_diagnostic": "Start AI Diagnostic",
+    "learn_more": "Learn more",
+    "included": "Included"
+}
