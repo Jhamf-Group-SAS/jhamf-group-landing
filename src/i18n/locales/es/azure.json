@@ -1,0 +1,123 @@
+{
+    "seo": {
+        "title": "Consultoría Microsoft Azure Colombia | Servicios Cloud & Migración",
+        "description": "Expertos en Microsoft Azure en Colombia. Migración a la nube, optimización de costos, arquitecturas serverless y soluciones híbridas para empresas.",
+        "keywords": "Microsoft Azure Colombia, Consultoría Azure, Cloud Computing, Migración Nube, Azure DevOps, Arquitectura Cloud"
+    },
+    "hero": {
+        "badge": "Solutions Partner",
+        "badge_label": "Cloud & Infrastructure",
+        "headline_1": "Escala tu negocio con ",
+        "headline_highlight": "Microsoft Azure",
+        "description": "Infraestructura cloud segura, escalable y optimizada para empresas en Colombia. Migra, innova y crece con el respaldo de expertos certificados.",
+        "primary_cta": "Solicitar Diagnóstico Gratuito",
+        "secondary_cta": "Explorar Servicios",
+        "traits": [
+            "Security First",
+            "High Performance",
+            "Hybrid Ready"
+        ]
+    },
+    "services": {
+        "title_1": "Soluciones Integrales ",
+        "title_highlight": "Microsoft Azure",
+        "description": "Potencia cada aspecto de tu tecnología con el ecosistema cloud más confiable del mundo.",
+        "items": [
+            {
+                "title": "Infraestructura Cloud",
+                "description": "Servidores virtuales, redes y almacenamiento escalable en Azure. Diseñamos arquitecturas robustas y rentables."
+            },
+            {
+                "title": "Migración y Modernización",
+                "description": "Llevamos tus apps y datos a la nube sin interrupciones. Estrategias Rehost, Refactor o Rearchitect."
+            },
+            {
+                "title": "Ciberseguridad y Cumplimiento",
+                "description": "Protección avanzada con Azure Sentinel y Defender. Auditorías de seguridad y gestión de identidades."
+            },
+            {
+                "title": "Backup y Disaster Recovery",
+                "description": "Protege tu negocio contra pérdida de datos. Soluciones de continuidad de negocio (BCDR) resilientes."
+            },
+            {
+                "title": "IA y Analítica de Datos",
+                "description": "Implementa Azure OpenAI, Machine Learning y servicios cognitivos para potenciar tus decisiones."
+            },
+            {
+                "title": "Soporte Gestionado 24/7",
+                "description": "Monitoreo proactivo, optimización de costos y resolución de incidentes por expertos locales."
+            }
+        ]
+    },
+    "benefits": {
+        "title_1": "¿Por qué elegir a ",
+        "title_highlight": "Jhamf Group",
+        "title_2": " como tu Partner?",
+        "description": "No somos solo un proveedor de licencias. Somos tu equipo extendido de ingeniería cloud, ubicados aquí en Colombia, hablando tu idioma y entendiendo tu mercado.",
+        "items": [
+            {
+                "title": "Microsoft Partner Certificado",
+                "description": "Expertos validados oficialmente por Microsoft."
+            },
+            {
+                "title": "Ubicación Local en Cali",
+                "description": "Oficinas físicas en San Fernando. Soporte en tu zona horaria."
+            },
+            {
+                "title": "Acompañamiento Estratégico",
+                "description": "Consultoría de negocio, no solo soporte técnico."
+            },
+            {
+                "title": "Facturación Local",
+                "description": "Facilidad administrativa y optimización de costos."
+            }
+        ],
+        "map_title": "Visítanos",
+        "map_address": "Calle 5b2 No 38-27\nSan Fernando, Cali",
+        "map_link_text": "Ver en Google Maps →"
+    },
+    "use_cases": {
+        "title": "Escenarios de Éxito",
+        "description": "Soluciones adaptadas al tamaño y necesidades de tu organización.",
+        "card1": {
+            "title": "PyMEs y Startups",
+            "description": "Elimina costos de servidores físicos. Paga solo por lo que usas y habilita trabajo remoto seguro.",
+            "points": [
+                "Escritorios virtuales (AVD)",
+                "Backup automático en la nube",
+                "Hosting web y bases de datos"
+            ],
+            "link": "Ver planes para Pymes →"
+        },
+        "card2": {
+            "title": "Grandes Empresas",
+            "description": "Modernización de aplicaciones legacy, arquitectura híbrida y analítica avanzada de datos a gran escala.",
+            "points": [
+                "Migración de Datacenters",
+                "Gobernanza y Compliance",
+                "IA Corporativa y Big Data"
+            ],
+            "link": "Ver soluciones corporativas →"
+        }
+    },
+    "contact": {
+        "title": "¿Listo para migrar a la nube?",
+        "description": "Agenda una sesión de diagnóstico gratuita de 30 minutos con un arquitecto de soluciones de Jhamf.",
+        "primary_title": "Contacto Directo",
+        "whatsapp": "Chat en WhatsApp",
+        "form_inputs": {
+            "name": "Nombre de la empresa",
+            "email": "Correo corporativo"
+        },
+        "form_select": {
+            "placeholder": "Interés Principal",
+            "options": [
+                "Interés Principal: Migración",
+                "Interés Principal: Infraestructura",
+                "Interés Principal: Datos e IA",
+                "Interés Principal: Seguridad"
+            ]
+        },
+        "form_cta": "Solicitar Asesoría"
+    }
+}

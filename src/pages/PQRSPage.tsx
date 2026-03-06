@@ -202,9 +202,10 @@ const PQRSPage = () => {
                                 </h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-gray-300">{t('form.fields.fullname')}</label>
+                                        <label htmlFor="fullName" className="text-sm font-medium text-gray-300">{t('form.fields.fullname')}</label>
                                         <input
                                             type="text"
+                                            id="fullName"
                                             name="fullName"
                                             required
                                             value={formData.fullName}
@@ -213,9 +214,10 @@ const PQRSPage = () => {
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-gray-300">{t('form.fields.company')}</label>
+                                        <label htmlFor="companyName" className="text-sm font-medium text-gray-300">{t('form.fields.company')}</label>
                                         <input
                                             type="text"
+                                            id="companyName"
                                             name="companyName"
                                             required
                                             value={formData.companyName}
@@ -224,9 +226,10 @@ const PQRSPage = () => {
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-gray-300">{t('form.fields.email')}</label>
+                                        <label htmlFor="email" className="text-sm font-medium text-gray-300">{t('form.fields.email')}</label>
                                         <input
                                             type="email"
+                                            id="email"
                                             name="email"
                                             required
                                             value={formData.email}
@@ -235,9 +238,10 @@ const PQRSPage = () => {
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-gray-300">{t('form.fields.phone')}</label>
+                                        <label htmlFor="phone" className="text-sm font-medium text-gray-300">{t('form.fields.phone')}</label>
                                         <input
                                             type="tel"
+                                            id="phone"
                                             name="phone"
                                             value={formData.phone}
                                             onChange={handleChange}
@@ -254,8 +258,9 @@ const PQRSPage = () => {
                                 </h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-gray-300">{t('form.fields.type')}</label>
+                                        <label htmlFor="type" className="text-sm font-medium text-gray-300">{t('form.fields.type')}</label>
                                         <select
+                                            id="type"
                                             name="type"
                                             required
                                             value={formData.type}
@@ -270,8 +275,9 @@ const PQRSPage = () => {
                                         </select>
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-gray-300">{t('form.fields.service')}</label>
+                                        <label htmlFor="service" className="text-sm font-medium text-gray-300">{t('form.fields.service')}</label>
                                         <select
+                                            id="service"
                                             name="service"
                                             required
                                             value={formData.service}
@@ -288,8 +294,9 @@ const PQRSPage = () => {
                                     </div>
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-sm font-medium text-gray-300">{t('form.fields.description')}</label>
+                                    <label htmlFor="description" className="text-sm font-medium text-gray-300">{t('form.fields.description')}</label>
                                     <textarea
+                                        id="description"
                                         name="description"
                                         required
                                         value={formData.description}
@@ -312,10 +319,11 @@ const PQRSPage = () => {
 
                             {/* Policies and Submit */}
                             <div className="pt-4 space-y-6">
-                                <label className="flex items-start gap-3 cursor-pointer group">
+                                <label htmlFor="acceptedPolicy" className="flex items-start gap-3 cursor-pointer group">
                                     <div className="relative flex items-center">
                                         <input
                                             type="checkbox"
+                                            id="acceptedPolicy"
                                             required
                                             name="acceptedPolicy"
                                             checked={formData.acceptedPolicy}

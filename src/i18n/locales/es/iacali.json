@@ -1,0 +1,30 @@
+{
+    "seo": {
+        "title": "Inteligencia Artificial en Cali & Valle del Cauca | JHAMF Group",
+        "description": "Empresa líder en desarrollo de IA, Automatización de Procesos y Soporte TI en Cali. Transformamos empresas del Valle del Cauca con tecnología de punta.",
+        "keywords": "IA Cali, Inteligencia Artificial Valle del Cauca, Automatización Cali, Desarrollo Software Cali, Soporte TI Cali, Empresas de Tecnología Cali"
+    },
+    "hero": {
+        "badge": "Soluciones Tecnológicas en Cali",
+        "headline_1": "Inteligencia Artificial <br /> <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-neon-lime to-azure-DEFAULT\">made in Cali</span>",
+        "description": "Impulsamos la competitividad de las empresas del Valle del Cauca con automatización inteligente, infraestructura cloud y soporte TI de clase mundial.",
+        "primary_cta": "Diagnóstico Gratuito"
+    },
+    "services": {
+        "title": "Servicios Locales",
+        "items": [
+            {
+                "title": "Automatización RPA en Cali",
+                "description": "Robots de software para automatizar tareas administrativas en empresas caleñas. Reduzca costos operativos hoy."
+            },
+            {
+                "title": "Infraestructura & Cloud",
+                "description": "Migración a Azure y servicios de nube híbrida. Soporte local para su infraestructura crítica."
+            },
+            {
+                "title": "Ciberseguridad",
+                "description": "Protección de datos y auditoría de seguridad para cumplimiento normativo en Colombia."
+            }
+        ]
+    }
+}

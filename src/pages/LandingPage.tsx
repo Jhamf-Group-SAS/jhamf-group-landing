@@ -1,46 +1,34 @@
-import { useState } from 'react';
+import { useState, Suspense, lazy } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocale } from '../hooks/useLocale';
 import SEOHead from '../components/seo/SEOHead';
 import Navbar from '../components/layout/Navbar';
 import Hero from '../components/sections/Hero';
 import Services from '../components/sections/Services';
-import AIAutomation from '../components/sections/AIAutomation';
-import CloudInfrastructure from '../components/sections/CloudInfrastructure';
-import Cybersecurity from '../components/sections/Cybersecurity';
-import Clients from '../components/sections/Clients';
-import CTABanner from '../components/sections/CTABanner';
-import AboutUs from '../components/sections/AboutUs';
-import Contact from '../components/sections/Contact';
-import DiagnosticWizard from '../components/diagnostic/DiagnosticWizard';
 
-const SEO_CONTENT = {
-    es: {
-        title: 'JHAMF Group | Infraestructura TI con IA · Azure · Ciberseguridad',
-        description: 'Socio estratégico en infraestructura TI, automatización con IA y ciberseguridad empresarial. Partner certificado de Microsoft Azure. Atendemos más de 50 empresas en Latinoamérica.',
-        keywords: 'infraestructura TI, automatización IA, Microsoft Azure Colombia, ciberseguridad empresarial, servicios cloud, outsourcing TI Cali',
-    },
-    en: {
-        title: 'JHAMF Group | AI-Powered Cloud Infrastructure & IT Automation',
-        description: 'Enterprise AI automation, Microsoft Azure cloud infrastructure, and cybersecurity services. Certified Azure partner. Trusted by 50+ enterprises across Latin America.',
-        keywords: 'AI infrastructure, cloud automation, Microsoft Azure partner, enterprise cybersecurity, IT outsourcing, managed IT services Colombia',
-    },
-};
+// Lazy loaded below-the-fold components
+const AIAutomation = lazy(() => import('../components/sections/AIAutomation'));
+const CloudInfrastructure = lazy(() => import('../components/sections/CloudInfrastructure'));
+const Cybersecurity = lazy(() => import('../components/sections/Cybersecurity'));
+const Clients = lazy(() => import('../components/sections/Clients'));
+const CTABanner = lazy(() => import('../components/sections/CTABanner'));
+const AboutUs = lazy(() => import('../components/sections/AboutUs'));
+const Contact = lazy(() => import('../components/sections/Contact'));
+import DiagnosticWizard from '../components/diagnostic/DiagnosticWizard';
 
 const LandingPage = () => {
     const [isWizardOpen, setIsWizardOpen] = useState(false);
     const { lang } = useLocale();
     const { t } = useTranslation('home');
 
-    const seo = SEO_CONTENT[lang] ?? SEO_CONTENT.es;
     const SITE = 'https://www.jhamf.com';
 
     return (
         <div className="min-h-screen" style={{ background: 'var(--color-void)' }}>
             <SEOHead
-                title={seo.title}
-                description={seo.description}
-                keywords={seo.keywords}
+                title={t('seo.title')}
+                description={t('seo.description')}
+                keywords={t('seo.keywords')}
                 url={`${SITE}/${lang}/`}
                 lang={lang}
                 alternateUrls={{ es: `${SITE}/es/`, en: `${SITE}/en/` }}
@@ -69,13 +57,15 @@ const LandingPage = () => {
             <main>
                 <Hero onOpenWizard={() => setIsWizardOpen(true)} />
                 <Services />
-                <AIAutomation />
-                <CloudInfrastructure />
-                <Cybersecurity />
-                <Clients />
-                <CTABanner />
-                <AboutUs />
-                <Contact />
+                <Suspense fallback={<div className="min-h-[50vh] flex items-center justify-center"><div className="w-12 h-12 border-2 border-electric border-t-transparent rounded-full animate-spin" /></div>}>
+                    <AIAutomation />
+                    <CloudInfrastructure />
+                    <Cybersecurity />
+                    <Clients />
+                    <CTABanner />
+                    <AboutUs />
+                    <Contact />
+                </Suspense>
             </main>
 
             <DiagnosticWizard isOpen={isWizardOpen} onClose={() => setIsWizardOpen(false)} />

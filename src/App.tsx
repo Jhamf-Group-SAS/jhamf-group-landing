@@ -40,6 +40,14 @@ function App() {
         {/* Root: redirect to Spanish (primary) */}
         <Route path="/" element={<Navigate to="/es/" replace />} />
 
+        {/* Global redirects without language prefix */}
+        <Route path="/pqrs" element={<Navigate to="/es/pqrs" replace />} />
+        <Route path="/support" element={<Navigate to="/es/support" replace />} />
+        <Route path="/politica-privacidad" element={<Navigate to="/es/politica-privacidad" replace />} />
+        <Route path="/privacy-policy" element={<Navigate to="/es/privacy-policy" replace />} />
+        <Route path="/casos-de-exito" element={<Navigate to="/es/casos-de-exito" replace />} />
+        <Route path="/ia-cali" element={<Navigate to="/es/ia-cali" replace />} />
+
         {/* Language-prefixed routes */}
         <Route path="/:lang/*" element={<LocalizedRoutes />} />
 
@@ -53,6 +61,12 @@ function App() {
 function LocalizedRoutes() {
   // Extract :lang from the matched path prefix via the wildcard parent
   const lang = window.location.pathname.split('/')[1] || 'es';
+
+  // Language validation guard
+  if (!SUPPORTED_LANGUAGES.includes(lang as SupportedLanguage)) {
+    const restOfPath = window.location.pathname.split('/').slice(2).join('/');
+    return <Navigate to={`/es/${restOfPath}`} replace />;
+  }
 
   return (
     <>

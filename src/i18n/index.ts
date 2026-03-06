@@ -13,6 +13,10 @@ import esPqrs from './locales/es/pqrs.json';
 import esPrivacy from './locales/es/privacy.json';
 import esSupport from './locales/es/support.json';
 import esCyberarch from './locales/es/cyberarch.json';
+import esAzure from './locales/es/azure.json';
+import esAutomation from './locales/es/automation.json';
+import esCaseStudies from './locales/es/casestudies.json';
+import esIACali from './locales/es/iacali.json';
 
 // EN translations
 import enCommon from './locales/en/common.json';
@@ -25,6 +29,10 @@ import enPqrs from './locales/en/pqrs.json';
 import enPrivacy from './locales/en/privacy.json';
 import enSupport from './locales/en/support.json';
 import enCyberarch from './locales/en/cyberarch.json';
+import enAzure from './locales/en/azure.json';
+import enAutomation from './locales/en/automation.json';
+import enCaseStudies from './locales/en/casestudies.json';
+import enIACali from './locales/en/iacali.json';
 
 export const SUPPORTED_LANGUAGES = ['es', 'en'] as const;
 export type SupportedLanguage = typeof SUPPORTED_LANGUAGES[number];
@@ -46,6 +54,10 @@ i18n
                 privacy: esPrivacy,
                 support: esSupport,
                 cyberarch: esCyberarch,
+                azure: esAzure,
+                automation: esAutomation,
+                casestudies: esCaseStudies,
+                iacali: esIACali,
             },
             en: {
                 common: enCommon,
@@ -58,12 +70,16 @@ i18n
                 privacy: enPrivacy,
                 support: enSupport,
                 cyberarch: enCyberarch,
+                azure: enAzure,
+                automation: enAutomation,
+                casestudies: enCaseStudies,
+                iacali: enIACali,
             },
         },
         lng: DEFAULT_LANGUAGE,
         fallbackLng: 'es',
         defaultNS: 'common',
-        ns: ['common', 'home', 'services', 'about', 'infrastructure', 'assets', 'pqrs', 'privacy', 'support', 'cyberarch'],
+        ns: ['common', 'home', 'services', 'about', 'infrastructure', 'assets', 'pqrs', 'privacy', 'support', 'cyberarch', 'azure', 'automation', 'casestudies', 'iacali'],
         interpolation: {
             escapeValue: false, // React already escapes
         },

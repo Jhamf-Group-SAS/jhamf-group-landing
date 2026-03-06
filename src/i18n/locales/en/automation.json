@@ -1,0 +1,142 @@
+{
+    "seo": {
+        "title": "Process Automation (RPA) & AI in Colombia | JHAMF Group",
+        "description": "Automate enterprise workflows with Artificial Intelligence and RPA. Reduce operational costs and errors with our hyper-automation solutions.",
+        "keywords": "Process Automation, RPA Colombia, AI Builder, Power Automate, Hyper-automation, Workflow Optimization"
+    },
+    "hero": {
+        "badge": "Intelligent Automation",
+        "headline_1": "We automate your operations with ",
+        "headline_highlight": "Artificial Intelligence",
+        "description": "Eliminate repetitive tasks, reduce operational costs, and scale your business without increasing headcount. We implement RPA and Copilot Agents that work 24/7.",
+        "primary_cta": "Request AI Diagnosis",
+        "secondary_cta": "View Solutions",
+        "traits": [
+            {
+                "label": "Cost Savings",
+                "val": "+40%"
+            },
+            {
+                "label": "Productivity",
+                "val": "24/7"
+            },
+            {
+                "label": "Human Errors",
+                "val": "0%"
+            },
+            {
+                "label": "Average ROI",
+                "val": "3 Months"
+            }
+        ]
+    },
+    "problems": {
+        "title_1": "Is ",
+        "title_highlight": "Operational Chaos",
+        "title_2": " slowing your growth?",
+        "description": "Many companies lose their potential trapped in obsolete manual processes.",
+        "items": [
+            {
+                "title": "Time Loss",
+                "description": "Valuable human talent wasted on repetitive tasks like copying and pasting data between Excel files and systems."
+            },
+            {
+                "title": "Costly Errors",
+                "description": "Incorrectly issued invoices, duplicated or lost customer data, and manual data entry errors."
+            },
+            {
+                "title": "Limited Scalability",
+                "description": "To sell more, you need to hire more operational staff, reducing margins and agility."
+            }
+        ]
+    },
+    "solutions": {
+        "title_1": "Our ",
+        "title_highlight": "Artificial Intelligence",
+        "title_2": " Solutions",
+        "description": "Technology working for you. From software robots to advanced cognitive assistants.",
+        "card1": {
+            "title": "RPA (Robotic Process Automation)",
+            "description": "Software robots that mimic human actions in digital systems. Ideal for billing, bank reconciliation, and reporting.",
+            "points": [
+                "Automates Excel, SAP, Web Apps",
+                "Zero data entry errors",
+                "24/7 execution without rest"
+            ]
+        },
+        "card2": {
+            "title": "Cognitive Agents & Chatbots",
+            "description": "Virtual assistants powered by Generative AI that understand natural language. For sales, support, and HR.",
+            "points": [
+                "WhatsApp Business API integration",
+                "Automatic lead qualification",
+                "Instant and accurate responses"
+            ]
+        },
+        "integration_title": "We integrate with your ecosystem"
+    },
+    "use_cases": {
+        "title": "Real Use Cases",
+        "items": [
+            {
+                "title": "Automated Billing",
+                "before": "3 days a month dedicated to generating and sending invoices.",
+                "after": "Bots generate and send invoices in minutes upon receiving the order.",
+                "impact": "90% less time"
+            },
+            {
+                "title": "Customer Support",
+                "before": "Customers wait hours for basic responses on WhatsApp.",
+                "after": "AI responds instantly 24/7 and escalates complex cases.",
+                "impact": "+40% satisfaction"
+            },
+            {
+                "title": "Sales Reporting",
+                "before": "Management waits until month-end to see consolidated metrics.",
+                "after": "Dashboards updated in real-time by data bots.",
+                "impact": "Agile decisions"
+            }
+        ],
+        "labels": {
+            "before": "Before",
+            "after": "After (with AI)"
+        }
+    },
+    "process": {
+        "title": "How do we do it?",
+        "items": [
+            {
+                "title": "Diagnosis",
+                "description": "We identify high-impact repetitive processes."
+            },
+            {
+                "title": "Design",
+                "description": "Architecture of the RPA or AI Agent solution."
+            },
+            {
+                "title": "Automation",
+                "description": "Development, testing, and production deployment."
+            },
+            {
+                "title": "Continual Improvement",
+                "description": "Results monitoring and continuous optimization."
+            }
+        ]
+    },
+    "cta": {
+        "title": "Discover how much you can save today",
+        "description": "Schedule a free consulting session. We analyze your processes and deliver an estimated ROI projection.",
+        "points": [
+            "No purchase commitment",
+            "Analysis by senior experts",
+            "Proposal in 48 hours"
+        ],
+        "form_inputs": {
+            "name": "Full Name",
+            "email": "Corporate Email",
+            "process": "What process do you want to automate?"
+        },
+        "form_cta": "Request AI Consultation",
+        "privacy_note": "Your data is safe. Privacy Policy."
+    }
+}

@@ -1,0 +1,123 @@
+{
+    "seo": {
+        "title": "Microsoft Azure Consulting | Cloud Services & Migration",
+        "description": "Enterprise Microsoft Azure experts. Cloud migration, cost optimization, serverless architectures, and hybrid solutions.",
+        "keywords": "Microsoft Azure consulting, Cloud Computing, Cloud Migration, Azure DevOps, Cloud Architecture"
+    },
+    "hero": {
+        "badge": "Solutions Partner",
+        "badge_label": "Cloud & Infrastructure",
+        "headline_1": "Scale your business with ",
+        "headline_highlight": "Microsoft Azure",
+        "description": "Secure, scalable, and optimized cloud infrastructure. Migrate, innovate, and grow backed by certified experts.",
+        "primary_cta": "Request Free Diagnosis",
+        "secondary_cta": "Explore Services",
+        "traits": [
+            "Security First",
+            "High Performance",
+            "Hybrid Ready"
+        ]
+    },
+    "services": {
+        "title_1": "Comprehensive ",
+        "title_highlight": "Microsoft Azure",
+        "description": "Empower every aspect of your technology with the world's most trusted cloud ecosystem.",
+        "items": [
+            {
+                "title": "Cloud Infrastructure",
+                "description": "Virtual servers, networks, and scalable storage on Azure. We design robust and cost-effective architectures."
+            },
+            {
+                "title": "Migration and Modernization",
+                "description": "Take your apps and data to the cloud seamlessly. Rehost, Refactor, or Rearchitect strategies."
+            },
+            {
+                "title": "Cybersecurity and Compliance",
+                "description": "Advanced protection with Azure Sentinel and Defender. Security audits and identity management."
+            },
+            {
+                "title": "Backup and Disaster Recovery",
+                "description": "Protect your business against data loss. Resilient Business Continuity and Disaster Recovery (BCDR) solutions."
+            },
+            {
+                "title": "AI and Data Analytics",
+                "description": "Implement Azure OpenAI, Machine Learning, and cognitive services to empower your decisions."
+            },
+            {
+                "title": "24/7 Managed Support",
+                "description": "Proactive monitoring, cost optimization, and incident resolution by local experts."
+            }
+        ]
+    },
+    "benefits": {
+        "title_1": "Why choose ",
+        "title_highlight": "Jhamf Group",
+        "title_2": " as your Partner?",
+        "description": "We are not just a license provider. We are your extended cloud engineering team, speaking your language and understanding your market.",
+        "items": [
+            {
+                "title": "Certified Microsoft Partner",
+                "description": "Experts officially validated by Microsoft."
+            },
+            {
+                "title": "Local Expertise",
+                "description": "Physical offices in San Fernando. Support in your time zone."
+            },
+            {
+                "title": "Strategic Guidance",
+                "description": "Business consulting, not just technical support."
+            },
+            {
+                "title": "Simplified Billing",
+                "description": "Administrative ease and cost optimization."
+            }
+        ],
+        "map_title": "Visit Us",
+        "map_address": "Calle 5b2 No 38-27\nSan Fernando, Cali",
+        "map_link_text": "View on Google Maps →"
+    },
+    "use_cases": {
+        "title": "Success Scenarios",
+        "description": "Solutions adapted to the size and needs of your organization.",
+        "card1": {
+            "title": "SMBs and Startups",
+            "description": "Eliminate physical server costs. Pay only for what you use and enable secure remote work.",
+            "points": [
+                "Virtual Desktops (AVD)",
+                "Automated Cloud Backup",
+                "Web Hosting and Databases"
+            ],
+            "link": "View plans for SMBs →"
+        },
+        "card2": {
+            "title": "Large Enterprises",
+            "description": "Legacy application modernization, hybrid architecture, and advanced data analytics at scale.",
+            "points": [
+                "Datacenter Migration",
+                "Governance and Compliance",
+                "Corporate AI and Big Data"
+            ],
+            "link": "View corporate solutions →"
+        }
+    },
+    "contact": {
+        "title": "Ready to migrate to the cloud?",
+        "description": "Schedule a free 30-minute diagnostic session with a Jhamf solutions architect.",
+        "primary_title": "Direct Contact",
+        "whatsapp": "Chat on WhatsApp",
+        "form_inputs": {
+            "name": "Company Name",
+            "email": "Corporate Email"
+        },
+        "form_select": {
+            "placeholder": "Main Interest",
+            "options": [
+                "Main Interest: Migration",
+                "Main Interest: Infrastructure",
+                "Main Interest: Data and AI",
+                "Main Interest: Security"
+            ]
+        },
+        "form_cta": "Request Consultation"
+    }
+}

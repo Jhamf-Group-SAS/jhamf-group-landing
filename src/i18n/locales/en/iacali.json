@@ -1,0 +1,30 @@
+{
+    "seo": {
+        "title": "Artificial Intelligence in Cali & Valle del Cauca | JHAMF Group",
+        "description": "Leading company in AI development, Process Automation, and IT Support in Cali. We transform Valle del Cauca businesses with cutting-edge technology.",
+        "keywords": "AI Cali, Artificial Intelligence Valle del Cauca, Automation Cali, Software Development Cali, IT Support Cali, Tech Companies Cali"
+    },
+    "hero": {
+        "badge": "Tech Solutions in Cali",
+        "headline_1": "Artificial Intelligence <br /> <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-neon-lime to-azure-DEFAULT\">made in Cali</span>",
+        "description": "We boost the competitiveness of Valle del Cauca's companies with intelligent automation, cloud infrastructure, and world-class IT support.",
+        "primary_cta": "Free Diagnosis"
+    },
+    "services": {
+        "title": "Local Services",
+        "items": [
+            {
+                "title": "RPA Automation in Cali",
+                "description": "Software robots to automate administrative tasks in local businesses. Reduce operational costs today."
+            },
+            {
+                "title": "Infrastructure & Cloud",
+                "description": "Migration to Azure and hybrid cloud services. Local support for your critical infrastructure."
+            },
+            {
+                "title": "Cybersecurity",
+                "description": "Data protection and security auditing for regulatory compliance in Colombia."
+            }
+        ]
+    }
+}

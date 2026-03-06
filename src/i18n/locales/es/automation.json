@@ -1,0 +1,141 @@
+{
+    "seo": {
+        "title": "Automatización de Procesos (RPA) & IA en Colombia | JHAMF Group",
+        "description": "Automatice flujos de trabajo empresariales con Inteligencia Artificial y RPA. Reduzca costos y errores operativos con nuestras soluciones de hiperautomatización.",
+        "keywords": "Automatización de Procesos, RPA Colombia, AI Builder, Power Automate, Hiperautomatización, Optimización de Flujos"
+    },
+    "hero": {
+        "badge": "Intelligent Automation",
+        "headline_1": "Automatizamos tu operación con ",
+        "headline_highlight": "Inteligencia Artificial",
+        "description": "Elimina tareas repetitivas, reduce costos operativos y escala tu negocio sin aumentar la nómina. Implementamos RPA y Agentes Copilotos que trabajan 24/7.",
+        "primary_cta": "Solicitar Diagnóstico IA",
+        "secondary_cta": "Ver Soluciones",
+        "traits": [
+            {
+                "label": "Ahorro de Costos",
+                "val": "+40%"
+            },
+            {
+                "label": "Productividad",
+                "val": "24/7"
+            },
+            {
+                "label": "Errores Humanos",
+                "val": "0%"
+            },
+            {
+                "label": "ROI Promedio",
+                "val": "3 Meses"
+            }
+        ]
+    },
+    "problems": {
+        "title_1": "¿El ",
+        "title_highlight": "Caos Operativo",
+        "title_2": " frena tu crecimiento?",
+        "description": "Muchas empresas pierden potencial atrapadas en procesos manuales obsoletos.",
+        "items": [
+            {
+                "title": "Pérdida de Tiempo",
+                "description": "Talento humano valioso desperdiciado en tareas repetitivas como copiar y pegar datos entre Excels y sistemas."
+            },
+            {
+                "title": "Errores Costosos",
+                "description": "Facturas mal emitidas, datos de clientes duplicados o perdidos, fallos en la digitación manual."
+            },
+            {
+                "title": "Escalabilidad Limitada",
+                "description": "Para vender más necesitas contratar más personal operativo, reduciendo márgenes y agilidad."
+            }
+        ]
+    },
+    "solutions": {
+        "title_1": "Nuestras Soluciones de ",
+        "title_highlight": "Inteligencia Artificial",
+        "description": "Tecnología que trabaja para ti. Desde robots de software hasta asistentes cognitivos avanzados.",
+        "card1": {
+            "title": "RPA (Robotic Process Automation)",
+            "description": "Robots de software que imitan acciones humanas en sistemas digitales. Ideales para facturación, conciliación bancaria y reportes.",
+            "points": [
+                "Automatiza Excel, SAP, Web Apps",
+                "Cero errores en digitación",
+                "Ejecución 24/7 sin descanso"
+            ]
+        },
+        "card2": {
+            "title": "Agentes Cognitivos & Chatbots",
+            "description": "Asistentes virtuales potenciados por IA Generativa que entienden lenguaje natural. Para ventas, soporte y HR.",
+            "points": [
+                "Integración WhatsApp Business API",
+                "Calificación automática de leads",
+                "Respuestas instantáneas y precisas"
+            ]
+        },
+        "integration_title": "Nos integramos con tu ecosistema"
+    },
+    "use_cases": {
+        "title": "Casos de Uso Reales",
+        "items": [
+            {
+                "title": "Facturación Automática",
+                "before": "3 días al mes dedicados a generar y enviar facturas.",
+                "after": "Bots generan y envían facturas en minutos al recibir la orden.",
+                "impact": "90% menos tiempo"
+            },
+            {
+                "title": "Atención al Cliente",
+                "before": "Clientes esperan horas por respuestas básicas en WhatsApp.",
+                "after": "IA responde instantáneamente 24/7 y escala casos complejos.",
+                "impact": "+40% satisfacción"
+            },
+            {
+                "title": "Reportes de Ventas",
+                "before": "Gerencia espera al cierre de mes para ver métricas consolidadas.",
+                "after": "Dashboards actualizados en tiempo real por bots de datos.",
+                "impact": "Decisiones ágiles"
+            }
+        ],
+        "labels": {
+            "before": "Antes",
+            "after": "Después (con IA)"
+        }
+    },
+    "process": {
+        "title": "¿Cómo lo hacemos?",
+        "items": [
+            {
+                "title": "Diagnóstico",
+                "description": "Identificamos procesos repetitivos de alto impacto."
+            },
+            {
+                "title": "Diseño",
+                "description": "Arquitectura de la solución RPA o Agente IA."
+            },
+            {
+                "title": "Automatización",
+                "description": "Desarrollo, pruebas y despliegue en producción."
+            },
+            {
+                "title": "Mejora",
+                "description": "Monitoreo de resultados y optimización continua."
+            }
+        ]
+    },
+    "cta": {
+        "title": "Descubre cuánto puedes ahorrar hoy",
+        "description": "Agenda una sesión de consultoría gratuita. Analizamos tus procesos y te entregamos una proyección de ROI estimada.",
+        "points": [
+            "Sin compromiso de compra",
+            "Análisis por expertos senior",
+            "Propuesta en 48 horas"
+        ],
+        "form_inputs": {
+            "name": "Nombre completo",
+            "email": "Correo corporativo",
+            "process": "¿Qué proceso deseas automatizar?"
+        },
+        "form_cta": "Solicitar Asesoría IA",
+        "privacy_note": "Tus datos están seguros. Política de Privacidad."
+    }
+}

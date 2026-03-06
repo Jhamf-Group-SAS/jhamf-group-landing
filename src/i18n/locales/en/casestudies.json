@@ -1,0 +1,124 @@
+{
+    "seo": {
+        "title": "Success Stories: AI & Cloud in Colombia | JHAMF Portfolio",
+        "description": "Discover how we have transformed Colombian companies with Artificial Intelligence and Microsoft Azure solutions. Real success cases and digital transformation.",
+        "keywords": "AI Success Stories, Azure Projects Colombia, Digital Transformation Examples, JHAMF Portfolio, Customer Stories"
+    },
+    "hero": {
+        "badge": "Infrastructure & Automation",
+        "headline_1": "Success Stories: ",
+        "headline_highlight": "Cloud & Automation Solutions",
+        "description": "We transform business operations through robust cloud infrastructure, scalable architectures, and intelligent process automation.",
+        "primary_cta": "Explore Cases",
+        "secondary_cta": "Request Consultation"
+    },
+    "trust": {
+        "title": "Why trust JHAMF",
+        "description": "We combine deep technical expertise with a strategic business vision to deliver real value.",
+        "items": [
+            {
+                "title": "Azure Experts",
+                "description": "Native cloud architectures, complex migrations, and cost optimization."
+            },
+            {
+                "title": "Intelligent Automation",
+                "description": "RPA and AI workflows to eliminate repetitive tasks."
+            },
+            {
+                "title": "Robust Security",
+                "description": "Implementation of Cybersecurity and Compliance best practices."
+            },
+            {
+                "title": "Total Scalability",
+                "description": "Solutions designed to grow with your business seamlessly."
+            }
+        ]
+    },
+    "grid": {
+        "filters": {
+            "all": "All",
+            "cloud": "Cloud & Azure",
+            "automation": "Automation"
+        },
+        "labels": {
+            "challenge": "The Challenge",
+            "solution": "The Solution",
+            "results": "Key Results"
+        },
+        "cases": [
+            {
+                "title": "High-Availability Azure Migration",
+                "client": "Fintech Leader",
+                "type": "Cloud",
+                "challenge": "Legacy infrastructure with frequent downtime and high operational costs.",
+                "solution": "Migration to Azure Kubernetes Service (AKS) with multi-region architecture and auto-scaling.",
+                "results": [
+                    "99.99% Uptime guaranteed",
+                    "40% Cost reduction",
+                    "Deployments in minutes, not hours"
+                ]
+            },
+            {
+                "title": "Billing Automation",
+                "client": "Retail Chain Colombia",
+                "type": "Automation",
+                "challenge": "Manual processing of 5000+ monthly invoices with a high human error rate.",
+                "solution": "RPA implementation with AI Builder for data extraction and automatic ERP accounting.",
+                "results": [
+                    "0% Data entry errors",
+                    "Savings of 120 hours/month",
+                    "Real-time processing"
+                ]
+            },
+            {
+                "title": "Data Lakehouse for Analytics",
+                "client": "Logistics Corp",
+                "type": "Cloud",
+                "challenge": "Disconnected data silos prevented real-time business analysis.",
+                "solution": "Construction of Data Lakehouse in Azure Synapse + Power BI for executive dashboards.",
+                "results": [
+                    "360° view of the business",
+                    "Automated reporting",
+                    "Data-driven decision making"
+                ]
+            },
+            {
+                "title": "Customer Support Chatbot",
+                "client": "E-commerce Startup",
+                "type": "Automation",
+                "challenge": "Saturated customer support and slow response times.",
+                "solution": "Development of AI agent with Azure OpenAI for 24/7 support and ticket resolution.",
+                "results": [
+                    "70% Tickets automatically resolved",
+                    "Customer satisfaction +30%",
+                    "24/7 Availability"
+                ]
+            }
+        ]
+    },
+    "testimonials": {
+        "title": "What our clients say",
+        "items": [
+            {
+                "quote": "The migration to Azure with JHAMF was flawless. We managed to reduce costs and improve our availability in record time.",
+                "author": "Carlos Rodriguez",
+                "role": "CTO, Fintech Andina"
+            },
+            {
+                "quote": "Thanks to the automation of our accounting processes, the team now focuses on strategic analysis instead of manual data entry.",
+                "author": "Ana Martinez",
+                "role": "Finance Manager, Retail Co."
+            },
+            {
+                "quote": "The level of expertise in security and cloud they provided was key to our regulatory compliance.",
+                "author": "David Gomez",
+                "role": "IT Director, SaludTotal"
+            }
+        ]
+    },
+    "cta": {
+        "title": "Do you want a success story like these?",
+        "description": "Schedule a free strategic session and let's discover how the cloud and automation can transform your business.",
+        "button": "Schedule Consulting"
+    }
+}

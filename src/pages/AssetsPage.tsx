@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import SEOHead from '../components/seo/SEOHead';
+import { useTranslation } from 'react-i18next';
+import { useLocale } from '../hooks/useLocale';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import DiagnosticWizard from '../components/diagnostic/DiagnosticWizard';
@@ -14,14 +16,18 @@ import AssetsCTA from '../components/sections/assets/AssetsCTA';
 
 const AssetsPage: React.FC = () => {
     const [isWizardOpen, setIsWizardOpen] = useState(false);
+    const { t } = useTranslation('assets');
+    const { lang } = useLocale();
+    const SITE = 'https://www.jhamf.com';
 
     return (
         <div className="bg-void min-h-screen">
             <SEOHead
-                title="Gestión de Activos Tecnológicos y Licenciamiento de Software Empresarial | JHAMF Group"
-                description="Servicios de gestión de activos IT, licenciamiento de software empresarial, control de inventario tecnológico y optimización de costos de licencias en Colombia."
-                keywords="gestión de activos tecnológicos, licenciamiento de software empresarial, ITAM, control de inventario IT, ciclo de vida de activos, optimización de licencias Colombia"
-                url="https://www.jhamf.com/es/activos-licencias"
+                title={t('seo.title')}
+                description={t('seo.description')}
+                keywords={t('seo.keywords')}
+                url={`${SITE}/${lang}/activos-licencias`}
+                lang={lang}
                 alternateUrls={{
                     es: 'https://www.jhamf.com/es/activos-licencias',
                     en: 'https://www.jhamf.com/en/it-assets-licensing',
