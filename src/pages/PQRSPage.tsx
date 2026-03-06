@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle, Upload, Send, FileText, AlertCircle } from 'lucide-react';
 import Navbar from '../components/layout/Navbar';
+import Footer from '../components/layout/Footer';
 import SEO from '../components/seo/SEO';
 import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom';
