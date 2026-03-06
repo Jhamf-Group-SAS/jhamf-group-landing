@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Cloud, BrainCircuit, Shield, Server, Headphones, Monitor, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Cloud, BrainCircuit, Shield, Headphones, Server, Monitor, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useLocale } from '../../hooks/useLocale';
@@ -12,8 +12,6 @@ const Services = () => {
     const { t: tCommon } = useTranslation('common');
     const { lang } = useLocale();
 
-    // ✅ Defined INSIDE the component so t() is called in React scope and
-    //    re-evaluated on every language change.
     const services = useMemo(() => [
         {
             num: tSvc('cards.cloud.num', '01'),
@@ -63,20 +61,31 @@ const Services = () => {
             link: undefined,
             items: tSvc('cards.managed.items', { returnObjects: true }) as string[],
         },
-    ], [tSvc, lang]);
-
-    const secondaryServices = useMemo(() => [
         {
+            num: tSvc('cards.infra.num', '05'),
             icon: Server,
-            label: tSvc('secondary.infra.label'),
-            desc: tSvc('secondary.infra.desc'),
+            iconColor: 'text-electric',
+            accentColor: 'rgba(0,102,255,0.12)',
+            borderColor: 'rgba(0,102,255,0.4)',
+            title: tSvc('cards.infra.title'),
+            subtitle: tSvc('cards.infra.subtitle'),
+            description: tSvc('cards.infra.description'),
+            link: lang === 'es' ? `/${lang}/infraestructura-redes` : `/${lang}/infrastructure-networks`,
+            items: tSvc('cards.infra.items', { returnObjects: true }) as string[],
         },
         {
+            num: tSvc('cards.assets.num', '06'),
             icon: Monitor,
-            label: tSvc('secondary.assets.label'),
-            desc: tSvc('secondary.assets.desc'),
+            iconColor: 'text-plasma-bright',
+            accentColor: 'rgba(139,92,246,0.12)',
+            borderColor: 'rgba(139,92,246,0.4)',
+            title: tSvc('cards.assets.title'),
+            subtitle: tSvc('cards.assets.subtitle'),
+            description: tSvc('cards.assets.description'),
+            link: lang === 'es' ? `/${lang}/activos-licencias` : `/${lang}/it-assets-licensing`,
+            items: tSvc('cards.assets.items', { returnObjects: true }) as string[],
         },
-    ], [tSvc]);
+    ], [tSvc, lang]);
 
     return (
         <section
@@ -112,8 +121,8 @@ const Services = () => {
                     </p>
                 </motion.div>
 
-                {/* Main services grid */}
-                <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+                {/* Services grid — 3 columns x 2 rows */}
+                <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
                     {services.map((service, index) => {
                         const Icon = service.icon;
                         const isHovered = hoveredIndex === index;
@@ -216,40 +225,6 @@ const Services = () => {
                         );
                     })}
                 </div>
-
-                {/* Secondary services */}
-                <motion.div
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    className="mt-6 grid md:grid-cols-2 gap-4"
-                >
-                    {secondaryServices.map((svc) => {
-                        const Icon = svc.icon;
-                        return (
-                            <div
-                                key={svc.label}
-                                className="flex items-center gap-4 p-5 rounded-xl"
-                                style={{
-                                    background: 'rgba(255,255,255,0.02)',
-                                    border: '1px solid rgba(255,255,255,0.05)',
-                                }}
-                            >
-                                <div
-                                    className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
-                                    style={{ background: 'rgba(255,255,255,0.05)' }}
-                                >
-                                    <Icon className="w-5 h-5 text-steel-dark" aria-hidden="true" />
-                                </div>
-                                <div>
-                                    <h4 className="text-sm font-semibold text-white">{svc.label}</h4>
-                                    <p className="text-xs text-steel-dark mt-0.5 font-light">{svc.desc}</p>
-                                </div>
-                            </div>
-                        );
-                    })}
-                </motion.div>
             </div>
         </section>
     );

@@ -1,0 +1,243 @@
+{
+    "hero": {
+        "eyebrow": "Gestión de Activos Tecnológicos",
+        "title": "Activos Tecnológicos",
+        "titleHighlight": "y Licenciamiento Empresarial",
+        "subtitle": "Optimice la adquisición, gestión y ciclo de vida de sus activos IT con consultoría especializada que reduce costos y maximiza el retorno de inversión.",
+        "cta": "Solicitar Consultoría",
+        "ctaSecondary": "Ver Servicios"
+    },
+    "overview": {
+        "eyebrow": "Gestión Integral",
+        "title": "Servicios de Gestión de",
+        "titleHighlight": "Activos IT",
+        "subtitle": "Una visión 360° de sus activos tecnológicos: desde la adquisición hasta la disposición final, con trazabilidad completa.",
+        "items": [
+            {
+                "title": "Adquisición de Hardware",
+                "description": "Procuramiento estratégico de equipos empresariales con negociación directa con fabricantes y precios competitivos."
+            },
+            {
+                "title": "Licenciamiento de Software",
+                "description": "Consultoría en licenciamiento que asegura cumplimiento legal y optimización de costos en todas las plataformas."
+            },
+            {
+                "title": "Gestión de Activos",
+                "description": "Inventario, seguimiento y control centralizado de todos los activos tecnológicos de su organización."
+            },
+            {
+                "title": "Control de Inventario IT",
+                "description": "Visibilidad completa de su parque tecnológico con dashboards en tiempo real y alertas automatizadas."
+            },
+            {
+                "title": "Ciclo de Vida de Activos",
+                "description": "Gestión integral desde la compra hasta el retiro, garantizando máximo valor y disposición responsable."
+            },
+            {
+                "title": "Optimización de Costos",
+                "description": "Análisis y reestructuración de licencias para eliminar gastos innecesarios y maximizar el ROI."
+            }
+        ]
+    },
+    "hardware": {
+        "eyebrow": "Hardware Empresarial",
+        "title": "Adquisición de",
+        "titleHighlight": "Hardware Empresarial",
+        "subtitle": "Proveemos equipos empresariales de los principales fabricantes con garantías extendidas y soporte local.",
+        "categories": [
+            {
+                "name": "Estaciones de Trabajo",
+                "items": [
+                    "Laptops Corporativas",
+                    "Desktops de Alto Rendimiento",
+                    "Workstations Profesionales",
+                    "Thin Clients"
+                ]
+            },
+            {
+                "name": "Servidores y Almacenamiento",
+                "items": [
+                    "Servidores Rack / Tower",
+                    "Almacenamiento NAS/SAN",
+                    "Soluciones HCI",
+                    "Backup Appliances"
+                ]
+            },
+            {
+                "name": "Redes y Seguridad",
+                "items": [
+                    "Switches Empresariales",
+                    "Access Points Wi-Fi 6",
+                    "Firewalls NGFW",
+                    "Balanceadores de Carga"
+                ]
+            }
+        ],
+        "process": {
+            "title": "Proceso de Adquisición",
+            "steps": [
+                {
+                    "step": "01",
+                    "title": "Análisis",
+                    "description": "Evaluación de necesidades y especificaciones técnicas."
+                },
+                {
+                    "step": "02",
+                    "title": "Cotización",
+                    "description": "Negociación directa con fabricantes y distribuidores."
+                },
+                {
+                    "step": "03",
+                    "title": "Configuración",
+                    "description": "Preparación, imagen e integración con su entorno."
+                },
+                {
+                    "step": "04",
+                    "title": "Despliegue",
+                    "description": "Instalación, migración de datos y capacitación."
+                }
+            ]
+        }
+    },
+    "licensing": {
+        "eyebrow": "Licenciamiento Inteligente",
+        "title": "Consultoría en",
+        "titleHighlight": "Licenciamiento de Software",
+        "subtitle": "Navegamos la complejidad del licenciamiento de software para que usted pague solo por lo que necesita.",
+        "types": [
+            {
+                "name": "Perpetuas",
+                "description": "Licencias de compra única con actualizaciones opcionales. Ideal para software estable de largo plazo.",
+                "highlight": "Inversión inicial"
+            },
+            {
+                "name": "Suscripción",
+                "description": "Modelos SaaS con pagos mensuales o anuales. Flexibilidad y siempre actualizadas.",
+                "highlight": "Pago por uso"
+            },
+            {
+                "name": "BYOL",
+                "description": "Traiga sus propias licencias a la nube. Maximice licencias existentes en entornos Azure o AWS.",
+                "highlight": "Maximice ROI"
+            }
+        ],
+        "vendors": [
+            "Microsoft",
+            "Adobe",
+            "AutoDesk",
+            "Acronis"
+        ]
+    },
+    "lifecycle": {
+        "eyebrow": "Metodología Probada",
+        "title": "Gestión del",
+        "titleHighlight": "Ciclo de Vida",
+        "subtitle": "Una metodología estructurada que asegura el máximo valor de cada activo tecnológico durante toda su vida útil.",
+        "stages": [
+            {
+                "name": "Planificación",
+                "description": "Evaluación de necesidades, presupuesto y roadmap tecnológico.",
+                "icon": "plan"
+            },
+            {
+                "name": "Adquisición",
+                "description": "Procuramiento estratégico con negociación y validación de especificaciones.",
+                "icon": "acquire"
+            },
+            {
+                "name": "Despliegue",
+                "description": "Configuración, instalación y puesta en marcha con mínimo impacto operativo.",
+                "icon": "deploy"
+            },
+            {
+                "name": "Operación",
+                "description": "Monitoreo, mantenimiento preventivo y gestión de garantías.",
+                "icon": "operate"
+            },
+            {
+                "name": "Optimización",
+                "description": "Análisis de rendimiento, actualizaciones y reasignación de recursos.",
+                "icon": "optimize"
+            },
+            {
+                "name": "Retiro",
+                "description": "Disposición segura, borrado certificado de datos y reciclaje responsable.",
+                "icon": "retire"
+            }
+        ]
+    },
+    "benefits": {
+        "eyebrow": "Resultados Medibles",
+        "title": "Beneficios para",
+        "titleHighlight": "Departamentos de TI",
+        "items": [
+            {
+                "stat": "30%",
+                "label": "Reducción en Costos de Licencias",
+                "description": "Identificamos licencias subutilizadas, duplicadas o innecesarias y las eliminamos."
+            },
+            {
+                "stat": "100%",
+                "label": "Cumplimiento de Software",
+                "description": "Evite multas y riesgos legales con inventario completo y auditorías proactivas."
+            },
+            {
+                "stat": "360°",
+                "label": "Visibilidad de Activos",
+                "description": "Dashboard unificado con estado, ubicación y valor de cada activo en tiempo real."
+            },
+            {
+                "stat": "2x",
+                "label": "Vida Útil Extendida",
+                "description": "Programas de mantenimiento preventivo que duplican la vida útil de sus equipos."
+            }
+        ]
+    },
+    "integration": {
+        "eyebrow": "Ecosistema Conectado",
+        "title": "Integración con",
+        "titleHighlight": "Sistemas de Gestión IT",
+        "subtitle": "Nuestras soluciones se integran nativamente con las plataformas ITSM y CMDB que su equipo ya utiliza.",
+        "platforms": [
+            {
+                "name": "ServiceNow",
+                "category": "ITSM"
+            },
+            {
+                "name": "Jira Service Management",
+                "category": "ITSM"
+            },
+            {
+                "name": "Azure DevOps",
+                "category": "DevOps"
+            },
+            {
+                "name": "Microsoft Intune",
+                "category": "MDM"
+            },
+            {
+                "name": "SCCM / MECM",
+                "category": "Endpoint"
+            },
+            {
+                "name": "ManageEngine",
+                "category": "ITAM"
+            }
+        ],
+        "features": [
+            "Sincronización bidireccional de activos",
+            "Alertas automatizadas de vencimiento",
+            "Reportes de cumplimiento en tiempo real",
+            "API REST para integración personalizada"
+        ]
+    },
+    "cta": {
+        "eyebrow": "¿Listo para Optimizar sus Activos IT?",
+        "title": "Tomemos el control de sus",
+        "titleHighlight": "activos tecnológicos",
+        "subtitle": "Nuestros consultores especializados analizarán su parque tecnológico y diseñarán un plan de optimización personalizado.",
+        "button": "Solicitar Análisis Gratuito",
+        "buttonSecondary": "Hablar con un Consultor",
+        "note": "Respuesta en menos de 24 horas • Sin compromiso"
+    }
+}

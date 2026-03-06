@@ -51,16 +51,30 @@
                 "IT Operations Management",
                 "SLA-backed Response Times"
             ]
-        }
-    },
-    "secondary": {
+        },
         "infra": {
-            "label": "Infrastructure & Networking",
-            "desc": "Structured cabling, VPN, CCTV, hybrid servers"
+            "num": "05",
+            "title": "Infrastructure & Networking",
+            "subtitle": "Enterprise Connectivity",
+            "description": "Structured cabling, VPN, CCTV, and hybrid servers for a secure, high-performance network infrastructure.",
+            "items": [
+                "Certified Structured Cabling",
+                "VPN & Secure Connectivity",
+                "IP CCTV & Video Surveillance",
+                "Hybrid On-Premise + Cloud Servers"
+            ]
         },
         "assets": {
-            "label": "Technology Assets & Licensing",
-            "desc": "Hardware procurement, software licensing, asset lifecycle"
+            "num": "06",
+            "title": "Technology Assets & Licensing",
+            "subtitle": "IT Asset Management",
+            "description": "Hardware procurement, enterprise software licensing, and end-to-end IT asset lifecycle management.",
+            "items": [
+                "Strategic Hardware Procurement",
+                "Enterprise Software Licensing",
+                "Asset Lifecycle Management",
+                "Cost Optimization & Compliance"
+            ]
         }
     }
 }

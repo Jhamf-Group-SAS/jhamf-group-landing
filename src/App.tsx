@@ -9,6 +9,8 @@ import AutomationPage from './pages/AutomationPage';
 import BlueprintPage from './pages/BlueprintPage';
 import CaseStudiesPage from './pages/CaseStudiesPage';
 import IACaliPage from './pages/IACaliPage';
+import InfrastructurePage from './pages/InfrastructurePage';
+import AssetsPage from './pages/AssetsPage';
 import { SUPPORTED_LANGUAGES } from './i18n';
 import type { SupportedLanguage } from './i18n';
 
@@ -66,6 +68,10 @@ function LocalizedRoutes() {
         <Route path="casos-de-exito" element={<CaseStudiesPage />} />
         <Route path="case-studies" element={<CaseStudiesPage />} />
         <Route path="ia-cali" element={<IACaliPage />} />
+        <Route path="infraestructura-redes" element={<InfrastructurePage />} />
+        <Route path="infrastructure-networks" element={<InfrastructurePage />} />
+        <Route path="activos-licencias" element={<AssetsPage />} />
+        <Route path="it-assets-licensing" element={<AssetsPage />} />
         <Route path="*" element={<Navigate to="." replace />} />
       </Routes>
     </>

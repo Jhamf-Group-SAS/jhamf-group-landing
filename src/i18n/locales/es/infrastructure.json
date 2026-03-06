@@ -1,0 +1,218 @@
+{
+    "hero": {
+        "eyebrow": "Infraestructura IT Empresarial",
+        "title": "Infraestructura y Redes",
+        "titleHighlight": "de Alto Rendimiento",
+        "subtitle": "Diseñamos, implementamos y gestionamos infraestructuras de red empresariales que garantizan conectividad, seguridad y disponibilidad 24/7 para su operación crítica.",
+        "cta": "Solicitar Consultoría",
+        "ctaSecondary": "Explorar Servicios"
+    },
+    "services": {
+        "eyebrow": "Nuestros Servicios",
+        "title": "Soluciones de Infraestructura",
+        "titleHighlight": "Empresarial",
+        "subtitle": "Cubrimos todo el espectro de infraestructura IT: desde el cableado físico hasta servidores híbridos en la nube.",
+        "items": [
+            {
+                "title": "Cableado Estructurado",
+                "description": "Diseño e instalación de cableado estructurado certificado categoría 6A y fibra óptica. Cumplimiento de normas TIA/EIA-568 y certificación Fluke.",
+                "features": [
+                    "Cat 6A / Fibra Óptica",
+                    "Certificación Fluke",
+                    "Normas TIA/EIA-568",
+                    "Garantía 25 años"
+                ]
+            },
+            {
+                "title": "Redes Empresariales",
+                "description": "Implementación de redes corporativas de alta disponibilidad con segmentación VLAN, QoS, redundancia y gestión centralizada para entornos críticos.",
+                "features": [
+                    "Alta Disponibilidad",
+                    "Segmentación VLAN",
+                    "QoS Avanzado",
+                    "Gestión Centralizada"
+                ]
+            },
+            {
+                "title": "CCTV y Videovigilancia",
+                "description": "Sistemas de videovigilancia IP con analítica de video inteligente, almacenamiento NVR/cloud y acceso remoto seguro desde cualquier dispositivo.",
+                "features": [
+                    "Analítica de Video IA",
+                    "Almacenamiento NVR/Cloud",
+                    "Acceso Remoto Seguro",
+                    "Cámaras IP HD/4K"
+                ]
+            },
+            {
+                "title": "Servidores Híbridos",
+                "description": "Arquitecturas de servidores que combinan infraestructura on-premise con cloud pública (Azure/AWS) para máximo rendimiento y flexibilidad operativa.",
+                "features": [
+                    "On-Premise + Cloud",
+                    "Failover Automático",
+                    "Escalabilidad Dinámica",
+                    "Backup Integrado"
+                ]
+            }
+        ]
+    },
+    "architecture": {
+        "eyebrow": "Arquitectura de Referencia",
+        "title": "Infraestructura",
+        "titleHighlight": "Híbrida Inteligente",
+        "subtitle": "Conectamos su infraestructura local con la nube para crear un ecosistema unificado, seguro y escalable.",
+        "onPremise": "On-Premise",
+        "cloud": "Cloud",
+        "onPremiseItems": [
+            "Servidores Físicos",
+            "Almacenamiento SAN",
+            "Switches Core",
+            "Firewall UTM"
+        ],
+        "cloudItems": [
+            "Azure VMs",
+            "Blob Storage",
+            "Azure VPN",
+            "Azure Sentinel"
+        ],
+        "connection": "VPN Site-to-Site / ExpressRoute",
+        "monitoring": "Monitoreo Unificado 24/7"
+    },
+    "benefits": {
+        "eyebrow": "Ventajas Competitivas",
+        "title": "Beneficios para",
+        "titleHighlight": "su Empresa",
+        "items": [
+            {
+                "stat": "99.9%",
+                "label": "Disponibilidad Garantizada",
+                "description": "Arquitecturas redundantes que minimizan tiempos de inactividad y aseguran la continuidad operativa."
+            },
+            {
+                "stat": "40%",
+                "label": "Reducción de Costos",
+                "description": "Optimización de recursos con modelos híbridos que eliminan sobreinversión en hardware."
+            },
+            {
+                "stat": "10x",
+                "label": "Mayor Velocidad de Red",
+                "description": "Redes de alto rendimiento con tecnología de última generación y configuración optimizada."
+            },
+            {
+                "stat": "24/7",
+                "label": "Soporte y Monitoreo",
+                "description": "Equipo de ingenieros certificados disponibles para resolver incidentes en tiempo real."
+            }
+        ]
+    },
+    "industries": {
+        "eyebrow": "Sectores de Impacto",
+        "title": "Industrias que",
+        "titleHighlight": "Servimos",
+        "subtitle": "Experiencia comprobada en infraestructura IT para los sectores más exigentes de Colombia y Latinoamérica.",
+        "items": [
+            {
+                "name": "Salud",
+                "description": "Redes seguras para historiales clínicos, telemedicina y equipos médicos conectados."
+            },
+            {
+                "name": "Financiero",
+                "description": "Infraestructura PCI-DSS para banca, fintech y procesamiento de transacciones."
+            },
+            {
+                "name": "Manufactura",
+                "description": "Redes industriales IoT, sistemas SCADA y conectividad de planta."
+            },
+            {
+                "name": "Gobierno",
+                "description": "Infraestructura segura para entidades gubernamentales y servicios ciudadanos."
+            },
+            {
+                "name": "Retail",
+                "description": "Redes unificadas para cadenas de tiendas, POS y logística."
+            },
+            {
+                "name": "Educación",
+                "description": "Infraestructura escalable para campus digitales y e-learning."
+            }
+        ]
+    },
+    "techStack": {
+        "eyebrow": "Ecosistema Tecnológico",
+        "title": "Stack",
+        "titleHighlight": "Tecnológico",
+        "subtitle": "Trabajamos con los líderes mundiales en infraestructura IT para garantizar la máxima calidad y soporte.",
+        "categories": [
+            {
+                "name": "Redes",
+                "brands": [
+                    "Cisco",
+                    "Ubiquiti",
+                    "Aruba",
+                    "MikroTik"
+                ]
+            },
+            {
+                "name": "Servidores",
+                "brands": [
+                    "Dell",
+                    "HPE",
+                    "Lenovo",
+                    "Supermicro"
+                ]
+            },
+            {
+                "name": "Seguridad",
+                "brands": [
+                    "Fortinet",
+                    "Palo Alto",
+                    "SonicWall",
+                    "Sophos"
+                ]
+            },
+            {
+                "name": "Cloud",
+                "brands": [
+                    "Microsoft Azure",
+                    "AWS",
+                    "Google Cloud",
+                    "VMware"
+                ]
+            }
+        ]
+    },
+    "security": {
+        "eyebrow": "Confianza y Cumplimiento",
+        "title": "Seguridad y",
+        "titleHighlight": "Confiabilidad",
+        "subtitle": "Implementamos las mejores prácticas de seguridad y cumplimiento normativo para proteger su infraestructura.",
+        "items": [
+            {
+                "title": "ISO 27001",
+                "description": "Prácticas alineadas con estándares internacionales de seguridad de la información."
+            },
+            {
+                "title": "SOC 2 Type II",
+                "description": "Controles de seguridad, disponibilidad y confidencialidad verificados."
+            },
+            {
+                "title": "PCI DSS",
+                "description": "Cumplimiento para entornos que procesan datos de tarjetas de pago."
+            },
+            {
+                "title": "GDPR / Ley 1581",
+                "description": "Protección de datos personales conforme a normativa colombiana e internacional."
+            }
+        ],
+        "uptimeGuarantee": "Garantía de Uptime 99.9%",
+        "uptimeDescription": "Respaldado por SLAs contractuales, monitoreo proactivo y planes de contingencia probados."
+    },
+    "cta": {
+        "eyebrow": "¿Listo para Transformar su Infraestructura?",
+        "title": "Diseñemos juntos la infraestructura",
+        "titleHighlight": "que su empresa necesita",
+        "subtitle": "Nuestro equipo de ingenieros certificados evaluará su infraestructura actual y diseñará una solución a medida.",
+        "button": "Agendar Consultoría Gratuita",
+        "buttonSecondary": "Hablar con un Ingeniero",
+        "note": "Respuesta en menos de 24 horas • Sin compromiso"
+    }
+}

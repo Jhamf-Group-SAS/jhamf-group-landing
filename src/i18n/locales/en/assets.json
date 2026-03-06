@@ -1,0 +1,243 @@
+{
+    "hero": {
+        "eyebrow": "IT Asset Management",
+        "title": "IT Assets",
+        "titleHighlight": "& Enterprise Licensing",
+        "subtitle": "Optimize the acquisition, management, and lifecycle of your IT assets with specialized consulting that reduces costs and maximizes return on investment.",
+        "cta": "Request Consultation",
+        "ctaSecondary": "View Services"
+    },
+    "overview": {
+        "eyebrow": "Comprehensive Management",
+        "title": "IT Asset",
+        "titleHighlight": "Management Services",
+        "subtitle": "A 360° view of your technology assets: from acquisition to final disposition, with complete traceability.",
+        "items": [
+            {
+                "title": "Hardware Acquisition",
+                "description": "Strategic procurement of enterprise equipment with direct manufacturer negotiation and competitive pricing."
+            },
+            {
+                "title": "Software Licensing",
+                "description": "Licensing consulting that ensures legal compliance and cost optimization across all platforms."
+            },
+            {
+                "title": "Asset Management",
+                "description": "Inventory, tracking, and centralized control of all your organization's technology assets."
+            },
+            {
+                "title": "IT Inventory Control",
+                "description": "Complete visibility of your technology fleet with real-time dashboards and automated alerts."
+            },
+            {
+                "title": "Asset Lifecycle",
+                "description": "End-to-end management from purchase to retirement, ensuring maximum value and responsible disposition."
+            },
+            {
+                "title": "Cost Optimization",
+                "description": "License analysis and restructuring to eliminate unnecessary expenses and maximize ROI."
+            }
+        ]
+    },
+    "hardware": {
+        "eyebrow": "Enterprise Hardware",
+        "title": "Enterprise",
+        "titleHighlight": "Hardware Procurement",
+        "subtitle": "We provide enterprise equipment from leading manufacturers with extended warranties and local support.",
+        "categories": [
+            {
+                "name": "Workstations",
+                "items": [
+                    "Corporate Laptops",
+                    "High-Performance Desktops",
+                    "Professional Workstations",
+                    "Thin Clients"
+                ]
+            },
+            {
+                "name": "Servers & Storage",
+                "items": [
+                    "Rack / Tower Servers",
+                    "NAS/SAN Storage",
+                    "HCI Solutions",
+                    "Backup Appliances"
+                ]
+            },
+            {
+                "name": "Networking & Security",
+                "items": [
+                    "Enterprise Switches",
+                    "Wi-Fi 6 Access Points",
+                    "NGFW Firewalls",
+                    "Load Balancers"
+                ]
+            }
+        ],
+        "process": {
+            "title": "Procurement Process",
+            "steps": [
+                {
+                    "step": "01",
+                    "title": "Analysis",
+                    "description": "Needs assessment and technical specifications."
+                },
+                {
+                    "step": "02",
+                    "title": "Quotation",
+                    "description": "Direct negotiation with manufacturers and distributors."
+                },
+                {
+                    "step": "03",
+                    "title": "Configuration",
+                    "description": "Preparation, imaging, and environment integration."
+                },
+                {
+                    "step": "04",
+                    "title": "Deployment",
+                    "description": "Installation, data migration, and training."
+                }
+            ]
+        }
+    },
+    "licensing": {
+        "eyebrow": "Smart Licensing",
+        "title": "Software",
+        "titleHighlight": "Licensing Consulting",
+        "subtitle": "We navigate software licensing complexity so you only pay for what you need.",
+        "types": [
+            {
+                "name": "Perpetual",
+                "description": "One-time purchase licenses with optional updates. Ideal for long-term stable software.",
+                "highlight": "Initial Investment"
+            },
+            {
+                "name": "Subscription",
+                "description": "SaaS models with monthly or annual payments. Flexible and always up to date.",
+                "highlight": "Pay Per Use"
+            },
+            {
+                "name": "BYOL",
+                "description": "Bring your own licenses to the cloud. Maximize existing licenses in Azure or AWS environments.",
+                "highlight": "Maximize ROI"
+            }
+        ],
+        "vendors": [
+            "Microsoft",
+            "Adobe",
+            "AutoDesk",
+            "Acronis"
+        ]
+    },
+    "lifecycle": {
+        "eyebrow": "Proven Methodology",
+        "title": "Asset",
+        "titleHighlight": "Lifecycle Management",
+        "subtitle": "A structured methodology that ensures maximum value from every technology asset throughout its useful life.",
+        "stages": [
+            {
+                "name": "Planning",
+                "description": "Needs assessment, budgeting, and technology roadmap.",
+                "icon": "plan"
+            },
+            {
+                "name": "Acquisition",
+                "description": "Strategic procurement with negotiation and specification validation.",
+                "icon": "acquire"
+            },
+            {
+                "name": "Deployment",
+                "description": "Configuration, installation, and commissioning with minimal operational impact.",
+                "icon": "deploy"
+            },
+            {
+                "name": "Operation",
+                "description": "Monitoring, preventive maintenance, and warranty management.",
+                "icon": "operate"
+            },
+            {
+                "name": "Optimization",
+                "description": "Performance analysis, upgrades, and resource reallocation.",
+                "icon": "optimize"
+            },
+            {
+                "name": "Retirement",
+                "description": "Secure disposition, certified data erasure, and responsible recycling.",
+                "icon": "retire"
+            }
+        ]
+    },
+    "benefits": {
+        "eyebrow": "Measurable Results",
+        "title": "Benefits for",
+        "titleHighlight": "IT Departments",
+        "items": [
+            {
+                "stat": "30%",
+                "label": "License Cost Reduction",
+                "description": "We identify underutilized, duplicate, or unnecessary licenses and eliminate them."
+            },
+            {
+                "stat": "100%",
+                "label": "Software Compliance",
+                "description": "Avoid fines and legal risks with complete inventory and proactive audits."
+            },
+            {
+                "stat": "360°",
+                "label": "Asset Visibility",
+                "description": "Unified dashboard with status, location, and value of every asset in real time."
+            },
+            {
+                "stat": "2x",
+                "label": "Extended Useful Life",
+                "description": "Preventive maintenance programs that double the useful life of your equipment."
+            }
+        ]
+    },
+    "integration": {
+        "eyebrow": "Connected Ecosystem",
+        "title": "Integration with",
+        "titleHighlight": "IT Management Systems",
+        "subtitle": "Our solutions integrate natively with the ITSM and CMDB platforms your team already uses.",
+        "platforms": [
+            {
+                "name": "ServiceNow",
+                "category": "ITSM"
+            },
+            {
+                "name": "Jira Service Management",
+                "category": "ITSM"
+            },
+            {
+                "name": "Azure DevOps",
+                "category": "DevOps"
+            },
+            {
+                "name": "Microsoft Intune",
+                "category": "MDM"
+            },
+            {
+                "name": "SCCM / MECM",
+                "category": "Endpoint"
+            },
+            {
+                "name": "ManageEngine",
+                "category": "ITAM"
+            }
+        ],
+        "features": [
+            "Bidirectional asset synchronization",
+            "Automated expiration alerts",
+            "Real-time compliance reporting",
+            "REST API for custom integration"
+        ]
+    },
+    "cta": {
+        "eyebrow": "Ready to Optimize Your IT Assets?",
+        "title": "Let's take control of your",
+        "titleHighlight": "technology assets",
+        "subtitle": "Our specialized consultants will analyze your technology fleet and design a personalized optimization plan.",
+        "button": "Request Free Analysis",
+        "buttonSecondary": "Talk to a Consultant",
+        "note": "Response within 24 hours • No commitment"
+    }
+}

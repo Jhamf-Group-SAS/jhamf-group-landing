@@ -1,0 +1,218 @@
+{
+    "hero": {
+        "eyebrow": "Enterprise IT Infrastructure",
+        "title": "High-Performance",
+        "titleHighlight": "Infrastructure & Networks",
+        "subtitle": "We design, implement, and manage enterprise network infrastructures that guarantee connectivity, security, and 24/7 availability for your critical operations.",
+        "cta": "Request Consultation",
+        "ctaSecondary": "Explore Services"
+    },
+    "services": {
+        "eyebrow": "Our Services",
+        "title": "Enterprise Infrastructure",
+        "titleHighlight": "Solutions",
+        "subtitle": "We cover the full IT infrastructure spectrum: from physical cabling to hybrid cloud servers.",
+        "items": [
+            {
+                "title": "Structured Cabling",
+                "description": "Design and installation of certified Category 6A structured cabling and fiber optics. TIA/EIA-568 compliance with Fluke certification.",
+                "features": [
+                    "Cat 6A / Fiber Optics",
+                    "Fluke Certification",
+                    "TIA/EIA-568 Standards",
+                    "25-Year Warranty"
+                ]
+            },
+            {
+                "title": "Enterprise Networks",
+                "description": "Implementation of high-availability corporate networks with VLAN segmentation, QoS, redundancy, and centralized management for critical environments.",
+                "features": [
+                    "High Availability",
+                    "VLAN Segmentation",
+                    "Advanced QoS",
+                    "Centralized Management"
+                ]
+            },
+            {
+                "title": "CCTV & Video Surveillance",
+                "description": "IP video surveillance systems with intelligent video analytics, NVR/cloud storage, and secure remote access from any device.",
+                "features": [
+                    "AI Video Analytics",
+                    "NVR/Cloud Storage",
+                    "Secure Remote Access",
+                    "HD/4K IP Cameras"
+                ]
+            },
+            {
+                "title": "Hybrid Servers",
+                "description": "Server architectures combining on-premise infrastructure with public cloud (Azure/AWS) for maximum performance and operational flexibility.",
+                "features": [
+                    "On-Premise + Cloud",
+                    "Automatic Failover",
+                    "Dynamic Scalability",
+                    "Integrated Backup"
+                ]
+            }
+        ]
+    },
+    "architecture": {
+        "eyebrow": "Reference Architecture",
+        "title": "Intelligent",
+        "titleHighlight": "Hybrid Infrastructure",
+        "subtitle": "We connect your local infrastructure to the cloud to create a unified, secure, and scalable ecosystem.",
+        "onPremise": "On-Premise",
+        "cloud": "Cloud",
+        "onPremiseItems": [
+            "Physical Servers",
+            "SAN Storage",
+            "Core Switches",
+            "UTM Firewall"
+        ],
+        "cloudItems": [
+            "Azure VMs",
+            "Blob Storage",
+            "Azure VPN",
+            "Azure Sentinel"
+        ],
+        "connection": "Site-to-Site VPN / ExpressRoute",
+        "monitoring": "Unified 24/7 Monitoring"
+    },
+    "benefits": {
+        "eyebrow": "Competitive Advantages",
+        "title": "Benefits for",
+        "titleHighlight": "Your Business",
+        "items": [
+            {
+                "stat": "99.9%",
+                "label": "Guaranteed Availability",
+                "description": "Redundant architectures that minimize downtime and ensure operational continuity."
+            },
+            {
+                "stat": "40%",
+                "label": "Cost Reduction",
+                "description": "Resource optimization with hybrid models that eliminate hardware over-investment."
+            },
+            {
+                "stat": "10x",
+                "label": "Faster Network Speed",
+                "description": "High-performance networks with cutting-edge technology and optimized configuration."
+            },
+            {
+                "stat": "24/7",
+                "label": "Support & Monitoring",
+                "description": "Team of certified engineers available to resolve incidents in real time."
+            }
+        ]
+    },
+    "industries": {
+        "eyebrow": "Impact Sectors",
+        "title": "Industries",
+        "titleHighlight": "We Serve",
+        "subtitle": "Proven IT infrastructure experience across the most demanding sectors in Colombia and Latin America.",
+        "items": [
+            {
+                "name": "Healthcare",
+                "description": "Secure networks for medical records, telemedicine, and connected medical equipment."
+            },
+            {
+                "name": "Financial",
+                "description": "PCI-DSS infrastructure for banking, fintech, and transaction processing."
+            },
+            {
+                "name": "Manufacturing",
+                "description": "Industrial IoT networks, SCADA systems, and plant connectivity."
+            },
+            {
+                "name": "Government",
+                "description": "Secure infrastructure for government agencies and citizen services."
+            },
+            {
+                "name": "Retail",
+                "description": "Unified networks for store chains, POS, and logistics."
+            },
+            {
+                "name": "Education",
+                "description": "Scalable infrastructure for digital campuses and e-learning."
+            }
+        ]
+    },
+    "techStack": {
+        "eyebrow": "Technology Ecosystem",
+        "title": "Technology",
+        "titleHighlight": "Stack",
+        "subtitle": "We work with global IT infrastructure leaders to guarantee the highest quality and support.",
+        "categories": [
+            {
+                "name": "Networking",
+                "brands": [
+                    "Cisco",
+                    "Ubiquiti",
+                    "Aruba",
+                    "MikroTik"
+                ]
+            },
+            {
+                "name": "Servers",
+                "brands": [
+                    "Dell",
+                    "HPE",
+                    "Lenovo",
+                    "Supermicro"
+                ]
+            },
+            {
+                "name": "Security",
+                "brands": [
+                    "Fortinet",
+                    "Palo Alto",
+                    "SonicWall",
+                    "Sophos"
+                ]
+            },
+            {
+                "name": "Cloud",
+                "brands": [
+                    "Microsoft Azure",
+                    "AWS",
+                    "Google Cloud",
+                    "VMware"
+                ]
+            }
+        ]
+    },
+    "security": {
+        "eyebrow": "Trust & Compliance",
+        "title": "Security &",
+        "titleHighlight": "Reliability",
+        "subtitle": "We implement best-in-class security practices and regulatory compliance to protect your infrastructure.",
+        "items": [
+            {
+                "title": "ISO 27001",
+                "description": "Practices aligned with international information security standards."
+            },
+            {
+                "title": "SOC 2 Type II",
+                "description": "Verified security, availability, and confidentiality controls."
+            },
+            {
+                "title": "PCI DSS",
+                "description": "Compliance for environments processing payment card data."
+            },
+            {
+                "title": "GDPR / Law 1581",
+                "description": "Personal data protection in compliance with Colombian and international regulations."
+            }
+        ],
+        "uptimeGuarantee": "99.9% Uptime Guarantee",
+        "uptimeDescription": "Backed by contractual SLAs, proactive monitoring, and tested contingency plans."
+    },
+    "cta": {
+        "eyebrow": "Ready to Transform Your Infrastructure?",
+        "title": "Let's design the infrastructure",
+        "titleHighlight": "your company needs",
+        "subtitle": "Our team of certified engineers will evaluate your current infrastructure and design a tailored solution.",
+        "button": "Schedule Free Consultation",
+        "buttonSecondary": "Talk to an Engineer",
+        "note": "Response within 24 hours • No commitment"
+    }
+}
