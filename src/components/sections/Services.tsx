@@ -114,7 +114,7 @@ const Services = () => {
                     <span className="eyebrow-chip">{tSvc('eyebrow')}</span>
                     <h2 className="mt-4 text-4xl md:text-5xl font-display font-bold tracking-tight">
                         {tSvc('headline_1')} <br />
-                        <span className="text-gradient-electric">{tSvc('headline_2')}</span>
+                        <span className="text-electric">{tSvc('headline_2')}</span>
                     </h2>
                     <p className="mt-4 text-lg text-steel max-w-xl leading-relaxed font-light">
                         {tSvc('subtext')}

@@ -48,7 +48,7 @@ const InfraHero: React.FC = () => {
                     >
                         {t('hero.title')}{' '}
                         <br className="hidden sm:block" />
-                        <span className="text-gradient-electric">{t('hero.titleHighlight')}</span>
+                        <span className="text-electric">{t('hero.titleHighlight')}</span>
                     </motion.h1>
 
                     {/* Sub-headline */}

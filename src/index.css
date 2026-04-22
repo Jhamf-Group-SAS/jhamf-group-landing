@@ -94,28 +94,14 @@
     -webkit-backdrop-filter: blur(24px);
   }
 
-  /* Electric gradient text */
-  .text-gradient-electric {
-    background: linear-gradient(135deg, #0066FF 0%, #00D4FF 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  /* Brand accent text — solid electric blue */
+  .text-accent-electric {
+    color: #3388FF;
   }
 
-  /* Plasma gradient text */
-  .text-gradient-plasma {
-    background: linear-gradient(135deg, #8B5CF6 0%, #00D4FF 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* Hero gradient text */
-  .text-gradient-hero {
-    background: linear-gradient(135deg, #ffffff 0%, #3388FF 50%, #00D4FF 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  /* Brand accent text — solid plasma purple */
+  .text-accent-plasma {
+    color: #A78BFA;
   }
 
   /* Neon border effect */

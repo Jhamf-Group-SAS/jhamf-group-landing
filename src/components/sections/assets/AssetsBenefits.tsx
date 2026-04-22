@@ -42,7 +42,7 @@ const AssetsBenefits: React.FC = () => {
                         className="text-3xl md:text-5xl font-display font-bold text-white mb-4"
                     >
                         {t('benefits.title')}{' '}
-                        <span className="text-gradient-plasma">{t('benefits.titleHighlight')}</span>
+                        <span className="text-plasma-bright">{t('benefits.titleHighlight')}</span>
                     </motion.h2>
                 </div>
 

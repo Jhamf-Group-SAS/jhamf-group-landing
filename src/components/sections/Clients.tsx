@@ -63,7 +63,7 @@ const Clients = () => {
                     <span className="eyebrow-chip">{t('clients.eyebrow')}</span>
                     <h2 className="mt-4 text-4xl md:text-5xl font-display font-bold tracking-tight">
                         {t('clients.headline_1')}{' '}
-                        <span className="text-gradient-electric">{t('clients.headline_2')}</span>
+                        <span className="text-electric">{t('clients.headline_2')}</span>
                     </h2>
                     <p className="mt-4 text-lg text-steel font-light max-w-xl mx-auto">
                         {t('clients.subtext')}

@@ -38,7 +38,7 @@ const AssetsIntegration: React.FC = () => {
                         className="text-3xl md:text-5xl font-display font-bold text-white mb-4"
                     >
                         {t('integration.title')}{' '}
-                        <span className="text-gradient-plasma">{t('integration.titleHighlight')}</span>
+                        <span className="text-plasma-bright">{t('integration.titleHighlight')}</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}

@@ -35,7 +35,7 @@ const InfraCTA: React.FC = () => {
                     className="text-3xl md:text-5xl font-display font-bold text-white mb-6"
                 >
                     {t('cta.title')}{' '}
-                    <span className="text-gradient-electric">{t('cta.titleHighlight')}</span>
+                    <span className="text-electric">{t('cta.titleHighlight')}</span>
                 </motion.h2>
 
                 <motion.p

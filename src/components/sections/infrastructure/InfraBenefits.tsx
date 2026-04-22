@@ -41,7 +41,7 @@ const InfraBenefits: React.FC = () => {
                         className="text-3xl md:text-5xl font-display font-bold text-white mb-4"
                     >
                         {t('benefits.title')}{' '}
-                        <span className="text-gradient-electric">{t('benefits.titleHighlight')}</span>
+                        <span className="text-electric">{t('benefits.titleHighlight')}</span>
                     </motion.h2>
                 </div>
 

@@ -43,7 +43,7 @@ const AssetsHardware: React.FC = () => {
                         className="text-3xl md:text-5xl font-display font-bold text-white mb-4"
                     >
                         {t('hardware.title')}{' '}
-                        <span className="text-gradient-plasma">{t('hardware.titleHighlight')}</span>
+                        <span className="text-plasma-bright">{t('hardware.titleHighlight')}</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}

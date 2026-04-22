@@ -43,7 +43,7 @@ const InfraServices: React.FC = () => {
                         className="text-3xl md:text-5xl font-display font-bold text-white mb-4"
                     >
                         {t('services.title')}{' '}
-                        <span className="text-gradient-electric">{t('services.titleHighlight')}</span>
+                        <span className="text-electric">{t('services.titleHighlight')}</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}

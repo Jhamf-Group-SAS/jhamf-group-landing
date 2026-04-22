@@ -41,7 +41,7 @@ const AssetsHero: React.FC = () => {
                     >
                         {t('hero.title')}{' '}
                         <br className="hidden sm:block" />
-                        <span className="text-gradient-plasma">{t('hero.titleHighlight')}</span>
+                        <span className="text-plasma-bright">{t('hero.titleHighlight')}</span>
                     </motion.h1>
 
                     {/* Subtitle */}

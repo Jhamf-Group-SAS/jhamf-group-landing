@@ -120,7 +120,7 @@ const AIAutomation = () => {
 
                         <h2 className="mt-5 text-4xl md:text-5xl font-display font-bold tracking-tight">
                             {t('ai_automation.headline_1')} <br />
-                            <span className="text-gradient-plasma">{t('ai_automation.headline_2')}</span>
+                            <span className="text-plasma-bright">{t('ai_automation.headline_2')}</span>
                         </h2>
 
                         <p className="mt-5 text-lg text-steel font-light leading-relaxed max-w-lg">

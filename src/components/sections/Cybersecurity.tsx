@@ -85,7 +85,7 @@ const Cybersecurity = () => {
                         </span>
                         <h2 className="mt-5 text-4xl md:text-5xl font-display font-bold tracking-tight">
                             {t('cyber.headline_1')} <br />
-                            <span className="text-gradient-plasma">{t('cyber.headline_2')}</span>
+                            <span className="text-plasma-bright">{t('cyber.headline_2')}</span>
                         </h2>
                         <p className="mt-5 text-lg text-steel font-light leading-relaxed max-w-xl">
                             {t('cyber.subtext')}

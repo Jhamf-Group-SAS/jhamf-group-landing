@@ -97,23 +97,31 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({
                             </a>
                         </div>
 
-                        <form className="space-y-4" onSubmit={handleSubmit}>
+                        <form className="space-y-4" onSubmit={handleSubmit} aria-label="Formulario de contacto">
                             {formInputs.map((input, idx) => (
                                 <div key={idx}>
-                                    <label htmlFor={`input-${idx}`} className="sr-only">{input.placeholder}</label>
+                                    <label htmlFor={`field-${idx}`} className="block text-sm font-medium text-steel mb-2">
+                                        {input.type === 'text' ? 'Nombre de la empresa' : 'Correo corporativo'}
+                                        <span className="sr-only"> (requerido)</span>
+                                    </label>
                                     <input
-                                        id={`input-${idx}`}
+                                        id={`field-${idx}`}
                                         type={input.type}
                                         required
+                                        aria-required="true"
+                                        autoComplete={input.type === 'email' ? 'email' : 'organization'}
                                         placeholder={input.placeholder}
-                                        className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-azure transition-colors"
+                                        className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-electric focus:border-electric transition-colors"
                                     />
                                 </div>
                             ))}
                             {formSelect && (
                                 <div>
-                                    <label htmlFor="form-select" className="sr-only">{formSelect.placeholder}</label>
-                                    <select required id="form-select" className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-gray-300 focus:outline-none focus:border-azure transition-colors">
+                                    <label htmlFor="form-select" className="block text-sm font-medium text-steel mb-2">
+                                        {formSelect.placeholder}
+                                        <span className="sr-only"> (requerido)</span>
+                                    </label>
+                                    <select required id="form-select" aria-required="true" className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-gray-300 focus:outline-none focus:ring-2 focus:ring-electric focus:border-electric transition-colors">
                                         <option value="" disabled selected>{formSelect.placeholder}</option>
                                         {formSelect.options.map((opt, idx) => (
                                             <option key={idx} value={opt}>{opt}</option>
@@ -125,14 +133,24 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({
                             <button
                                 type="submit"
                                 disabled={isSubmitting || isSuccess}
-                                className={`w-full text-white font-medium py-3 rounded-lg transition-all flex items-center justify-center gap-2 group ${buttonClass} disabled:opacity-75`}
+                                aria-label={isSubmitting ? 'Enviando formulario...' : isSuccess ? 'Formulario enviado correctamente' : formCtaText}
+                                className={`w-full text-white font-medium py-3 rounded-lg transition-all flex items-center justify-center gap-2 group focus-visible:ring-2 focus-visible:ring-electric focus-visible:outline-none ${buttonClass} disabled:opacity-75`}
                             >
                                 {isSubmitting ? (
-                                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                                    <span className="flex items-center gap-2">
+                                        <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" aria-hidden="true" />
+                                        <span>Enviando...</span>
+                                    </span>
                                 ) : isSuccess ? (
-                                    <>¡Solicitud Enviada! <CheckCircle className="w-4 h-4 text-green-400" /></>
+                                    <span className="flex items-center gap-2">
+                                        <CheckCircle className="w-4 h-4 text-green-400" aria-hidden="true" />
+                                        <span>Solicitud Enviada</span>
+                                    </span>
                                 ) : (
-                                    <>{formCtaText} <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" /></>
+                                    <span className="flex items-center gap-2">
+                                        <span>{formCtaText}</span>
+                                        <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                                    </span>
                                 )}
                             </button>
                         </form>

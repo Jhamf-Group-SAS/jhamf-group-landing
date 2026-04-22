@@ -107,7 +107,7 @@ const Navbar = ({ onOpenWizard }: NavbarProps) => {
 
                     {/* Mobile hamburger */}
                     <button
-                        className="lg:hidden text-steel hover:text-white p-2 rounded-lg hover:bg-white/5 transition-colors"
+                        className="lg:hidden text-steel hover:text-white w-11 h-11 flex items-center justify-center rounded-lg hover:bg-white/5 transition-colors focus-visible:ring-2 focus-visible:ring-electric focus-visible:outline-none"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
                         aria-expanded={isMobileMenuOpen}
@@ -132,7 +132,7 @@ const Navbar = ({ onOpenWizard }: NavbarProps) => {
                                 <button
                                     key={link.key}
                                     onClick={() => handleNavAnchor(link.id)}
-                                    className="text-left px-4 py-3 text-sm font-medium text-steel hover:text-white hover:bg-white/5 rounded-lg transition-all bg-transparent border-none cursor-pointer w-full"
+                                    className="text-left px-4 min-h-11 flex items-center text-sm font-medium text-steel hover:text-white hover:bg-white/5 rounded-lg transition-all bg-transparent border-none cursor-pointer w-full focus-visible:ring-2 focus-visible:ring-electric focus-visible:outline-none"
                                 >
                                     {link.name}
                                 </button>

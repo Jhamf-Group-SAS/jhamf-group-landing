@@ -53,7 +53,7 @@ const CTABanner = () => {
                     <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight text-white">
                         {t('cta_banner.headline_1')}
                         <br />
-                        <span className="text-gradient-hero">{t('cta_banner.headline_2')}</span>
+                        <span className="text-electric">{t('cta_banner.headline_2')}</span>
                     </h2>
 
                     <p className="mt-6 text-lg text-steel font-light max-w-2xl mx-auto leading-relaxed">

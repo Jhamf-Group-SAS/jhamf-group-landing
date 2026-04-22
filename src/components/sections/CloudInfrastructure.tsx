@@ -54,7 +54,7 @@ const CloudInfrastructure = () => {
                         </span>
                         <h2 className="mt-5 text-4xl md:text-5xl font-display font-bold tracking-tight">
                             {t('cloud.headline_1')} <br />
-                            <span className="text-gradient-electric">{t('cloud.headline_2')}</span>
+                            <span className="text-electric">{t('cloud.headline_2')}</span>
                         </h2>
                     </div>
                     <p className="text-lg text-steel font-light leading-relaxed lg:self-end">
@@ -111,7 +111,7 @@ const CloudInfrastructure = () => {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         {stats.map((stat) => (
                             <div key={stat.label} className="text-center">
-                                <div className="text-3xl font-display font-bold text-gradient-electric">{stat.value}</div>
+                                <div className="text-3xl font-display font-bold text-electric">{stat.value}</div>
                                 <div className="mt-1 text-xs text-steel font-medium tracking-wide">{stat.label}</div>
                             </div>
                         ))}

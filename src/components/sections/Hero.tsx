@@ -72,7 +72,7 @@ const Hero = ({ onOpenWizard }: HeroProps) => {
                     className="mt-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-display font-bold leading-[1.05] tracking-tight max-w-5xl"
                 >
                     {t('hero.headline_1')}{' '}
-                    <span className="block text-gradient-hero">
+                    <span className="block text-electric">
                         {t('hero.headline_2')}
                     </span>
                     <span className="block text-white">{t('hero.headline_3')}</span>
@@ -149,7 +149,7 @@ const Hero = ({ onOpenWizard }: HeroProps) => {
                                 className="stat-card"
                             >
                                 <div
-                                    className="text-3xl font-display font-bold text-gradient-electric"
+                                    className="text-3xl font-display font-bold text-electric"
                                     aria-label={t(`stats.${key}_value`)}
                                 >
                                     {t(`stats.${key}_value`)}
