@@ -37,5 +37,53 @@
     "cta_schedule": "Schedule Consultation",
     "cta_diagnostic": "Start AI Diagnostic",
     "learn_more": "Learn more",
-    "included": "Included"
+    "included": "Included",
+    "quoter": {
+        "eyebrow": "AI OMNICHANNEL",
+        "title": "Configurator",
+        "subtitle": "Valora Suite",
+        "description": "Design the perfect customer service environment for your operation.",
+        "sections": {
+            "plans": "Select a Plan",
+            "addons": "Add-ons (Optional)",
+            "client": "Commercial Data"
+        },
+        "badges": {
+            "popular": "POPULAR"
+        },
+        "actions": {
+            "select": "Choose Plan",
+            "selected": "Selected",
+            "pdf": "Download PDF",
+            "whatsapp": "Send to Advisor"
+        },
+        "form": {
+            "company": "Company",
+            "name": "Contact Name",
+            "nit": "TAX ID / Document",
+            "email": "Email Address",
+            "phone": "Phone",
+            "city": "City",
+            "sector": "Sector",
+            "sector_placeholder": "Select a sector",
+            "sectors": {
+                "health": "Healthcare",
+                "realestate": "Real Estate",
+                "retail": "Retail / Commerce",
+                "services": "Services",
+                "other": "Other"
+            },
+            "validity": "Validity (Days)"
+        },
+        "summary": {
+            "title": "Quote Summary",
+            "plan": "Plan",
+            "addons": "Add-ons",
+            "monthly": "Monthly Total",
+            "taxes": "Taxes not included"
+        },
+        "errors": {
+            "empresa_required": "Please enter the company name."
+        }
+    }
 }

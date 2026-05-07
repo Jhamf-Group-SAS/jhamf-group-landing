@@ -37,5 +37,53 @@
     "cta_schedule": "Agendar Consultoría",
     "cta_diagnostic": "Iniciar Diagnóstico IA",
     "learn_more": "Ver detalles",
-    "included": "Incluido"
+    "included": "Incluido",
+    "quoter": {
+        "eyebrow": "OMNICANALIDAD IA",
+        "title": "Configurador",
+        "subtitle": "Valora Suite",
+        "description": "Diseña el entorno de atención perfecto para tu operación.",
+        "sections": {
+            "plans": "Selecciona un Plan",
+            "addons": "Potenciadores (Opcional)",
+            "client": "Datos Comerciales"
+        },
+        "badges": {
+            "popular": "POPULAR"
+        },
+        "actions": {
+            "select": "Elegir Plan",
+            "selected": "Seleccionado",
+            "pdf": "Descargar PDF",
+            "whatsapp": "Enviar a Asesor"
+        },
+        "form": {
+            "company": "Empresa",
+            "name": "Nombre de Contacto",
+            "nit": "NIT / Documento",
+            "email": "Correo Electrónico",
+            "phone": "Teléfono",
+            "city": "Ciudad",
+            "sector": "Sector",
+            "sector_placeholder": "Selecciona un sector",
+            "sectors": {
+                "health": "Salud",
+                "realestate": "Inmobiliario",
+                "retail": "Retail / Comercio",
+                "services": "Servicios",
+                "other": "Otro"
+            },
+            "validity": "Vigencia (Días)"
+        },
+        "summary": {
+            "title": "Resumen de Cotización",
+            "plan": "Plan",
+            "addons": "Add-ons",
+            "monthly": "Total Mensual",
+            "taxes": "No incluye IVA"
+        },
+        "errors": {
+            "empresa_required": "Por favor ingresa el nombre de la empresa."
+        }
+    }
 }
