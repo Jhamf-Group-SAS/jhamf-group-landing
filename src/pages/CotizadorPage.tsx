@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import { Check, Info, FileText, Send, Phone, MapPin, Mail, Building, User, Calendar, Plus, Minus } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { generatePDF } from "./CotizadorPDF";
@@ -7,14 +7,27 @@ import { PLANS, ADDONS, fmt, type PlanKey } from "./CotizadorData";
 export default function CotizadorPage() {
   const { t } = useTranslation();
   const [selectedPlan, setSelectedPlan] = useState<PlanKey>("growth");
-  const [selectedAddons, setSelectedAddons] = useState<Record<string, typeof ADDONS[0]>>({});
+  const [selectedAddons, setSelectedAddons] = useState<Record<string, { addon: typeof ADDONS[0], qty: number }>>({});
   const [formData, setFormData] = useState({ nombre: "", empresa: "", nit: "", email: "", tel: "", ciudad: "", sector: "", vigencia: "30" });
 
   const toggleAddon = (addon: typeof ADDONS[0]) => {
+    if (addon.isQty) return;
     setSelectedAddons(prev => {
       const next = { ...prev };
       if (next[addon.id]) delete next[addon.id];
-      else next[addon.id] = addon;
+      else next[addon.id] = { addon, qty: 1 };
+      return next;
+    });
+  };
+
+  const updateQty = (addon: typeof ADDONS[0], delta: number, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setSelectedAddons(prev => {
+      const next = { ...prev };
+      const currentQty = next[addon.id]?.qty || 0;
+      const newQty = Math.max(0, currentQty + delta);
+      if (newQty === 0) delete next[addon.id];
+      else next[addon.id] = { addon, qty: newQty };
       return next;
     });
   };
@@ -25,7 +38,7 @@ export default function CotizadorPage() {
 
   const plan = PLANS[selectedPlan];
   const addonEntries = Object.values(selectedAddons);
-  const addonTotal = addonEntries.reduce((s, a) => s + a.price, 0);
+  const addonTotal = addonEntries.reduce((s, a) => s + (a.addon.price * a.qty), 0);
   const total = plan.price + addonTotal;
 
   const handleWhatsApp = () => {
@@ -34,7 +47,7 @@ export default function CotizadorPage() {
       return;
     }
     const msg = encodeURIComponent(
-      `Hola Jhamf Group!\n\nEstoy interesado en el *${plan.name}* (${plan.subtitle}) para *${formData.empresa}*.\n\nTotal estimado: *${fmt(total)}/mes*\n${addonEntries.length ? "\nAdd-ons: " + addonEntries.map(a => a.name).join(", ") : ""}\n\nQuedo atento para continuar con la propuesta.\n\n_${formData.nombre}_`
+      `Hola Jhamf Group!\n\nEstoy interesado en el *${plan.name}* (${plan.subtitle}) para *${formData.empresa}*.\n\nTotal estimado: *${fmt(total)}/mes*\n${addonEntries.length ? "\nAdd-ons: " + addonEntries.map(a => `${a.addon.name}${a.addon.isQty ? ` (x${a.qty})` : ''}`).join(", ") : ""}\n\nQuedo atento para continuar con la propuesta.\n\n_${formData.nombre}_`
     );
     window.open("https://wa.me/573022388714?text=" + msg, "_blank");
   };
@@ -125,27 +138,41 @@ export default function CotizadorPage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {ADDONS.map(addon => {
-                  const isSelected = !!selectedAddons[addon.id];
+                  const qty = selectedAddons[addon.id]?.qty || 0;
+                  const isSelected = qty > 0;
                   return (
-                    <button
+                    <div
                       key={addon.id}
-                      onClick={() => toggleAddon(addon)}
-                      role="switch"
-                      aria-checked={isSelected}
-                      className={`p-5 text-left border flex flex-col justify-between transition-colors ${isSelected ? "border-white bg-neutral-900" : "border-neutral-800 bg-black hover:border-neutral-700"}`}
+                      onClick={() => !addon.isQty && toggleAddon(addon)}
+                      role={addon.isQty ? "region" : "switch"}
+                      aria-checked={addon.isQty ? undefined : isSelected}
+                      className={`p-5 text-left border flex flex-col justify-between transition-colors ${isSelected ? "border-white bg-neutral-900" : "border-neutral-800 bg-black"} ${!addon.isQty && "hover:border-neutral-700 cursor-pointer"}`}
                     >
                       <div className="flex justify-between items-start mb-3">
                         <h3 className="font-bold text-lg">{addon.name}</h3>
-                        <div className={`p-1.5 rounded-full ${isSelected ? "bg-white text-black" : "bg-neutral-800 text-neutral-400"}`}>
-                          {isSelected ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
-                        </div>
+                        {!addon.isQty && (
+                          <div className={`p-1.5 rounded-full ${isSelected ? "bg-white text-black" : "bg-neutral-800 text-neutral-400"}`}>
+                            {isSelected ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                          </div>
+                        )}
                       </div>
                       <p className="text-sm text-neutral-400 mb-4 flex-grow">{addon.desc}</p>
-                      <div className="text-sm">
-                        <span className="font-bold text-white">{fmt(addon.price)}</span>
-                        <span className="text-neutral-500">{addon.period}</span>
+                      
+                      <div className="flex justify-between items-center mt-2">
+                        <div className="text-sm">
+                          <span className="font-bold text-white">{fmt(addon.price)}</span>
+                          <span className="text-neutral-500">{addon.period}</span>
+                        </div>
+                        
+                        {addon.isQty && (
+                          <div className="flex items-center gap-3 bg-neutral-950 border border-neutral-800 rounded p-1">
+                            <button onClick={(e) => updateQty(addon, -1, e)} className="p-1 hover:text-white text-neutral-400"><Minus className="h-3 w-3" /></button>
+                            <span className="text-sm font-mono w-4 text-center">{qty}</span>
+                            <button onClick={(e) => updateQty(addon, 1, e)} className="p-1 hover:text-white text-neutral-400"><Plus className="h-3 w-3" /></button>
+                          </div>
+                        )}
                       </div>
-                    </button>
+                    </div>
                   );
                 })}
               </div>
@@ -206,9 +233,12 @@ export default function CotizadorPage() {
                     <p className="text-sm text-neutral-400 uppercase tracking-wider mb-3">{t("quoter.summary.addons", "Add-ons")}</p>
                     <ul className="space-y-2">
                       {addonEntries.map(a => (
-                        <li key={a.id} className="flex justify-between items-center text-sm">
-                          <span className="text-neutral-300">{a.name}</span>
-                          <span className="font-mono">{fmt(a.price)}</span>
+                        <li key={a.addon.id} className="flex justify-between items-center text-sm">
+                          <span className="text-neutral-300 flex items-center gap-2">
+                            {a.addon.name}
+                            {a.addon.isQty && <span className="bg-neutral-800 px-1.5 py-0.5 rounded text-xs">x{a.qty}</span>}
+                          </span>
+                          <span className="font-mono">{fmt(a.addon.price * a.qty)}</span>
                         </li>
                       ))}
                     </ul>

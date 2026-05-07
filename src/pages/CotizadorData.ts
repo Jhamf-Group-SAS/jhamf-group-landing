@@ -1,20 +1,21 @@
 ﻿export type PlanKey = "basic" | "growth" | "premium";
 export interface Plan { name: string; subtitle: string; price: number; tag: string; features: string[]; color: string; gradient: string; planColors: [number,number,number]; badge?: string; }
-export interface Addon { id: string; name: string; price: number; period: string; desc: string; }
+export interface Addon { id: string; name: string; price: number; period: string; desc: string; isQty?: boolean; unit?: string; }
 
 export const PLANS: Record<PlanKey, Plan> = {
   basic: { name:"Básico", subtitle:"Arranque digital omnicanal", price:990000, tag:"Ideal para equipos pequeños de hasta 5 agentes.", planColors:[59,130,246], color:"#3B82F6", gradient:"from-blue-600 to-blue-400", features:["5 agentes incluidos","1 canal WhatsApp","Bandeja unificada","Respuestas automáticas","Trazabilidad básica","Reportes básicos","Roles y permisos básicos","Hosting compartido","Soporte horario hábil","Onboarding inicial"] },
-  growth: { name:"Growth", subtitle:"Escala tu atención con IA", price:2490000, tag:"Para equipos de 10 agentes con flujos IA incluidos.", badge:"POPULAR", planColors:[0,184,217], color:"#00B8D9", gradient:"from-cyan-500 to-cyan-300", features:["10 agentes incluidos","3 canales WhatsApp","Bandeja multicanal","1 flujo IA automatizado","Respuestas automáticas","Enrutamiento inteligente","Dashboard de métricas","Roles por agente","Hosting administrado","SLA prioritario","Integración API (adicional)","Onboarding asistido"] },
-  premium: { name:"Premium", subtitle:"Omnicanal enterprise con IA avanzada", price:4990000, tag:"Para operaciones de alto volumen con 20 agentes y 5 flujos IA.", planColors:[168,85,247], color:"#A855F7", gradient:"from-purple-600 to-purple-400", features:["20 agentes incluidos","5 canales WhatsApp","Instagram / Facebook (adicional)","5 flujos IA avanzados","Agentes IA por proceso","Escalamiento automático IA + humano","Dashboard ejecutivo completo","Dominio propio","Infraestructura dedicada","Integraciones API incluidas","Soporte prioritario","Acompañamiento técnico evolutivo","10 h/mes optimización","10 h/mes desarrollo","Onboarding completo"] }
+  growth: { name:"Growth", subtitle:"Escala tu atención con IA", price:1990000, tag:"Para equipos de 10 agentes con flujos IA incluidos.", badge:"POPULAR", planColors:[0,184,217], color:"#00B8D9", gradient:"from-cyan-500 to-cyan-300", features:["10 agentes incluidos","3 canales WhatsApp","Bandeja multicanal","1 flujo IA automatizado","Respuestas automáticas","Enrutamiento inteligente","Dashboard de métricas","Roles por agente","Hosting administrado","SLA prioritario","Integración API (adicional)","Onboarding asistido"] },
+  premium: { name:"Premium", subtitle:"Omnicanal enterprise con IA avanzada", price:2990000, tag:"Para operaciones de alto volumen con 20 agentes y 5 flujos IA.", planColors:[168,85,247], color:"#A855F7", gradient:"from-purple-600 to-purple-400", features:["20 agentes incluidos","5 canales WhatsApp","Instagram / Facebook (adicional)","5 flujos IA avanzados","Agentes IA por proceso","Escalamiento automático IA + humano","Dashboard ejecutivo completo","Dominio propio","Infraestructura dedicada","Integraciones API incluidas","Soporte prioritario","Acompañamiento técnico evolutivo","10 h/mes optimización","10 h/mes desarrollo","Onboarding completo"] }
 };
 
 export const ADDONS: Addon[] = [
-  { id:"bot_adicional", name:"Bot IA adicional", price:590000, period:"/mes", desc:"Agente conversacional entrenado por proceso adicional." },
-  { id:"canal_ig", name:"Canal Instagram/Facebook", price:390000, period:"/mes", desc:"Integración directa con Meta Business Suite." },
-  { id:"api", name:"Integración API empresarial", price:490000, period:"/implementación", desc:"Conector con CRM, ERP u otros sistemas." },
-  { id:"analitica", name:"Analítica avanzada", price:350000, period:"/mes", desc:"BI embebido con dashboards ejecutivos personalizados." },
-  { id:"soporte_24", name:"Soporte 24/7", price:290000, period:"/mes", desc:"Atención técnica fuera de horario hábil." },
-  { id:"onboarding_plus", name:"Onboarding Plus", price:890000, period:"/único", desc:"Capacitación profunda + documentación + plan de adopción." }
+  { id:"canal_wa", name:"Canal WhatsApp adicional", price:250000, period:"/mes c/u", desc:"Amplía cobertura con nuevas líneas activas.", isQty:true, unit:"canales" },
+  { id:"agente", name:"Agente adicional", price:90000, period:"/mes c/u", desc:"Añade capacidad de atención por agente.", isQty:true, unit:"agentes" },
+  { id:"flujo_ia", name:"Flujo IA adicional", price:400000, period:"/mes c/u", desc:"Automatiza un proceso adicional con IA.", isQty:true, unit:"flujos" },
+  { id:"canal_ig", name:"Canales Instagram y Facebook", price:350000, period:"/mes", desc:"Integra ambos canales sociales a tu plataforma." },
+  { id:"api", name:"Integración API externa", price:800000, period:"/única vez", desc:"CRM, ERP, plataformas propias." },
+  { id:"bot_area", name:"Bot entrenado por área", price:600000, period:"/única vez", desc:"Soporte, ventas, RRHH, etc." },
+  { id:"sla", name:"SLA extendido 24/7", price:800000, period:"/mes", desc:"Soporte fuera de horario hábil." }
 ];
 
 export const PLAN_FEATURES_PDF: Record<PlanKey, [string,string][]> = {
