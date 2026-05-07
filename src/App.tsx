@@ -13,6 +13,7 @@ import InfrastructurePage from './pages/InfrastructurePage';
 import AssetsPage from './pages/AssetsPage';
 import SupportPage from './pages/SupportPage';
 import CyberArchPage from './pages/CyberArchPage';
+import CotizadorPage from './pages/CotizadorPage';
 import { SUPPORTED_LANGUAGES } from './i18n';
 import type { SupportedLanguage } from './i18n';
 import { useHashScroll } from './hooks/useHashScroll';
@@ -103,6 +104,10 @@ function LocalizedRoutes() {
         {/* Nueva Subpágina Ciberseguridad */}
         <Route path="ciberseguridad/arquitectura-y-proteccion" element={<CyberArchPage />} />
         <Route path="cybersecurity/architecture-and-protection" element={<CyberArchPage />} />
+
+        {/* Cotizador */}
+        <Route path="cotizador" element={<CotizadorPage />} />
+        <Route path="quoter" element={<CotizadorPage />} />
 
         <Route path="*" element={<Navigate to="." replace />} />
       </Routes>
