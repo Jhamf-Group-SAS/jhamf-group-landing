@@ -4,12 +4,12 @@ import { PLANS, ADDONS, PLAN_FEATURES_PDF, fmt, type PlanKey } from "./Cotizador
 
 export const generatePDF = (
   selectedPlan: PlanKey,
-  selectedAddons: Record<string, typeof ADDONS[0]>,
+  selectedAddons: Record<string, { addon: typeof ADDONS[0], qty: number }>,
   formData: { nombre: string; empresa: string; nit: string; email: string; tel: string; ciudad: string; sector: string; vigencia: string }
 ) => {
   const plan = PLANS[selectedPlan];
   const addonEntries = Object.values(selectedAddons);
-  const addonTotal = addonEntries.reduce((s, a) => s + a.price, 0);
+  const addonTotal = addonEntries.reduce((s, a) => s + (a.addon.price * a.qty), 0);
   const total = plan.price + addonTotal;
 
   const doc = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
@@ -125,7 +125,7 @@ export const generatePDF = (
     autoTable(doc, {
       startY: y,
       head: [["Add-on", "Modalidad", "Precio"]],
-      body: addonEntries.map(a => [a.name, a.period, fmt(a.price)]),
+      body: addonEntries.map(a => [a.addon.name + (a.addon.isQty ? ` (x${a.qty})` : ""), a.addon.period, fmt(a.addon.price * a.qty)]),
       theme: "grid",
       headStyles: { fillColor: [245, 247, 250], textColor: [pr, pg, pb], fontSize: 7.5, fontStyle: "bold" },
       bodyStyles: { fillColor: [255, 255, 255], textColor: [40, 50, 70], fontSize: 8, lineColor: [220, 225, 235] },
