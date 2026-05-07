@@ -1,8 +1,8 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import { Check, Info, FileText, Send, Phone, MapPin, Mail, Building, User, Calendar, Plus, Minus } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { generatePDF } from "./CotizadorPDF";
-import { PLANS, ADDONS, fmt, PlanKey } from "./CotizadorData";
+import { PLANS, ADDONS, fmt, type PlanKey } from "./CotizadorData";
 
 export default function CotizadorPage() {
   const { t } = useTranslation();

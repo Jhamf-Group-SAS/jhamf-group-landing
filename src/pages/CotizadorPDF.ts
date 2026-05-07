@@ -1,6 +1,6 @@
-﻿import { jsPDF } from "jspdf";
+import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
-import { PLANS, ADDONS, PLAN_FEATURES_PDF, fmt, PlanKey } from "./CotizadorData";
+import { PLANS, ADDONS, PLAN_FEATURES_PDF, fmt, type PlanKey } from "./CotizadorData";
 
 export const generatePDF = (
   selectedPlan: PlanKey,
