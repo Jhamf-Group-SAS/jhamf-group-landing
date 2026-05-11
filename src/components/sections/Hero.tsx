@@ -9,7 +9,7 @@ interface HeroProps {
 const TRUST_BADGE_ICONS = ['⬡', '◈', '◇', '⬡'];
 
 const Hero = ({ onOpenWizard }: HeroProps) => {
-    const { t } = useTranslation('home');
+    const { t, i18n } = useTranslation('home');
     return (
         <section
             className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
@@ -103,6 +103,12 @@ const Hero = ({ onOpenWizard }: HeroProps) => {
                         {t('hero.cta_primary')}
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </button>
+                    <a
+                        href={`/${i18n.language || 'es'}/cotizador`}
+                        className="btn-ghost border border-white/20 hover:border-white/40"
+                    >
+                        Cotizador Valora Suite
+                    </a>
                     <a
                         href="https://form.typeform.com/to/gxR8JkE0"
                         target="_blank"
