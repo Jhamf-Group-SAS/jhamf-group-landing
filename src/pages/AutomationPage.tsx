@@ -45,6 +45,8 @@ const AutomationPage: React.FC = () => {
                     primaryCtaText={t('hero.primary_cta')}
                     secondaryCtaText={t('hero.secondary_cta')}
                     secondaryCtaLink="#solutions"
+                    cotizadorCtaText="Cotizador Valora Suite"
+                    cotizadorCtaLink={`/${lang}/cotizador`}
                     traits={[
                         { icon: <Sparkles className="w-6 h-6" />, label: `${t('hero.traits.0.val')} ${t('hero.traits.0.label')}` },
                         { icon: <Bot className="w-6 h-6" />, label: `${t('hero.traits.1.val')} ${t('hero.traits.1.label')}` },
@@ -55,10 +57,10 @@ const AutomationPage: React.FC = () => {
 
                 <ServiceBenefits
                     layout="split"
-                    bgClass="bg-[#05050A]"
+                    bgClass="bg-void"
                     title={
                         <Trans i18nKey="problems.title_1" ns="automation">
-                            ¿El <span className="text-red-500">Caos Operativo</span> frena tu crecimiento?
+                            ¿El Caos Operativo frena tu crecimiento?
                         </Trans>
                     }
                     description={t('problems.description')}
@@ -68,22 +70,22 @@ const AutomationPage: React.FC = () => {
                         { icon: <TrendingDown className="w-6 h-6 text-orange-500" />, title: t('problems.items.2.title'), description: t('problems.items.2.description') }
                     ]}
                     sideContent={
-                        <div className="h-full min-h-[400px] rounded-2xl border border-red-500/20 bg-gradient-to-br from-red-500/10 to-transparent p-8 flex flex-col justify-center relative overflow-hidden">
-                            <Bot className="w-64 h-64 text-red-500/5 absolute -right-10 -bottom-10" />
+                        <div className="h-full min-h-[400px] rounded-2xl border border-white/5 bg-gradient-to-br from-obsidian to-transparent p-8 flex flex-col justify-center relative overflow-hidden">
+                            <Bot className="w-64 h-64 text-white/5 absolute -right-10 -bottom-10" />
                             <div className="relative z-10 space-y-6">
-                                <div className="p-4 rounded-xl bg-obsidian/80 backdrop-blur-md border border-white/5 shadow-2xl animate-float">
+                                <div className="p-4 rounded-xl bg-obsidian/80 backdrop-blur-md border border-white/5 shadow-lg animate-float">
                                     <div className="flex items-center gap-3 mb-2">
-                                        <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                                        <p className="text-sm font-medium text-gray-300">"El reporte tiene errores de digitación..."</p>
+                                        <div className="w-2 h-2 rounded-full bg-red-400" />
+                                        <p className="text-sm font-medium text-gray-300">Reporte con errores detectado</p>
                                     </div>
-                                    <p className="text-xs text-red-400">Hace 2 horas</p>
+                                    <p className="text-xs text-gray-500">Operación Manual</p>
                                 </div>
-                                <div className="p-4 rounded-xl bg-obsidian/80 backdrop-blur-md border border-white/5 shadow-2xl animate-float" style={{ animationDelay: '1s' }}>
+                                <div className="p-4 rounded-xl bg-obsidian/80 backdrop-blur-md border border-white/5 shadow-lg animate-float" style={{ animationDelay: '1s' }}>
                                     <div className="flex items-center gap-3 mb-2">
-                                        <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-                                        <p className="text-sm font-medium text-gray-300">"Demora en respuesta: Cliente perdido"</p>
+                                        <div className="w-2 h-2 rounded-full bg-orange-400" />
+                                        <p className="text-sm font-medium text-gray-300">Retraso en respuesta al cliente</p>
                                     </div>
-                                    <p className="text-xs text-orange-400">Ayer</p>
+                                    <p className="text-xs text-gray-500">Cuello de botella</p>
                                 </div>
                             </div>
                         </div>
@@ -157,7 +159,7 @@ const AutomationPage: React.FC = () => {
                 {/* Use Cases Grid */}
                 <ServiceBenefits
                     layout="grid"
-                    bgClass="bg-[#05050A]"
+                    bgClass="bg-void"
                     title={t('use_cases.title')}
                     items={[
                         {

@@ -94,6 +94,14 @@ const Navbar = ({ onOpenWizard }: NavbarProps) => {
                     <div className="hidden lg:flex items-center gap-3">
                         <LanguageSwitcher />
 
+                        <a
+                            href={`/${lang}/cotizador`}
+                            className="group flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-neon-cyan rounded-xl border border-neon-cyan/40 hover:bg-neon-cyan/10 transition-all duration-200"
+                            aria-label="Ir al Cotizador Valora Suite"
+                        >
+                            Cotizar
+                        </a>
+
                         <button
                             onClick={onOpenWizard}
                             className="group flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white rounded-xl border border-electric/30 bg-electric/10 hover:bg-electric/20 hover:border-electric/60 transition-all duration-200 hover:shadow-electric focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric"
@@ -138,13 +146,17 @@ const Navbar = ({ onOpenWizard }: NavbarProps) => {
                                 </button>
                             ))}
 
-                            {/* Language switcher in mobile menu */}
-                            <div className="pt-3 mt-2 border-t border-white/5 flex items-center justify-between px-1">
-                                <span className="text-xs text-steel-dark font-medium">{t('nav.lang_switch_label')}</span>
-                                <LanguageSwitcher />
-                            </div>
-
-                            <div className="pt-2">
+                            <div className="pt-3 mt-2 border-t border-white/5 flex flex-col gap-3">
+                                <div className="flex items-center justify-between px-1">
+                                    <span className="text-xs text-steel-dark font-medium">{t('nav.lang_switch_label')}</span>
+                                    <LanguageSwitcher />
+                                </div>
+                                <a
+                                    href={`/${lang}/cotizador`}
+                                    className="w-full flex items-center justify-center gap-2 py-3 text-sm font-semibold text-neon-cyan rounded-xl border border-neon-cyan/40 hover:bg-neon-cyan/10 transition-all"
+                                >
+                                    Cotizar
+                                </a>
                                 <button
                                     onClick={() => { setIsMobileMenuOpen(false); onOpenWizard(); }}
                                     className="w-full flex items-center justify-center gap-2 py-3 text-sm font-semibold text-white rounded-xl border border-electric/40 bg-electric/10 hover:bg-electric/20 transition-all"

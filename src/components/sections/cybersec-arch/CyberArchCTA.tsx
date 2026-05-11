@@ -2,9 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useLocale } from '../../../hooks/useLocale';
 
 const CyberArchCTA: React.FC = () => {
     const { t } = useTranslation('cyberarch');
+    const { lang } = useLocale();
 
     return (
         <section className="py-24 bg-obsidian relative overflow-hidden">
@@ -24,10 +26,16 @@ const CyberArchCTA: React.FC = () => {
                         {t('cta.title')}
                     </h2>
 
-                    <a href="https://form.typeform.com/to/gxR8JkE0" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 bg-neon-cyan text-obsidian rounded-lg font-bold text-lg hover:bg-white hover:shadow-[0_0_30px_rgba(0,255,157,0.3)] transition-all group relative z-10">
-                        {t('cta.button')}
-                        <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                    </a>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <a href={`/${lang}/cotizador`} className="inline-flex items-center gap-2 px-8 py-4 bg-neon-cyan text-obsidian rounded-lg font-bold text-lg hover:bg-white hover:shadow-[0_0_30px_rgba(0,255,157,0.3)] transition-all group relative z-10 w-full sm:w-auto min-h-[44px]">
+                            Cotizador Valora Suite
+                            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                        </a>
+                        <a href="https://form.typeform.com/to/gxR8JkE0" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-neon-cyan/50 text-neon-cyan hover:bg-neon-cyan/10 rounded-lg font-bold text-lg transition-all group relative z-10 w-full sm:w-auto min-h-[44px]">
+                            {t('cta.button')}
+                            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                        </a>
+                    </div>
                 </motion.div>
             </div>
         </section>

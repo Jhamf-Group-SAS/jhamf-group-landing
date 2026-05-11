@@ -61,11 +61,13 @@ const IACaliPage: React.FC = () => {
                         e.preventDefault();
                         setIsWizardOpen(true);
                     }}
+                    cotizadorCtaText="Cotizador Valora Suite"
+                    cotizadorCtaLink={`/${lang}/cotizador`}
                 />
 
                 <ServiceBenefits
                     layout="grid"
-                    bgClass="bg-white/[0.02]"
+                    bgClass="bg-void"
                     title=""
                     items={[
                         {

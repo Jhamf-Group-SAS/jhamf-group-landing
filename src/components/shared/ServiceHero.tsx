@@ -12,6 +12,8 @@ export interface ServiceHeroProps {
     primaryCtaOnClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
     secondaryCtaText?: string;
     secondaryCtaLink?: string;
+    cotizadorCtaText?: string;
+    cotizadorCtaLink?: string;
     traits?: { icon: React.ReactNode; label: string }[];
     pillColorClass?: string;
     bgClass?: string;
@@ -27,6 +29,8 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
     primaryCtaOnClick,
     secondaryCtaText,
     secondaryCtaLink = "https://wa.me/573022388714",
+    cotizadorCtaText,
+    cotizadorCtaLink,
     traits,
     pillColorClass = "bg-white/5 border-white/10 text-white",
     bgClass = "bg-obsidian"
@@ -80,19 +84,25 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
                     >
                         <a
                             href={primaryCtaLink || "#"}
-                            target={primaryCtaLink ? "_blank" : undefined}
-                            rel={primaryCtaLink ? "noopener noreferrer" : undefined}
+                            target={primaryCtaLink && primaryCtaLink.startsWith('http') ? "_blank" : undefined}
+                            rel={primaryCtaLink && primaryCtaLink.startsWith('http') ? "noopener noreferrer" : undefined}
                             onClick={primaryCtaOnClick ? (e) => {
                                 if (!primaryCtaLink) e.preventDefault();
                                 primaryCtaOnClick(e);
                             } : undefined}
-                            className="px-8 py-4 bg-azure hover:bg-electric-glow text-white rounded-lg transition-all flex items-center justify-center gap-2 font-medium group relative overflow-hidden w-full sm:w-auto"
+                            className="px-8 py-4 bg-azure hover:bg-electric-glow text-white rounded-lg transition-all flex items-center justify-center gap-2 font-medium group relative overflow-hidden w-full sm:w-auto min-h-[44px]"
                         >
                             <span className="relative z-10">{primaryCtaText}</span>
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
                         </a>
+                        {cotizadorCtaText && cotizadorCtaLink && (
+                            <a href={cotizadorCtaLink} className="px-8 py-4 bg-transparent border-2 border-neon-cyan hover:bg-neon-cyan/10 text-neon-cyan rounded-lg transition-all flex items-center justify-center gap-2 font-medium group w-full sm:w-auto min-h-[44px]">
+                                <span className="relative z-10">{cotizadorCtaText}</span>
+                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
+                            </a>
+                        )}
                         {secondaryCtaText && (
-                            <a href={secondaryCtaLink} target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white rounded-lg transition-all flex items-center justify-center gap-2 font-medium border border-white/10 group w-full sm:w-auto">
+                            <a href={secondaryCtaLink} target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white rounded-lg transition-all flex items-center justify-center gap-2 font-medium border border-white/10 group w-full sm:w-auto min-h-[44px]">
                                 <span className="relative z-10">{secondaryCtaText}</span>
                                 <PhoneCall className="w-5 h-5 text-gray-400 group-hover:text-signal transition-colors relative z-10" />
                             </a>
