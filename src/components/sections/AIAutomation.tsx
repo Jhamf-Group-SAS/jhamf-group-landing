@@ -1,76 +1,154 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Brain, Workflow, BarChart3, Sparkles, ArrowRight } from 'lucide-react';
+import { Brain, Workflow, BarChart3, Sparkles, ArrowRight, FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useLocale } from '../../hooks/useLocale';
 
-// SVG pipeline visual — no user-visible strings, aria-hidden on parent
+// Animated workflow pipeline visual
 const AIPipelineVisual = ({ liveLabel, tasksLabel }: { liveLabel: string; tasksLabel: string }) => (
-    <div className="relative w-full h-full min-h-[420px] flex items-center justify-center" aria-hidden="true">
-        {/* Outer glow ring */}
-        <div
-            className="absolute inset-0 rounded-3xl pointer-events-none"
-            style={{ background: 'radial-gradient(ellipse at center, rgba(139,92,246,0.12) 0%, transparent 70%)' }}
-        />
+    <div className="relative w-full h-full min-h-[420px] flex items-center justify-center font-mono overflow-hidden rounded-2xl bg-void" aria-hidden="true">
+        {/* Background Grid */}
+        <div className="absolute inset-0 opacity-10" style={{ 
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)', 
+            backgroundSize: '20px 20px' 
+        }} />
 
-        <svg
-            viewBox="0 0 400 400"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-full max-w-sm"
-        >
-            {/* Outer ring */}
-            <circle cx="200" cy="200" r="170" stroke="rgba(139,92,246,0.12)" strokeWidth="1" />
-            <circle cx="200" cy="200" r="130" stroke="rgba(0,102,255,0.12)" strokeWidth="1" strokeDasharray="4 6" />
-            <circle cx="200" cy="200" r="90" stroke="rgba(0,212,255,0.1)" strokeWidth="1" />
-
-            {/* Center node */}
-            <circle cx="200" cy="200" r="36" fill="rgba(139,92,246,0.2)" stroke="rgba(139,92,246,0.6)" strokeWidth="1.5" />
-            <circle cx="200" cy="200" r="20" fill="rgba(139,92,246,0.4)" />
-            <circle cx="200" cy="200" r="7" fill="#A78BFA" />
-
-            {/* Satellite nodes */}
-            {[0, 60, 120, 180, 240, 300].map((angle, i) => {
-                const rad = (angle * Math.PI) / 180;
-                const x = 200 + 130 * Math.cos(rad);
-                const y = 200 + 130 * Math.sin(rad);
-                const colors = ['#0066FF', '#8B5CF6', '#00D4FF', '#0066FF', '#8B5CF6', '#00FF88'];
-                return (
-                    <g key={i}>
-                        <line x1="200" y1="200" x2={x} y2={y} stroke={colors[i]} strokeWidth="0.5" strokeOpacity="0.3" />
-                        <circle cx={x} cy={y} r="10" fill={`${colors[i]}22`} stroke={colors[i]} strokeWidth="1" strokeOpacity="0.7" />
-                        <circle cx={x} cy={y} r="3" fill={colors[i]} fillOpacity="0.8" />
-                    </g>
-                );
-            })}
-
-            {/* Outer orbit nodes */}
-            {[30, 90, 150, 210, 270, 330].map((angle, i) => {
-                const rad = (angle * Math.PI) / 180;
-                const x = 200 + 170 * Math.cos(rad);
-                const y = 200 + 170 * Math.sin(rad);
-                return (
-                    <circle key={i} cx={x} cy={y} r="4" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" />
-                );
-            })}
-
-            {/* Label */}
-            <text x="200" y="204" textAnchor="middle" fill="rgba(255,255,255,0.9)" fontSize="8" fontFamily="JetBrains Mono, monospace" fontWeight="500">
-                AI CORE
-            </text>
+        {/* Connection Lines */}
+        <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <line x1="15" y1="50" x2="50" y2="50" stroke="rgba(139,92,246,0.3)" strokeWidth="2" strokeDasharray="2 2" vectorEffect="non-scaling-stroke" />
+            <path d="M 50 50 L 65 50 L 70 25 L 85 25" fill="none" stroke="rgba(0,255,136,0.3)" strokeWidth="2" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
+            <path d="M 50 50 L 65 50 L 70 75 L 85 75" fill="none" stroke="rgba(0,102,255,0.3)" strokeWidth="2" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
         </svg>
 
+        {/* Particles */}
+        <motion.div 
+            className="absolute w-2 h-2 rounded-full bg-plasma-bright shadow-[0_0_10px_rgba(139,92,246,0.8)] -ml-1 -mt-1"
+            animate={{ left: ['15%', '50%'], top: ['50%', '50%'], opacity: [0, 1, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div 
+            className="absolute w-2 h-2 rounded-full bg-plasma-bright shadow-[0_0_10px_rgba(139,92,246,0.8)] -ml-1 -mt-1"
+            animate={{ left: ['15%', '50%'], top: ['50%', '50%'], opacity: [0, 1, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "linear", delay: 0.75 }}
+        />
+        <motion.div 
+            className="absolute w-2 h-2 rounded-full bg-signal shadow-[0_0_10px_rgba(0,255,136,0.8)] -ml-1 -mt-1"
+            animate={{ left: ['50%', '65%', '70%', '85%'], top: ['50%', '50%', '25%', '25%'], opacity: [0, 1, 1, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div 
+            className="absolute w-2 h-2 rounded-full bg-electric shadow-[0_0_10px_rgba(0,102,255,0.8)] -ml-1 -mt-1"
+            animate={{ left: ['50%', '65%', '70%', '85%'], top: ['50%', '50%', '75%', '75%'], opacity: [0, 1, 1, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: 1 }}
+        />
+
+        {/* Input Node (Repetitive Tasks) */}
+        <motion.div 
+            className="absolute left-[15%] top-[50%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-3"
+            initial={{ opacity: 0.9 }}
+        >
+            <div className="w-14 h-14 rounded-lg bg-[#0a0a0a] border border-white/10 flex items-center justify-center relative overflow-hidden shadow-lg">
+                <FileText className="w-6 h-6 text-steel" />
+                <motion.div 
+                    className="absolute inset-0 bg-white/5" 
+                    animate={{ y: ['100%', '-100%'] }} 
+                    transition={{ duration: 2, repeat: Infinity, ease: "linear" }} 
+                />
+            </div>
+            <div className="text-center bg-void/50 px-2 py-1 rounded backdrop-blur-sm">
+                <div className="text-[10px] text-steel font-bold tracking-widest uppercase">Manual</div>
+                <div className="text-[9px] text-steel/60">Hojas de cálculo</div>
+            </div>
+        </motion.div>
+
+        {/* Central AI Node */}
+        <motion.div 
+            className="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-4 z-10"
+            animate={{ y: ['-50%', 'calc(-50% - 5px)', '-50%'] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        >
+            <div className="relative">
+                <motion.div 
+                    className="absolute inset-0 bg-plasma-bright/30 blur-2xl rounded-full"
+                    animate={{ scale: [1, 1.3, 1], opacity: [0.4, 0.8, 0.4] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <div className="w-24 h-24 rounded-2xl bg-[#0a0a0a] border border-plasma-bright/50 text-plasma-bright flex items-center justify-center relative shadow-[0_0_30px_rgba(139,92,246,0.2)]">
+                    <Brain className="w-10 h-10" />
+                    <svg className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none">
+                        <circle cx="48" cy="48" r="46" fill="none" stroke="rgba(139,92,246,0.1)" strokeWidth="2" />
+                        <motion.circle 
+                            cx="48" cy="48" r="46" fill="none" stroke="rgba(139,92,246,0.8)" strokeWidth="2"
+                            strokeDasharray="289"
+                            animate={{ strokeDashoffset: [289, 0, 289] }}
+                            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                        />
+                    </svg>
+                </div>
+            </div>
+            <div className="flex flex-col items-center bg-[#0a0a0a]/80 backdrop-blur-sm border border-plasma/30 px-4 py-1.5 rounded-lg">
+                <span className="text-[11px] text-white font-bold tracking-wider">AI CORE</span>
+                <span className="text-[9px] text-plasma-bright animate-pulse">Automatizando...</span>
+            </div>
+        </motion.div>
+
+        {/* Output Node 1 (Strategy) */}
+        <motion.div 
+            className="absolute left-[85%] top-[25%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-3"
+            animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        >
+            <div className="w-14 h-14 rounded-full bg-[#0a0a0a] border border-signal/40 flex items-center justify-center shadow-[0_0_20px_rgba(0,255,136,0.15)] relative">
+                <motion.div 
+                    className="absolute inset-0 bg-signal/10 rounded-full"
+                    animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
+                />
+                <Sparkles className="w-6 h-6 text-signal" />
+            </div>
+            <div className="text-center bg-void/50 px-2 py-1 rounded backdrop-blur-sm">
+                <div className="text-[10px] text-signal font-bold tracking-widest uppercase">Estrategia</div>
+                <div className="text-[9px] text-signal/60">Enfoque vital</div>
+            </div>
+        </motion.div>
+
+        {/* Output Node 2 (Growth) */}
+        <motion.div 
+            className="absolute left-[85%] top-[75%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-3"
+            animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        >
+            <div className="w-14 h-14 rounded-full bg-[#0a0a0a] border border-electric/40 flex items-center justify-center shadow-[0_0_20px_rgba(0,102,255,0.15)] relative">
+                <motion.div 
+                    className="absolute inset-0 bg-electric/10 rounded-full"
+                    animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeOut", delay: 0.5 }}
+                />
+                <BarChart3 className="w-6 h-6 text-electric" />
+            </div>
+            <div className="text-center bg-void/50 px-2 py-1 rounded backdrop-blur-sm">
+                <div className="text-[10px] text-electric font-bold tracking-widest uppercase">Crecimiento</div>
+                <div className="text-[9px] text-electric/60">Escalabilidad</div>
+            </div>
+        </motion.div>
+
         {/* Floating badges */}
-        <div className="absolute top-6 right-6 px-3 py-1.5 rounded-full text-xs font-mono font-medium text-signal" style={{ background: 'rgba(0,255,136,0.1)', border: '1px solid rgba(0,255,136,0.25)' }}>
-            ● {liveLabel}
-        </div>
-        <div className="absolute bottom-8 left-6 px-3 py-1.5 rounded-lg text-xs font-mono text-electric" style={{ background: 'rgba(0,102,255,0.1)', border: '1px solid rgba(0,102,255,0.25)' }}>
-            12.4k {tasksLabel}
-        </div>
-        <div className="absolute top-1/3 left-4 px-3 py-1.5 rounded-lg text-xs font-mono text-neon-ice" style={{ background: 'rgba(0,212,255,0.08)', border: '1px solid rgba(0,212,255,0.2)' }}>
-            GPT-4o ↔ Azure
-        </div>
+        <motion.div 
+            className="absolute top-6 left-6 px-3 py-1.5 rounded-md text-[10px] font-medium text-signal border border-signal/20 bg-signal/10 flex items-center gap-2 backdrop-blur-sm"
+            animate={{ y: [0, -4, 0] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        >
+            <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse" />
+            {liveLabel}
+        </motion.div>
+        <motion.div 
+            className="absolute bottom-6 left-6 px-3 py-1.5 rounded-md text-[10px] text-electric border border-electric/20 bg-electric/10 backdrop-blur-sm"
+            animate={{ y: [0, 4, 0] }}
+            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        >
+            {tasksLabel}: 12.4k/hr
+        </motion.div>
     </div>
 );
 
