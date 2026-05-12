@@ -51,23 +51,21 @@ export const generatePDF = async (
   doc.setFillColor(0, 184, 217);
   doc.rect(0, 0, W, 28, "F");
 
-  // Logo en la barra superior (blanco sobre cyan)
+  // Logo en la barra superior (blanco sobre cyan) — izquierda
   if (logoBase64) {
-    // Logo width proporcional: ancho 44mm, alto 14mm aprox
     doc.addImage(logoBase64, "PNG", margin, 7, 44, 14);
   } else {
-    // Fallback texto si no carga imagen
     doc.setTextColor(255, 255, 255); doc.setFontSize(13); doc.setFont("helvetica", "bold");
     doc.text("JHAMF GROUP", margin, 18);
   }
 
-  // ISO badge
-  doc.setFillColor(255, 255, 255);
-  doc.roundedRect(W - margin - 46, 7, 46, 14, 3, 3, "F");
-  doc.setTextColor(0, 120, 160); doc.setFontSize(7); doc.setFont("helvetica", "bold");
-  doc.text("ISO 9001:2015 CERTIFIED", W - margin - 23, 13, { align: "center" });
-  doc.setTextColor(40, 40, 40); doc.setFontSize(6); doc.setFont("helvetica", "normal");
-  doc.text("COMPECER · jhamf.com", W - margin - 23, 18, { align: "center" });
+  // N° COTIZACIÓN — derecha de la barra cyan
+  doc.setTextColor(255, 255, 255); doc.setFontSize(6.5); doc.setFont("helvetica", "bold");
+  doc.text("N° COTIZACIÓN", W - margin - 2, 10, { align: "right" });
+  doc.setFontSize(9);
+  doc.text(cotiNum, W - margin - 2, 18, { align: "right" });
+  doc.setFontSize(6.5); doc.setFont("helvetica", "normal");
+  doc.text(dateStr, W - margin - 2, 24, { align: "right" });
 
   // Title Block
   doc.setFillColor(245, 247, 250);
@@ -83,14 +81,6 @@ export const generatePDF = async (
   doc.text("Portafolio Comercial 2025 · Jhamf Group S.A.S", margin, 57);
 
   const [pr, pg, pb] = plan.planColors;
-  doc.setFillColor(pr, pg, pb);
-  doc.roundedRect(W - margin - 50, 31, 50, 22, 3, 3, "F");
-  doc.setTextColor(255, 255, 255); doc.setFontSize(7); doc.setFont("helvetica", "bold");
-  doc.text("N° COTIZACIÓN", W - margin - 25, 39, { align: "center" });
-  doc.setFontSize(8);
-  doc.text(cotiNum, W - margin - 25, 46, { align: "center" });
-  doc.setFontSize(6.5); doc.setFont("helvetica", "normal");
-  doc.text(dateStr, W - margin - 25, 51, { align: "center" });
 
   let y = 68;
 
@@ -225,11 +215,17 @@ export const generatePDF = async (
   // Footer — siempre al fondo de la última página
   const pageH = doc.internal.pageSize.getHeight();
   doc.setFillColor(0, 184, 217);
-  doc.rect(0, pageH - 15, W, 15, "F");
-  doc.setTextColor(0, 0, 0); doc.setFontSize(7.5); doc.setFont("helvetica", "bold");
-  doc.text("Jhamf Group S.A.S — ISO 9001:2015 Certified · Jamundí, Valle · +57 302 238 8714 · www.jhamf.com", W / 2, pageH - 8, { align: "center" });
-  doc.setFont("helvetica", "normal"); doc.setFontSize(6.5);
-  doc.text("© 2025 Jhamf Group SAS · " + cotiNum, W / 2, pageH - 3, { align: "center" });
+  doc.rect(0, pageH - 18, W, 18, "F");
+
+  // Línea 1: ISO badge (izquierda) | contacto (centro) | N° cotización (derecha)
+  doc.setTextColor(255, 255, 255); doc.setFontSize(7.5); doc.setFont("helvetica", "bold");
+  doc.text("✦ ISO 9001:2015 CERTIFIED · COMPECER", margin, pageH - 10);
+  doc.text("Jhamf Group S.A.S · Jamundí, Valle · +57 302 238 8714 · www.jhamf.com", W / 2, pageH - 10, { align: "center" });
+  doc.text(cotiNum, W - margin, pageH - 10, { align: "right" });
+
+  // Línea 2: copyright
+  doc.setFont("helvetica", "normal"); doc.setFontSize(6); doc.setTextColor(0, 60, 80);
+  doc.text("© 2025 Jhamf Group SAS · Todos los derechos reservados", W / 2, pageH - 4, { align: "center" });
 
   doc.save("Cotizacion_ValoraSuite_" + (formData.empresa || "Cliente").replace(/\s+/g, "_") + "_" + cotiNum + ".pdf");
 };
