@@ -215,17 +215,16 @@ export const generatePDF = async (
   // Footer — siempre al fondo de la última página
   const pageH = doc.internal.pageSize.getHeight();
   doc.setFillColor(0, 184, 217);
-  doc.rect(0, pageH - 18, W, 18, "F");
+  doc.rect(0, pageH - 16, W, 16, "F");
 
-  // Línea 1: ISO badge (izquierda) | contacto (centro) | N° cotización (derecha)
+  // Línea 1 (centrada): contacto completo + certificación
   doc.setTextColor(255, 255, 255); doc.setFontSize(7.5); doc.setFont("helvetica", "bold");
-  doc.text("✦ ISO 9001:2015 CERTIFIED · COMPECER", margin, pageH - 10);
-  doc.text("Jhamf Group S.A.S · Jamundí, Valle · +57 302 238 8714 · www.jhamf.com", W / 2, pageH - 10, { align: "center" });
-  doc.text(cotiNum, W - margin, pageH - 10, { align: "right" });
+  doc.text("Jhamf Group S.A.S  |  ISO 9001:2015 CERTIFIED  |  +57 302 238 8714  |  www.jhamf.com", W / 2, pageH - 9, { align: "center" });
 
-  // Línea 2: copyright
-  doc.setFont("helvetica", "normal"); doc.setFontSize(6); doc.setTextColor(0, 60, 80);
-  doc.text("© 2025 Jhamf Group SAS · Todos los derechos reservados", W / 2, pageH - 4, { align: "center" });
+  // Línea 2: copyright (izquierda) | N° cotización (derecha)
+  doc.setFont("helvetica", "normal"); doc.setFontSize(6.5); doc.setTextColor(0, 50, 70);
+  doc.text("(c) 2025 Jhamf Group SAS · Todos los derechos reservados", margin, pageH - 3);
+  doc.text(cotiNum, W - margin, pageH - 3, { align: "right" });
 
   doc.save("Cotizacion_ValoraSuite_" + (formData.empresa || "Cliente").replace(/\s+/g, "_") + "_" + cotiNum + ".pdf");
 };
