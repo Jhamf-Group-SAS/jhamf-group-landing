@@ -2,7 +2,23 @@ import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
 import { PLANS, ADDONS, PLAN_FEATURES_PDF, fmt, type PlanKey } from "./CotizadorData";
 
-export const generatePDF = (
+// Carga una imagen de /public como base64 para usarla en jsPDF
+const loadImageAsBase64 = (src: string): Promise<string> =>
+  new Promise((resolve, reject) => {
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.onload = () => {
+      const canvas = document.createElement("canvas");
+      canvas.width = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+      canvas.getContext("2d")!.drawImage(img, 0, 0);
+      resolve(canvas.toDataURL("image/png"));
+    };
+    img.onerror = reject;
+    img.src = src;
+  });
+
+export const generatePDF = async (
   selectedPlan: PlanKey,
   selectedAddons: Record<string, { addon: typeof ADDONS[0], qty: number }>,
   formData: { nombre: string; empresa: string; nit: string; email: string; tel: string; ciudad: string; sector: string; vigencia: string }
@@ -19,6 +35,14 @@ export const generatePDF = (
   const dateStr = today.toLocaleDateString("es-CO", { day: "2-digit", month: "long", year: "numeric" });
   const cotiNum = "JHF-" + today.getFullYear() + "-" + String(today.getMonth() + 1).padStart(2, "0") + String(today.getDate()).padStart(2, "0") + "-" + String(Math.floor(Math.random() * 9000) + 1000);
 
+  // Cargar logo
+  let logoBase64: string | null = null;
+  try {
+    logoBase64 = await loadImageAsBase64("/jhamf-logo-white.png");
+  } catch {
+    // Si no carga el logo, continúa sin él
+  }
+
   // Background
   doc.setFillColor(255, 255, 255);
   doc.rect(0, 0, W, 297, "F");
@@ -26,6 +50,16 @@ export const generatePDF = (
   // Top Bar cyan
   doc.setFillColor(0, 184, 217);
   doc.rect(0, 0, W, 28, "F");
+
+  // Logo en la barra superior (blanco sobre cyan)
+  if (logoBase64) {
+    // Logo width proporcional: ancho 44mm, alto 14mm aprox
+    doc.addImage(logoBase64, "PNG", margin, 7, 44, 14);
+  } else {
+    // Fallback texto si no carga imagen
+    doc.setTextColor(255, 255, 255); doc.setFontSize(13); doc.setFont("helvetica", "bold");
+    doc.text("JHAMF GROUP", margin, 18);
+  }
 
   // ISO badge
   doc.setFillColor(255, 255, 255);
@@ -137,6 +171,15 @@ export const generatePDF = (
 
   // Totals
   const boxH = addonEntries.length > 0 ? 38 : 28;
+  // Verificar espacio: si totals + condiciones + footer no caben, nueva página
+  const condH = 38; // Condiciones comerciales height
+  const footerY = 282;
+  const neededSpace = boxH + 10 + condH + 10 + 15; // totals + gap + condiciones + gap + footer
+  if (y + neededSpace > footerY) {
+    doc.addPage();
+    y = 20;
+  }
+
   doc.setFillColor(248, 250, 253);
   doc.roundedRect(W / 2, y, W / 2 - margin, boxH, 4, 4, "F");
   doc.setDrawColor(pr, pg, pb); doc.setLineWidth(0.6);
@@ -165,9 +208,10 @@ export const generatePDF = (
   y = y + boxH + 10;
 
   // Conditions
+  const condBoxH = 28;
   doc.setFillColor(248, 250, 253);
-  doc.roundedRect(margin, y, W - margin * 2, 28, 4, 4, "F");
-  doc.setDrawColor(200, 210, 225); doc.roundedRect(margin, y, W - margin * 2, 28, 4, 4, "S");
+  doc.roundedRect(margin, y, W - margin * 2, condBoxH, 4, 4, "F");
+  doc.setDrawColor(200, 210, 225); doc.roundedRect(margin, y, W - margin * 2, condBoxH, 4, 4, "S");
   doc.setTextColor(pr, pg, pb); doc.setFontSize(7); doc.setFont("helvetica", "bold");
   doc.text("CONDICIONES COMERCIALES", margin + 6, y + 8);
   doc.setTextColor(60, 70, 90); doc.setFontSize(7); doc.setFont("helvetica", "normal");
@@ -178,13 +222,14 @@ export const generatePDF = (
     "• Jhamf Group S.A.S se reserva el derecho de ajustar precios con previo aviso de 30 días.",
   ], margin + 6, y + 15, { lineHeightFactor: 1.6 } as any);
 
-  // Footer
+  // Footer — siempre al fondo de la última página
+  const pageH = doc.internal.pageSize.getHeight();
   doc.setFillColor(0, 184, 217);
-  doc.rect(0, 282, W, 15, "F");
+  doc.rect(0, pageH - 15, W, 15, "F");
   doc.setTextColor(0, 0, 0); doc.setFontSize(7.5); doc.setFont("helvetica", "bold");
-  doc.text("Jhamf Group S.A.S — ISO 9001:2015 Certified · Jamundí, Valle · +57 302 238 8714 · www.jhamf.com", W / 2, 289, { align: "center" });
+  doc.text("Jhamf Group S.A.S — ISO 9001:2015 Certified · Jamundí, Valle · +57 302 238 8714 · www.jhamf.com", W / 2, pageH - 8, { align: "center" });
   doc.setFont("helvetica", "normal"); doc.setFontSize(6.5);
-  doc.text("© 2025 Jhamf Group SAS · " + cotiNum, W / 2, 294, { align: "center" });
+  doc.text("© 2025 Jhamf Group SAS · " + cotiNum, W / 2, pageH - 3, { align: "center" });
 
   doc.save("Cotizacion_ValoraSuite_" + (formData.empresa || "Cliente").replace(/\s+/g, "_") + "_" + cotiNum + ".pdf");
 };

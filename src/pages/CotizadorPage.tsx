@@ -1,8 +1,53 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import { Check, Info, FileText, Send, Phone, MapPin, Mail, Building, User, Calendar, Plus, Minus } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { generatePDF } from "./CotizadorPDF";
 import { PLANS, ADDONS, fmt, type PlanKey } from "./CotizadorData";
+
+// ─── InputField fuera del componente padre ────────────────────────────────────
+// IMPORTANTE: si InputField se define DENTRO de CotizadorPage, React genera una
+// nueva referencia de componente en cada render → desmonta/monta el <input> →
+// el campo pierde foco con cada tecla pulsada.
+const InputField = ({
+  icon: Icon,
+  label,
+  name,
+  type = "text",
+  required = false,
+  placeholder = "",
+  value,
+  onChange,
+}: {
+  icon: React.ElementType;
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+  placeholder?: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}) => (
+  <div className="space-y-1">
+    <label htmlFor={name} className="text-xs font-mono tracking-widest text-neutral-400 uppercase">
+      {label} {required && "*"}
+    </label>
+    <div className="relative">
+      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+        <Icon className="h-4 w-4 text-neutral-500" />
+      </div>
+      <input
+        type={type}
+        id={name}
+        name={name}
+        required={required}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        className="block w-full pl-10 pr-3 py-3 bg-neutral-900 border border-neutral-800 rounded-sm focus:border-white focus:ring-1 focus:ring-white transition-colors text-white placeholder-neutral-600 font-sans"
+      />
+    </div>
+  </div>
+);
 
 export default function CotizadorPage() {
   const { t } = useTranslation();
@@ -52,21 +97,6 @@ export default function CotizadorPage() {
     window.open("https://wa.me/573022388714?text=" + msg, "_blank");
   };
 
-  const InputField = ({ icon: Icon, label, name, type = "text", required = false, placeholder = "" }: any) => (
-    <div className="space-y-1">
-      <label htmlFor={name} className="text-xs font-mono tracking-widest text-neutral-400 uppercase">{label} {required && "*"}</label>
-      <div className="relative">
-        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-          <Icon className="h-4 w-4 text-neutral-500" />
-        </div>
-        <input
-          type={type} id={name} name={name} required={required} placeholder={placeholder}
-          value={(formData as any)[name]} onChange={handleInputChange}
-          className="block w-full pl-10 pr-3 py-3 bg-neutral-900 border border-neutral-800 rounded-sm focus:border-white focus:ring-1 focus:ring-white transition-colors text-white placeholder-neutral-600 font-sans"
-        />
-      </div>
-    </div>
-  );
 
   return (
     <div className="min-h-screen bg-black text-white pt-24 pb-20 font-sans selection:bg-white selection:text-black">
@@ -184,12 +214,12 @@ export default function CotizadorPage() {
               </h2>
               <div className="bg-neutral-950 border border-neutral-800 p-6 sm:p-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <InputField icon={Building} label={t("quoter.form.company", "Empresa")} name="empresa" required />
-                  <InputField icon={User} label={t("quoter.form.name", "Nombre de Contacto")} name="nombre" required />
-                  <InputField icon={FileText} label={t("quoter.form.nit", "NIT / Documento")} name="nit" />
-                  <InputField icon={Mail} label={t("quoter.form.email", "Correo Electrónico")} name="email" type="email" />
-                  <InputField icon={Phone} label={t("quoter.form.phone", "Teléfono")} name="tel" type="tel" />
-                  <InputField icon={MapPin} label={t("quoter.form.city", "Ciudad")} name="ciudad" />
+                  <InputField icon={Building} label={t("quoter.form.company", "Empresa")} name="empresa" required value={formData.empresa} onChange={handleInputChange} />
+                  <InputField icon={User} label={t("quoter.form.name", "Nombre de Contacto")} name="nombre" required value={formData.nombre} onChange={handleInputChange} />
+                  <InputField icon={FileText} label={t("quoter.form.nit", "NIT / Documento")} name="nit" value={formData.nit} onChange={handleInputChange} />
+                  <InputField icon={Mail} label={t("quoter.form.email", "Correo Electrónico")} name="email" type="email" value={formData.email} onChange={handleInputChange} />
+                  <InputField icon={Phone} label={t("quoter.form.phone", "Teléfono")} name="tel" type="tel" value={formData.tel} onChange={handleInputChange} />
+                  <InputField icon={MapPin} label={t("quoter.form.city", "Ciudad")} name="ciudad" value={formData.ciudad} onChange={handleInputChange} />
                   <div className="space-y-1">
                     <label htmlFor="sector" className="text-xs font-mono tracking-widest text-neutral-400 uppercase">{t("quoter.form.sector", "Sector")}</label>
                     <select id="sector" name="sector" value={formData.sector} onChange={handleInputChange} className="block w-full px-3 py-3 bg-neutral-900 border border-neutral-800 rounded-sm focus:border-white focus:ring-1 focus:ring-white transition-colors text-white">
