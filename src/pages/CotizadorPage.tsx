@@ -46,13 +46,13 @@ const InputField = ({
   error?: string;
   inputMode?: React.HTMLAttributes<HTMLInputElement>["inputMode"];
 }) => (
-  <div className="space-y-1">
-    <label htmlFor={name} className="text-xs font-mono tracking-widest text-neutral-500 dark:text-neutral-400 uppercase">
+  <div className={`space-y-1 ${error ? "animate-shake" : ""}`}>
+    <label htmlFor={name} className="text-xs font-mono tracking-widest text-navy dark:text-neutral-400 uppercase">
       {label} {required && <span className="text-red-500 dark:text-red-400">*</span>}
     </label>
-    <div className="relative">
+    <div className="relative group">
       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-        <Icon className={`h-4 w-4 ${error ? "text-red-500 dark:text-red-400" : "text-neutral-400 dark:text-neutral-500"}`} />
+        <Icon className={`h-4 w-4 transition-colors duration-200 ${error ? "text-red-500 dark:text-red-400" : "text-neutral-400 dark:text-neutral-500 group-focus-within:text-electric dark:group-focus-within:text-electric"}`} />
       </div>
       <input
         type={type}
@@ -63,15 +63,15 @@ const InputField = ({
         value={value}
         onChange={onChange}
         inputMode={inputMode}
-        className={`block w-full pl-10 pr-3 py-3 bg-white dark:bg-neutral-900 border rounded-sm focus:ring-1 transition-colors text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-600 font-sans ${
+        className={`block w-full pl-10 pr-3 py-3 bg-white dark:bg-neutral-900 border rounded-sm focus:outline-none focus:ring-2 focus:ring-electric/20 transition-all duration-200 text-navy dark:text-white placeholder-neutral-400 dark:placeholder-neutral-600 font-sans ${
           error
-            ? "border-red-400 focus:border-red-500 focus:ring-red-500 dark:border-red-500 dark:focus:border-red-400 dark:focus:ring-red-400"
-            : "border-neutral-300 focus:border-neutral-900 focus:ring-neutral-900 dark:border-neutral-800 dark:focus:border-white dark:focus:ring-white"
+            ? "border-red-400 focus:border-red-500 dark:border-red-500 dark:focus:border-red-400"
+            : "border-neutral-300 focus:border-electric dark:border-neutral-800 dark:focus:border-electric"
         }`}
       />
     </div>
     {error && (
-      <p className="flex items-center gap-1 text-xs text-red-500 dark:text-red-400 mt-1">
+      <p className="flex items-center gap-1 text-xs text-red-500 dark:text-red-400 mt-1 animate-fade-in-up" style={{ animationDuration: '250ms' }}>
         <AlertCircle className="h-3 w-3 shrink-0" /> {error}
       </p>
     )}
@@ -293,7 +293,7 @@ export default function CotizadorPage() {
                   <InputField icon={FileText} label={t("quoter.form.nit", "NIT / Documento")} name="nit" required value={formData.nit} onChange={handleInputChange} error={errors.nit} inputMode="numeric" />
                   <InputField icon={Mail} label={t("quoter.form.email", "Correo Electrónico")} name="email" type="email" required value={formData.email} onChange={handleInputChange} error={errors.email} />
                   {/* Teléfono con indicativo de país */}
-                  <div className="space-y-1">
+                  <div className={`space-y-1 ${errors.tel ? "animate-shake" : ""}`}>
                     <label className="text-xs font-mono tracking-widest text-navy dark:text-neutral-400 uppercase">
                       {t("quoter.form.phone", "Teléfono")} <span className="text-red-500 dark:text-red-400">*</span>
                     </label>
@@ -302,15 +302,15 @@ export default function CotizadorPage() {
                         value={countryCode}
                         onChange={e => setCountryCode(e.target.value)}
                         aria-label="Indicativo de país"
-                        className="bg-white border border-neutral-300 dark:bg-neutral-900 dark:border-neutral-800 text-neutral-900 dark:text-white text-sm rounded-sm px-2 py-3 focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 dark:focus:border-white dark:focus:ring-white transition-colors shrink-0"
+                        className="bg-white border border-neutral-300 dark:bg-neutral-900 dark:border-neutral-800 text-navy dark:text-white text-sm rounded-sm px-2 py-3 focus:outline-none focus:ring-2 focus:ring-electric/20 focus:border-electric dark:focus:border-electric transition-colors shrink-0 font-sans"
                       >
                         {COUNTRY_CODES.map(c => (
                           <option key={c.code} value={c.code}>{c.flag} {c.code} {c.label}</option>
                         ))}
                       </select>
-                      <div className="relative flex-1">
+                      <div className="relative flex-1 group">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                          <Phone className={`h-4 w-4 ${errors.tel ? "text-red-400" : "text-neutral-500"}`} />
+                          <Phone className={`h-4 w-4 transition-colors duration-200 ${errors.tel ? "text-red-500 dark:text-red-400" : "text-neutral-400 dark:text-neutral-500 group-focus-within:text-electric dark:group-focus-within:text-electric"}`} />
                         </div>
                         <input
                           type="tel"
@@ -320,22 +320,22 @@ export default function CotizadorPage() {
                           placeholder="3001234567"
                           value={formData.tel}
                           onChange={handleInputChange}
-                          className={`block w-full pl-10 pr-3 py-3 bg-white dark:bg-neutral-900 border rounded-sm focus:ring-1 transition-colors text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-600 font-sans ${
+                          className={`block w-full pl-10 pr-3 py-3 bg-white dark:bg-neutral-900 border rounded-sm focus:outline-none focus:ring-2 focus:ring-electric/20 transition-all duration-200 text-navy dark:text-white placeholder-neutral-400 dark:placeholder-neutral-600 font-sans ${
                             errors.tel
-                              ? "border-red-400 focus:border-red-500 focus:ring-red-500 dark:border-red-500 dark:focus:border-red-400 dark:focus:ring-red-400"
-                              : "border-neutral-300 focus:border-neutral-900 focus:ring-neutral-900 dark:border-neutral-800 dark:focus:border-white dark:focus:ring-white"
+                              ? "border-red-400 focus:border-red-500 dark:border-red-500 dark:focus:border-red-400"
+                              : "border-neutral-300 focus:border-electric dark:border-neutral-800 dark:focus:border-electric"
                           }`}
                         />
                       </div>
                     </div>
                     {errors.tel && (
-                      <p className="flex items-center gap-1 text-xs text-red-400 mt-1">
+                      <p className="flex items-center gap-1 text-xs text-red-500 dark:text-red-400 mt-1 animate-fade-in-up" style={{ animationDuration: '250ms' }}>
                         <AlertCircle className="h-3 w-3 shrink-0" /> {errors.tel}
                       </p>
                     )}
                   </div>
                   <InputField icon={MapPin} label={t("quoter.form.city", "Ciudad")} name="ciudad" required value={formData.ciudad} onChange={handleInputChange} error={errors.ciudad} />
-                  <div className="space-y-1">
+                  <div className={`space-y-1 ${errors.sector ? "animate-shake" : ""}`}>
                     <label htmlFor="sector" className="text-xs font-mono tracking-widest text-navy dark:text-neutral-400 uppercase">
                       {t("quoter.form.sector", "Sector")} <span className="text-red-500 dark:text-red-400">*</span>
                     </label>
@@ -343,8 +343,8 @@ export default function CotizadorPage() {
                       id="sector" name="sector" required
                       value={formData.sector}
                       onChange={e => { handleInputChange(e); if (submitted) validateField("sector", e.target.value); }}
-                      className={`block w-full px-3 py-3 bg-white border dark:bg-neutral-900 rounded-sm focus:ring-1 transition-colors text-neutral-900 dark:text-white ${
-                        errors.sector ? "border-red-400 focus:border-red-500 focus:ring-red-500 dark:border-red-500 dark:focus:border-red-400 dark:focus:ring-red-400" : "border-neutral-300 focus:border-neutral-900 focus:ring-neutral-900 dark:border-neutral-800 dark:focus:border-white dark:focus:ring-white"
+                      className={`block w-full px-3 py-3 bg-white border dark:bg-neutral-900 rounded-sm focus:outline-none focus:ring-2 focus:ring-electric/20 transition-all duration-200 text-navy dark:text-white font-sans ${
+                        errors.sector ? "border-red-400 focus:border-red-500 dark:border-red-500 dark:focus:border-red-400" : "border-neutral-300 focus:border-electric dark:border-neutral-800 dark:focus:border-electric"
                       }`}>
                       <option value="">{t("quoter.form.sector_placeholder", "Selecciona un sector")}</option>
                       <option value="Salud">{t("quoter.form.sectors.health", "Salud")}</option>
@@ -354,16 +354,16 @@ export default function CotizadorPage() {
                       <option value="Otro">{t("quoter.form.sectors.other", "Otro")}</option>
                     </select>
                     {errors.sector && (
-                      <p className="flex items-center gap-1 text-xs text-red-400 mt-1">
+                      <p className="flex items-center gap-1 text-xs text-red-500 dark:text-red-400 mt-1 animate-fade-in-up" style={{ animationDuration: '250ms' }}>
                         <AlertCircle className="h-3 w-3 shrink-0" /> {errors.sector}
                       </p>
                     )}
                   </div>
                   <div className="space-y-1">
                     <label htmlFor="vigencia" className="text-xs font-mono tracking-widest text-navy dark:text-neutral-400 uppercase">{t("quoter.form.validity", "Vigencia (Días)")}</label>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><Calendar className="h-4 w-4 text-neutral-400 dark:text-neutral-500" /></div>
-                      <input type="number" id="vigencia" name="vigencia" value={formData.vigencia} onChange={handleInputChange} className="block w-full pl-10 pr-3 py-3 bg-white border border-neutral-300 dark:bg-neutral-900 dark:border-neutral-800 rounded-sm focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 dark:focus:border-white dark:focus:ring-white text-neutral-900 dark:text-white" />
+                    <div className="relative group">
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><Calendar className="h-4 w-4 transition-colors duration-200 text-neutral-400 dark:text-neutral-500 group-focus-within:text-electric dark:group-focus-within:text-electric" /></div>
+                      <input type="number" id="vigencia" name="vigencia" value={formData.vigencia} onChange={handleInputChange} className="block w-full pl-10 pr-3 py-3 bg-white border border-neutral-300 dark:bg-neutral-900 dark:border-neutral-800 rounded-sm focus:outline-none focus:ring-2 focus:ring-electric/20 focus:border-electric dark:focus:border-electric transition-all duration-200 text-navy dark:text-white font-sans" />
                     </div>
                   </div>
                 </div>
