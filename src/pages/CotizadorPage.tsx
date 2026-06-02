@@ -102,12 +102,14 @@ export default function CotizadorPage() {
     setSelectedAddons(prev => {
       const next = { ...prev };
       const currentQty = next[addon.id]?.qty || 0;
-      const newQty = Math.max(0, currentQty + delta);
+      const rawQty = Math.max(0, currentQty + delta);
+      const newQty = addon.maxQty !== undefined ? Math.min(rawQty, addon.maxQty) : rawQty;
       if (newQty === 0) delete next[addon.id];
       else next[addon.id] = { addon, qty: newQty };
       return next;
     });
   };
+
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -269,10 +271,13 @@ export default function CotizadorPage() {
                         </div>
                         
                         {addon.isQty && (
-                          <div className="flex items-center gap-3 bg-white border border-neutral-200 dark:bg-neutral-950 dark:border-neutral-800 rounded p-1">
-                            <button onClick={(e) => updateQty(addon, -1, e)} className="p-1 hover:text-black dark:hover:text-white text-neutral-400"><Minus className="h-3 w-3" /></button>
+                          <div className="flex items-center gap-2 bg-white border border-neutral-200 dark:bg-neutral-950 dark:border-neutral-800 rounded p-1">
+                            <button onClick={(e) => updateQty(addon, -1, e)} className="p-1 hover:text-black dark:hover:text-white text-neutral-400 disabled:opacity-30 disabled:cursor-not-allowed" disabled={qty === 0}><Minus className="h-3 w-3" /></button>
                             <span className="text-sm font-mono w-4 text-center">{qty}</span>
-                            <button onClick={(e) => updateQty(addon, 1, e)} className="p-1 hover:text-black dark:hover:text-white text-neutral-400"><Plus className="h-3 w-3" /></button>
+                            <button onClick={(e) => updateQty(addon, 1, e)} className="p-1 hover:text-black dark:hover:text-white text-neutral-400 disabled:opacity-30 disabled:cursor-not-allowed" disabled={addon.maxQty !== undefined && qty >= addon.maxQty}><Plus className="h-3 w-3" /></button>
+                            {addon.maxQty !== undefined && qty >= addon.maxQty && (
+                              <span className="text-xs font-mono text-electric ml-1">MÁX</span>
+                            )}
                           </div>
                         )}
                       </div>

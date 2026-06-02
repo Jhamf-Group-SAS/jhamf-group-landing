@@ -1,6 +1,6 @@
-﻿export type PlanKey = "basic" | "growth" | "premium";
+export type PlanKey = "basic" | "growth" | "premium";
 export interface Plan { name: string; subtitle: string; price: number; tag: string; features: string[]; color: string; gradient: string; planColors: [number,number,number]; badge?: string; }
-export interface Addon { id: string; name: string; price: number; period: string; desc: string; isQty?: boolean; unit?: string; }
+export interface Addon { id: string; name: string; price: number; period: string; desc: string; isQty?: boolean; unit?: string; maxQty?: number; }
 
 export const PLANS: Record<PlanKey, Plan> = {
   basic: { name:"Básico", subtitle:"Arranque digital omnicanal", price:990000, tag:"Ideal para equipos pequeños de hasta 5 agentes.", planColors:[59,130,246], color:"#3B82F6", gradient:"from-blue-600 to-blue-400", features:["5 agentes incluidos","1 canal WhatsApp","Bandeja unificada","Respuestas automáticas","Trazabilidad básica","Reportes básicos","Roles y permisos básicos","Hosting compartido","Soporte horario hábil","Onboarding inicial"] },
@@ -14,7 +14,7 @@ export const ADDONS: Addon[] = [
   { id:"flujo_ia", name:"Flujo IA adicional", price:400000, period:"/mes c/u", desc:"Automatiza un proceso adicional con IA.", isQty:true, unit:"flujos" },
   { id:"canal_ig", name:"Canales Instagram y Facebook", price:350000, period:"/mes", desc:"Integra ambos canales sociales a tu plataforma." },
   { id:"api", name:"Integración API externa", price:800000, period:"/única vez", desc:"CRM, ERP, plataformas propias." },
-  { id:"bot_area", name:"Bot entrenado por área", price:600000, period:"/única vez", desc:"Soporte, ventas, RRHH, etc." },
+  { id:"bot_area", name:"Agente IA por proceso", price:600000, period:"/única vez", desc:"Soporte, ventas, RRHH, etc.", isQty:true, unit:"agente", maxQty:1 },
   { id:"sla", name:"SLA extendido 24/7", price:800000, period:"/mes", desc:"Soporte fuera de horario hábil." }
 ];
 
