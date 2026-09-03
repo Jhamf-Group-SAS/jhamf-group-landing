@@ -9,10 +9,9 @@ import { Link } from 'react-router-dom';
 import { useLocale } from '../hooks/useLocale';
 import { useTranslation } from 'react-i18next';
 
-// ⚠️ REEMPLAZA ESTOS VALORES CON LOS TUYOS DE EMAILJS
-const EMAILJS_SERVICE_ID = 'service_tuxji4s';      // Ej: 'service_xyz123'
-const EMAILJS_TEMPLATE_ID = 'template_t56ifou';    // Ej: 'template_abc123'
-const EMAILJS_PUBLIC_KEY = 'm-Iue2hNH0SNnZdmt';      // Ej: 'abc123XYZ'
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const PQRSPage = () => {
     const { lang } = useLocale();
