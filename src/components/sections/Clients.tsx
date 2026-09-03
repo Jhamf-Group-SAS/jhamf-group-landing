@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Star, Quote } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Clients = () => {
@@ -17,27 +16,6 @@ const Clients = () => {
         // Duplicate for seamless CSS marquee loop
         return [...base, ...base];
     }, [t]);
-
-    const testimonials = useMemo(() => [
-        {
-            quote: t('clients.testimonial_1_quote'),
-            author: t('clients.testimonial_1_author'),
-            role: t('clients.testimonial_1_role'),
-            rating: 5,
-        },
-        {
-            quote: t('clients.testimonial_2_quote'),
-            author: t('clients.testimonial_2_author'),
-            role: t('clients.testimonial_2_role'),
-            rating: 5,
-        },
-        {
-            quote: t('clients.testimonial_3_quote'),
-            author: t('clients.testimonial_3_author'),
-            role: t('clients.testimonial_3_role'),
-            rating: 5,
-        },
-    ], [t]);
 
     return (
         <section
@@ -92,59 +70,6 @@ const Clients = () => {
                                 <span className="w-1.5 h-1.5 rounded-full bg-electric/50 shrink-0" aria-hidden="true" />
                                 {industry}
                             </div>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Testimonials */}
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid md:grid-cols-3 gap-5">
-                        {testimonials.map((testimonial, i) => (
-                            <motion.article
-                                key={i}
-                                initial={{ opacity: 0, y: 24 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: i * 0.12 }}
-                                className="relative p-7 rounded-2xl glass-card flex flex-col gap-5"
-                                style={{ borderColor: 'rgba(255,255,255,0.07)' }}
-                                aria-label={`${testimonial.author}, ${testimonial.role}`}
-                            >
-                                {/* Quote mark */}
-                                <Quote
-                                    className="w-8 h-8 text-electric/20 absolute top-6 right-6"
-                                    aria-hidden="true"
-                                />
-
-                                {/* Stars */}
-                                <div className="flex gap-0.5" aria-label={`${testimonial.rating} stars`} role="img">
-                                    {Array.from({ length: testimonial.rating }).map((_, j) => (
-                                        <Star key={j} className="w-4 h-4 text-electric fill-electric" aria-hidden="true" />
-                                    ))}
-                                </div>
-
-                                {/* Quote text */}
-                                <blockquote className="text-sm text-steel leading-relaxed font-light flex-1">
-                                    &ldquo;{testimonial.quote}&rdquo;
-                                </blockquote>
-
-                                {/* Author */}
-                                <footer>
-                                    <div className="flex items-center gap-3">
-                                        <div
-                                            className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white"
-                                            style={{ background: 'linear-gradient(135deg, var(--color-electric), #8B5CF6)' }}
-                                            aria-hidden="true"
-                                        >
-                                            {testimonial.author.charAt(0)}
-                                        </div>
-                                        <div>
-                                            <p className="text-sm font-semibold text-white">{testimonial.author}</p>
-                                            <p className="text-xs text-steel-dark font-light">{testimonial.role}</p>
-                                        </div>
-                                    </div>
-                                </footer>
-                            </motion.article>
                         ))}
                     </div>
                 </div>

@@ -97,16 +97,7 @@
         "eyebrow": "Client Success",
         "headline_1": "Trusted by",
         "headline_2": "50+ Enterprises",
-        "subtext": "From SMBs to large enterprises across Latin America and beyond.",
-        "testimonial_1_quote": "JHAMF transformed our cloud posture in under 90 days. Our Azure infrastructure now handles 3x the load at 40% lower cost.",
-        "testimonial_1_author": "Santiago R.",
-        "testimonial_1_role": "CTO, Retail Group",
-        "testimonial_2_quote": "The AI automation team eliminated 15 hours of weekly manual reporting. The ROI was visible within the first month.",
-        "testimonial_2_author": "Carolina M.",
-        "testimonial_2_role": "VP Operations, Financial Services",
-        "testimonial_3_quote": "Best-in-class cybersecurity posture. They achieved our ISO 27001 certification in record time with zero critical findings.",
-        "testimonial_3_author": "Andrés L.",
-        "testimonial_3_role": "CISO, Healthcare Institution"
+        "subtext": "From SMBs to large enterprises across Latin America and beyond."
     },
     "cta_banner": {
         "badge": "Now Accepting Enterprise Clients",
