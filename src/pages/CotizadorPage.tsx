@@ -299,7 +299,7 @@ export default function CotizadorPage() {
                   <InputField icon={Mail} label={t("quoter.form.email", "Correo Electrónico")} name="email" type="email" required value={formData.email} onChange={handleInputChange} error={errors.email} />
                   {/* Teléfono con indicativo de país */}
                   <div className={`space-y-1 ${errors.tel ? "animate-shake" : ""}`}>
-                    <label className="text-xs font-mono tracking-widest text-navy dark:text-neutral-400 uppercase">
+                    <label htmlFor="tel" className="text-xs font-mono tracking-widest text-navy dark:text-neutral-400 uppercase">
                       {t("quoter.form.phone", "Teléfono")} <span className="text-red-500 dark:text-red-400">*</span>
                     </label>
                     <div className="flex gap-2">
