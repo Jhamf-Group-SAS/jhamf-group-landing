@@ -32,7 +32,6 @@ const Footer = () => {
                         <li><Link to={`/${lang}/azure`} className="hover:text-electric transition-colors">{t('footer.link_cloud')}</Link></li>
                         <li><Link to={lang === 'es' ? `/${lang}/automatizacion-ia` : `/${lang}/ai-automation`} className="hover:text-electric transition-colors">{t('footer.link_automation')}</Link></li>
                         <li><a href={`/${lang}/#ai-automation`} className="hover:text-electric transition-colors">{t('footer.link_ai')}</a></li>
-                        <li><Link to={`/${lang}/casos-de-exito`} className="hover:text-electric transition-colors">{t('footer.link_cases')}</Link></li>
                         <li><Link to={`/${lang}/ia-cali`} className="hover:text-electric transition-colors">{t('footer.link_ia_cali')}</Link></li>
                     </ul>
                 </div>

@@ -15,8 +15,7 @@ const routes = [
     { path: '/es/automatizacion-ia', title: 'Automatización con IA | JHAMF Group', desc: 'Implementación de Agentes de IA y pipelines automatizados para eficiencia operativa.' },
     { path: '/en/ai-automation', title: 'AI Automation | JHAMF Group', desc: 'Implementation of AI Agents and automated pipelines for operational efficiency.' },
     { path: '/es/ciberseguridad/arquitectura-y-proteccion', title: 'Ciberseguridad Avanzada | JHAMF Group', desc: 'Arquitecturas Zero-Trust y protección perimetral contra amenazas persistentes.' },
-    { path: '/es/servicios-ti-gestionados/soporte-empresarial-24-7', title: 'Soporte TI 24/7 | JHAMF Group', desc: 'Mesa de ayuda gestionada y soporte técnico continuo para continuidad de negocio.' },
-    { path: '/es/casos-de-exito', title: 'Casos de Éxito | JHAMF Group', desc: 'Descubra cómo nuestras soluciones cloud e IA han transformado la operación de nuestros clientes.' }
+    { path: '/es/servicios-ti-gestionados/soporte-empresarial-24-7', title: 'Soporte TI 24/7 | JHAMF Group', desc: 'Mesa de ayuda gestionada y soporte técnico continuo para continuidad de negocio.' }
 ];
 
 try {

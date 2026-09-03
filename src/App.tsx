@@ -11,7 +11,6 @@ const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'));
 const AzurePage = lazy(() => import('./pages/AzurePage'));
 const AutomationPage = lazy(() => import('./pages/AutomationPage'));
 const BlueprintPage = lazy(() => import('./pages/BlueprintPage'));
-const CaseStudiesPage = lazy(() => import('./pages/CaseStudiesPage'));
 const IACaliPage = lazy(() => import('./pages/IACaliPage'));
 const InfrastructurePage = lazy(() => import('./pages/InfrastructurePage'));
 const AssetsPage = lazy(() => import('./pages/AssetsPage'));
@@ -57,7 +56,6 @@ function AppContent() {
         <Route path="/support" element={<Navigate to="/es/support" replace />} />
         <Route path="/politica-privacidad" element={<Navigate to="/es/politica-privacidad" replace />} />
         <Route path="/privacy-policy" element={<Navigate to="/es/privacy-policy" replace />} />
-        <Route path="/casos-de-exito" element={<Navigate to="/es/casos-de-exito" replace />} />
         <Route path="/ia-cali" element={<Navigate to="/es/ia-cali" replace />} />
 
         {/* Language-prefixed routes */}
@@ -101,8 +99,6 @@ function LocalizedRoutes() {
         <Route path="politica-privacidad" element={<PrivacyPolicyPage />} />
         <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="blueprint" element={<BlueprintPage />} />
-        <Route path="casos-de-exito" element={<CaseStudiesPage />} />
-        <Route path="case-studies" element={<CaseStudiesPage />} />
         <Route path="ia-cali" element={<IACaliPage />} />
         <Route path="infraestructura-redes" element={<InfrastructurePage />} />
         <Route path="infrastructure-networks" element={<InfrastructurePage />} />
