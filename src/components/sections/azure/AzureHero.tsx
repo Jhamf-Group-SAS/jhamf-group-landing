@@ -4,11 +4,11 @@ import { ArrowRight, Cloud, Shield, Zap } from 'lucide-react';
 
 const AzureHero: React.FC = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-obsidian">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-void">
       {/* Background Effects */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-azure-glow/20 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-neon-purple/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-electric-glow/20 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-plasma/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '2s' }} />
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
       </div>
 
@@ -25,7 +25,7 @@ const AzureHero: React.FC = () => {
               <div className="h-4 w-px bg-white/20" />
               <span className="text-sm font-semibold text-white tracking-wide">Solutions Partner</span>
             </div>
-            <span className="text-[10px] text-azure-DEFAULT font-mono tracking-[0.2em] uppercase">Cloud & Infrastructure</span>
+            <span className="text-[10px] text-electric font-mono tracking-[0.2em] uppercase">Cloud & Infrastructure</span>
           </motion.div>
 
           <motion.h1
@@ -35,7 +35,7 @@ const AzureHero: React.FC = () => {
             className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight"
           >
             Escala tu negocio con <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-azure-DEFAULT to-neon-cyan">Microsoft Azure</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-neon-ice">Microsoft Azure</span>
           </motion.h1>
 
           <motion.p
@@ -58,13 +58,13 @@ const AzureHero: React.FC = () => {
               href="https://form.typeform.com/to/gxR8JkE0"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative px-8 py-4 bg-azure-DEFAULT text-white rounded-lg font-medium overflow-hidden transition-all hover:bg-azure-glow hover:scale-105"
+              className="group relative px-8 py-4 bg-electric text-white rounded-lg font-medium overflow-hidden transition-all hover:bg-electric-glow hover:scale-105"
             >
               <span className="relative z-10 flex items-center gap-2">
                 Solicitar Diagnóstico Gratuito
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan to-azure-DEFAULT opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-neon-ice to-electric opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </a>
 
             <a

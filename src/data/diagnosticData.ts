@@ -85,21 +85,21 @@ export const getResultCategory = (score: number) => {
         return {
             title: "En Crecimiento Digital",
             description: "Ya tiene bases sólidas. Es el momento ideal para empezar a conectar sus islas de información.",
-            color: "text-azure",
+            color: "text-electric",
             recommendations: ["Migración estratégica a Azure", "Automatización de reportes (BI)", "Integrar sistemas clave (API)"]
         };
     } else if (percentage < 85) {
         return {
             title: "Avanzado",
             description: "Su infraestructura es robusta. Está listo para dejar que la automatización maneje el trabajo pesado.",
-            color: "text-neon-cyan",
+            color: "text-neon-ice",
             recommendations: ["Implementar RPA para tareas repetitivas", "Asistentes virtuales para clientes", "Optimización de costos Cloud"]
         };
     } else {
         return {
             title: "AI-Ready Leader",
             description: "Operación de vanguardia. Su ecosistema está preparado para la inteligencia cognitiva avanzada.",
-            color: "text-neon-purple",
+            color: "text-plasma",
             recommendations: ["Modelos predictivos personalizados", "Agentes autónomos de toma de decisiones", "Automatización End-to-End"]
         };
     }

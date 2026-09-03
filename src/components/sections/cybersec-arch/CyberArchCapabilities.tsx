@@ -33,14 +33,14 @@ const CyberArchCapabilities: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="group bg-obsidian border border-white/5 hover:border-neon-cyan/30 rounded-2xl p-8 transition-all hover:bg-white/[0.02]"
+                                className="group bg-void border border-white/5 hover:border-neon-ice/30 rounded-2xl p-8 transition-all hover:bg-white/[0.02]"
                             >
                                 <div className="flex items-start gap-6">
-                                    <div className="w-14 h-14 shrink-0 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center group-hover:bg-neon-cyan/10 group-hover:border-neon-cyan/30 transition-colors">
-                                        <Icon className="w-7 h-7 text-electric-glow group-hover:text-neon-cyan transition-colors" />
+                                    <div className="w-14 h-14 shrink-0 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center group-hover:bg-neon-ice/10 group-hover:border-neon-ice/30 transition-colors">
+                                        <Icon className="w-7 h-7 text-electric-glow group-hover:text-neon-ice transition-colors" />
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-neon-cyan transition-colors">
+                                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-neon-ice transition-colors">
                                             {service.title}
                                         </h3>
                                         <p className="text-gray-400 leading-relaxed text-sm">

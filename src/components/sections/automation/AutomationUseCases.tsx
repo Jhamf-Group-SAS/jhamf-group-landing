@@ -40,7 +40,7 @@ const AutomationUseCases: React.FC = () => {
                             className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-all"
                         >
                             <div className="flex items-center justify-between mb-6">
-                                <div className="p-3 rounded-lg bg-azure/10 text-azure">
+                                <div className="p-3 rounded-lg bg-electric/10 text-electric">
                                     <useCase.icon className="w-6 h-6" />
                                 </div>
                                 <span className="text-xs font-bold px-3 py-1 rounded-full bg-green-500/20 text-green-400">

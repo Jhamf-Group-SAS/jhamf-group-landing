@@ -7,24 +7,24 @@ const Dashboard = () => {
 
     const metrics = {
         management: [
-            { label: 'EBITDA Actual', value: '$120M', trend: '+8%', icon: TrendingUp, color: 'text-neon-lime' },
-            { label: 'Velocidad Entrega', value: '1.2h', trend: '-15%', icon: Activity, color: 'text-neon-cyan' },
+            { label: 'EBITDA Actual', value: '$120M', trend: '+8%', icon: TrendingUp, color: 'text-signal' },
+            { label: 'Velocidad Entrega', value: '1.2h', trend: '-15%', icon: Activity, color: 'text-neon-ice' },
             { label: 'NPS Global', value: '72', trend: '+4', icon: CheckCircle, color: 'text-white' },
         ],
         sales: [
-            { label: 'Leads Calificados', value: '85', trend: '+45%', icon: Activity, color: 'text-neon-cyan' },
-            { label: 'Tasa de Cierre', value: '22%', trend: '+5%', icon: TrendingUp, color: 'text-neon-lime' },
+            { label: 'Leads Calificados', value: '85', trend: '+45%', icon: Activity, color: 'text-neon-ice' },
+            { label: 'Tasa de Cierre', value: '22%', trend: '+5%', icon: TrendingUp, color: 'text-signal' },
             { label: 'Tiempo Resp.', value: '2min', trend: '-95%', icon: CheckCircle, color: 'text-white' },
         ],
         ops: [
             { label: 'Stock Crítico', value: '2', trend: 'Items', icon: AlertTriangle, color: 'text-red-500' },
-            { label: 'Órdenes Auto', value: '14', trend: 'Esta sem', icon: CheckCircle, color: 'text-neon-cyan' },
-            { label: 'Eficiencia', value: '98%', trend: '+15%', icon: TrendingUp, color: 'text-neon-lime' },
+            { label: 'Órdenes Auto', value: '14', trend: 'Esta sem', icon: CheckCircle, color: 'text-neon-ice' },
+            { label: 'Eficiencia', value: '98%', trend: '+15%', icon: TrendingUp, color: 'text-signal' },
         ],
         support: [
             { label: 'Tickets Totales', value: '450', trend: 'Hoy', icon: Activity, color: 'text-white' },
-            { label: 'Resueltos por IA', value: '315', trend: '70%', icon: CheckCircle, color: 'text-neon-lime' },
-            { label: 'Satisfacción', value: '4.8', trend: '/ 5.0', icon: TrendingUp, color: 'text-neon-cyan' },
+            { label: 'Resueltos por IA', value: '315', trend: '70%', icon: CheckCircle, color: 'text-signal' },
+            { label: 'Satisfacción', value: '4.8', trend: '/ 5.0', icon: TrendingUp, color: 'text-neon-ice' },
         ]
     };
 
@@ -66,7 +66,7 @@ const Dashboard = () => {
                             <h3 className="text-4xl font-bold text-white mb-2">{metric.value}</h3>
                             <div className="flex justify-between items-end">
                                 <p className="text-gray-400 text-sm">{metric.label}</p>
-                                <span className={`text-sm font-medium ${metric.trend.includes('-') ? 'text-neon-lime' : 'text-neon-cyan'}`}>
+                                <span className={`text-sm font-medium ${metric.trend.includes('-') ? 'text-signal' : 'text-neon-ice'}`}>
                                     {metric.trend}
                                 </span>
                             </div>

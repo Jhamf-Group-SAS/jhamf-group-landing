@@ -25,7 +25,7 @@ const ArchitectureSection = () => {
         currentActive[type].includes(label);
 
     return (
-        <section className="py-12 bg-obsidian text-white relative overflow-hidden">
+        <section className="py-12 bg-void text-white relative overflow-hidden">
             <div className="container mx-auto px-4 relative z-10">
                 <div className="flex flex-col items-center">
 
@@ -36,7 +36,7 @@ const ArchitectureSection = () => {
                             {/* Integrated Status Bar */}
                             <div className="flex flex-wrap gap-6 justify-between items-center mb-8 border-b border-white/5 pb-6">
                                 <div className="flex gap-3 items-center">
-                                    <div className="w-2 h-2 rounded-full bg-neon-lime animate-pulse shadow-[0_0_8px_rgba(204,255,0,0.5)]" />
+                                    <div className="w-2 h-2 rounded-full bg-signal animate-pulse shadow-[0_0_8px_rgba(204,255,0,0.5)]" />
                                     <span className="text-[10px] md:text-xs font-mono text-gray-300 uppercase tracking-[0.2em]">System Operational</span>
                                 </div>
 
@@ -81,12 +81,12 @@ const ArchitectureSection = () => {
 
                                         <div className="flex justify-between items-start mb-4">
                                             <div>
-                                                <MicroLabel label="ORCHESTRATION" color="text-neon-cyan" />
+                                                <MicroLabel label="ORCHESTRATION" color="text-neon-ice" />
                                                 <div className="text-[10px] text-gray-500 mt-1 pl-3 font-mono">ROUTING & LOGIC</div>
                                             </div>
                                             <div className="flex items-center gap-2">
-                                                <span className="w-1.5 h-1.5 rounded-full bg-neon-cyan animate-pulse" />
-                                                <span className="text-[9px] uppercase text-neon-cyan font-bold tracking-wider">Processing</span>
+                                                <span className="w-1.5 h-1.5 rounded-full bg-neon-ice animate-pulse" />
+                                                <span className="text-[9px] uppercase text-neon-ice font-bold tracking-wider">Processing</span>
                                             </div>
                                         </div>
 
@@ -95,7 +95,7 @@ const ArchitectureSection = () => {
                                                 icon={GitMerge}
                                                 title="n8n"
                                                 subtitle="Normalize"
-                                                color="border-neon-lime/30 bg-neon-lime/5"
+                                                color="border-signal/30 bg-signal/5"
                                                 active
                                                 compact
                                             />
@@ -115,12 +115,12 @@ const ArchitectureSection = () => {
 
                                 {/* STAGE 3: AI INTELLIGENCE */}
                                 <div className="md:col-span-3 relative z-10 flex flex-col gap-3">
-                                    <div className="bg-gradient-to-br from-neon-purple/20 to-pink-500/10 border border-neon-purple/30 rounded-xl p-1 backdrop-blur-md h-full shadow-[0_0_20px_rgba(180,0,255,0.1)]">
-                                        <div className="bg-obsidian/80 rounded-lg p-5 h-full flex flex-col items-center justify-center text-center relative overflow-hidden">
-                                            <MicroLabel label="AI CORE" color="text-neon-purple" />
+                                    <div className="bg-gradient-to-br from-plasma/20 to-pink-500/10 border border-plasma/30 rounded-xl p-1 backdrop-blur-md h-full shadow-[0_0_20px_rgba(180,0,255,0.1)]">
+                                        <div className="bg-void/80 rounded-lg p-5 h-full flex flex-col items-center justify-center text-center relative overflow-hidden">
+                                            <MicroLabel label="AI CORE" color="text-plasma" />
 
                                             <div className="my-4 relative">
-                                                <div className="absolute inset-0 bg-neon-purple/20 blur-xl rounded-full" />
+                                                <div className="absolute inset-0 bg-plasma/20 blur-xl rounded-full" />
                                                 <BrainCircuit className="w-10 h-10 text-white relative z-10" />
                                             </div>
 
@@ -151,9 +151,9 @@ const ArchitectureSection = () => {
                                         </div>
 
                                         {/* Status Toast */}
-                                        <div className="mt-3 bg-neon-lime/10 border border-neon-lime/20 roundedmd p-2 flex items-center gap-2">
-                                            <div className="w-4 h-4 rounded-full bg-neon-lime flex items-center justify-center text-black text-[10px] font-bold">✓</div>
-                                            <span className="text-[10px] font-bold text-neon-lime uppercase tracking-wide">Success 200 OK</span>
+                                        <div className="mt-3 bg-signal/10 border border-signal/20 roundedmd p-2 flex items-center gap-2">
+                                            <div className="w-4 h-4 rounded-full bg-signal flex items-center justify-center text-black text-[10px] font-bold">✓</div>
+                                            <span className="text-[10px] font-bold text-signal uppercase tracking-wide">Success 200 OK</span>
                                         </div>
                                     </div>
                                 </div>
@@ -182,12 +182,12 @@ const MetricBadge = ({ label, value }: { label: string, value: string }) => (
 
 const InputCard = ({ icon: Icon, label, active }: any) => (
     <div className={`border p-4 rounded-xl flex flex-col items-center gap-2 transition-all duration-500 ${active
-        ? 'bg-neon-cyan/10 border-neon-cyan/50 shadow-[0_0_15px_rgba(0,240,255,0.2)] scale-105'
+        ? 'bg-neon-ice/10 border-neon-ice/50 shadow-[0_0_15px_rgba(0,240,255,0.2)] scale-105'
         : 'bg-white/5 border-white/10 opacity-50'
         }`}>
-        <Icon className={`w-5 h-5 ${active ? 'text-neon-cyan' : 'text-gray-400'}`} />
+        <Icon className={`w-5 h-5 ${active ? 'text-neon-ice' : 'text-gray-400'}`} />
         <span className={`text-xs font-medium ${active ? 'text-white' : 'text-gray-400'}`}>{label}</span>
-        {active && <div className="w-1.5 h-1.5 rounded-full bg-neon-cyan animate-pulse mt-1" />}
+        {active && <div className="w-1.5 h-1.5 rounded-full bg-neon-ice animate-pulse mt-1" />}
     </div>
 );
 
@@ -216,11 +216,11 @@ const Badge = ({ children }: any) => (
 
 const ActionCard = ({ icon: Icon, label, active }: any) => (
     <div className={`border p-4 rounded-xl flex items-center justify-between transition-all duration-500 ${active
-        ? 'bg-neon-lime/10 border-neon-lime/50 shadow-[0_0_15px_rgba(204,255,0,0.2)] scale-105'
+        ? 'bg-signal/10 border-signal/50 shadow-[0_0_15px_rgba(204,255,0,0.2)] scale-105'
         : 'bg-white/5 border-white/10 opacity-50'
         }`}>
         <span className={`text-sm font-medium ${active ? 'text-white' : 'text-gray-300'}`}>{label}</span>
-        <Icon className={`w-4 h-4 ${active ? 'text-neon-lime' : 'text-gray-500'}`} />
+        <Icon className={`w-4 h-4 ${active ? 'text-signal' : 'text-gray-500'}`} />
     </div>
 );
 

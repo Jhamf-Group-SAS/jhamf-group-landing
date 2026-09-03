@@ -137,7 +137,7 @@ const DiagnosticWizard = ({ isOpen, onClose }: DiagnosticWizardProps) => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 flex items-center justify-center p-4 bg-obsidian/90 backdrop-blur-sm -z-10"
+                        className="fixed inset-0 flex items-center justify-center p-4 bg-void/90 backdrop-blur-sm -z-10"
                         onClick={onClose}
                     />
                     <motion.div
@@ -145,12 +145,12 @@ const DiagnosticWizard = ({ isOpen, onClose }: DiagnosticWizardProps) => {
                         initial={{ scale: 0.95, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.95, opacity: 0 }}
-                        className="relative z-10 w-full max-w-2xl bg-obsidian border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
+                        className="relative z-10 w-full max-w-2xl bg-void border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
                     >
                         {/* Header */}
                         <div className="flex items-center justify-between p-6 border-b border-white/5 bg-white/5">
                             <div className="flex items-center gap-2">
-                                <Sparkles className="w-5 h-5 text-neon-cyan" />
+                                <Sparkles className="w-5 h-5 text-neon-ice" />
                                 <span id="diagnostic-title" className="font-display font-bold text-white">
                                     Diagnóstico IA
                                 </span>
@@ -166,7 +166,7 @@ const DiagnosticWizard = ({ isOpen, onClose }: DiagnosticWizardProps) => {
                                 <>
                                     <div className="w-full h-1 bg-white/10 rounded-full mb-8">
                                         <motion.div
-                                            className="h-full bg-gradient-to-r from-azure to-neon-cyan rounded-full"
+                                            className="h-full bg-gradient-to-r from-electric to-neon-ice rounded-full"
                                             animate={{ width: `${progress}%` }}
                                         />
                                     </div>
@@ -183,7 +183,7 @@ const DiagnosticWizard = ({ isOpen, onClose }: DiagnosticWizardProps) => {
                                                 className="w-full p-4 rounded-xl bg-white/5 hover:bg-white/10 flex justify-between"
                                             >
                                                 <span className="text-gray-300">{option.label}</span>
-                                                <ChevronRight className="w-4 h-4 text-azure" />
+                                                <ChevronRight className="w-4 h-4 text-electric" />
                                             </button>
                                         ))}
                                     </div>
@@ -204,20 +204,20 @@ const DiagnosticWizard = ({ isOpen, onClose }: DiagnosticWizardProps) => {
                                     }}>
                                         <div>
                                             <label htmlFor="leadName" className="block text-sm font-medium text-gray-300 mb-1">Nombre Completo</label>
-                                            <input id="leadName" required type="text" value={leadData.name} onChange={(e) => setLeadData({ ...leadData, name: e.target.value })} className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all placeholder:text-gray-600" />
+                                            <input id="leadName" required type="text" value={leadData.name} onChange={(e) => setLeadData({ ...leadData, name: e.target.value })} className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-ice focus:ring-1 focus:ring-neon-ice outline-none transition-all placeholder:text-gray-600" />
                                         </div>
                                         <div>
                                             <label htmlFor="leadEmail" className="block text-sm font-medium text-gray-300 mb-1">Email Corporativo</label>
-                                            <input id="leadEmail" required type="email" value={leadData.email} onChange={(e) => setLeadData({ ...leadData, email: e.target.value })} className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all placeholder:text-gray-600" />
+                                            <input id="leadEmail" required type="email" value={leadData.email} onChange={(e) => setLeadData({ ...leadData, email: e.target.value })} className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-ice focus:ring-1 focus:ring-neon-ice outline-none transition-all placeholder:text-gray-600" />
                                         </div>
                                         <div>
                                             <label htmlFor="leadCompany" className="block text-sm font-medium text-gray-300 mb-1">Empresa</label>
-                                            <input id="leadCompany" required type="text" value={leadData.company} onChange={(e) => setLeadData({ ...leadData, company: e.target.value })} className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all placeholder:text-gray-600" />
+                                            <input id="leadCompany" required type="text" value={leadData.company} onChange={(e) => setLeadData({ ...leadData, company: e.target.value })} className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-ice focus:ring-1 focus:ring-neon-ice outline-none transition-all placeholder:text-gray-600" />
                                         </div>
                                         <button
                                             type="submit"
                                             disabled={sending}
-                                            className="w-full mt-6 py-4 bg-azure hover:bg-azure-glow text-white font-bold rounded-xl flex justify-center gap-2 items-center transition-colors"
+                                            className="w-full mt-6 py-4 bg-electric hover:bg-electric-glow text-white font-bold rounded-xl flex justify-center gap-2 items-center transition-colors"
                                         >
                                             {sending ? <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" /> : 'Ver Resultados del Diagnóstico'}
                                         </button>
@@ -236,7 +236,7 @@ const DiagnosticWizard = ({ isOpen, onClose }: DiagnosticWizardProps) => {
                                         <button
                                             onClick={sendToWhatsApp}
                                             disabled={sending}
-                                            className="w-full py-4 bg-azure hover:bg-azure-glow text-white font-bold rounded-xl flex justify-center gap-2"
+                                            className="w-full py-4 bg-electric hover:bg-electric-glow text-white font-bold rounded-xl flex justify-center gap-2"
                                         >
                                             <Send />
                                             {sending ? 'Abriendo WhatsApp...' : 'Quiero recibir asesoría'}

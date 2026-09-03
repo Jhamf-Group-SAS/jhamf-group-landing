@@ -37,7 +37,7 @@ const SupportServices: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="group relative bg-obsidian border border-white/10 rounded-2xl p-8 hover:border-signal/50 transition-colors"
+                                className="group relative bg-void border border-white/10 rounded-2xl p-8 hover:border-signal/50 transition-colors"
                             >
                                 <div className="absolute inset-0 bg-gradient-to-br from-signal/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
 

@@ -12,7 +12,7 @@ const Contact = () => {
                 description="Hablemos de cómo la tecnología puede evolucionar su infraestructura hoy mismo."
                 contactTitle="Contacto Directo"
                 formCtaText="Solicitar Consultoría Gratuita"
-                bgClass="bg-obsidian border-t border-white/5"
+                bgClass="bg-void border-t border-white/5"
             />
 
             {/* Footer */}

@@ -24,13 +24,13 @@ const CaseStudiesPage: React.FC = () => {
 
     // Map icons for WhyTrustUs items
     const trustIcons = [
-        <BarChart3 className="w-6 h-6 text-azure-DEFAULT" />,
-        <TrendingUp className="w-6 h-6 text-azure-DEFAULT" />,
-        <Users className="w-6 h-6 text-azure-DEFAULT" />
+        <BarChart3 className="w-6 h-6 text-electric" />,
+        <TrendingUp className="w-6 h-6 text-electric" />,
+        <Users className="w-6 h-6 text-electric" />
     ];
 
     return (
-        <div className="bg-obsidian min-h-screen selection:bg-azure-DEFAULT/30">
+        <div className="bg-void min-h-screen selection:bg-electric/30">
             <SEOHead
                 title={t('seo.title')}
                 description={t('seo.description')}
@@ -47,7 +47,7 @@ const CaseStudiesPage: React.FC = () => {
                     title={
                         <Trans i18nKey="hero.headline_1" ns="casestudies">
                             Casos de Éxito: <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-azure-DEFAULT via-neon-cyan to-neon-purple">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric via-neon-ice to-plasma">
                                 Soluciones Cloud & Automatización
                             </span>
                         </Trans>
@@ -67,14 +67,14 @@ const CaseStudiesPage: React.FC = () => {
 
                 <ServiceBenefits
                     layout="grid"
-                    bgClass="bg-obsidian"
+                    bgClass="bg-void"
                     title={t('trust.title')}
                     description={t('trust.description')}
                     items={(t('trust.items', { returnObjects: true }) as Array<{ title: string, description: string }>).map((item, idx) => ({
                         icon: trustIcons[idx % trustIcons.length],
                         title: item.title,
                         description: item.description,
-                        iconColorClass: "text-azure-DEFAULT" // Optional since the icon has it
+                        iconColorClass: "text-electric" // Optional since the icon has it
                     }))}
                 />
 

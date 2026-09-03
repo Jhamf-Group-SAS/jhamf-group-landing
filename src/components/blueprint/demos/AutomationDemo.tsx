@@ -36,11 +36,11 @@ const AutomationDemo = () => {
     }, [activePersona]);
 
     return (
-        <section className="py-20 bg-obsidian">
+        <section className="py-20 bg-void">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold font-display mb-4">
-                        Operación <span className="text-neon-cyan">Autónoma</span>
+                        Operación <span className="text-neon-ice">Autónoma</span>
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto">
                         Esto es lo que pasa cuando los procesos dejan de depender de personas.
@@ -51,7 +51,7 @@ const AutomationDemo = () => {
                     {/* Connection Line */}
                     <div className="absolute top-1/2 left-10 right-10 h-1 bg-white/10 -translate-y-1/2 hidden md:block">
                         <motion.div
-                            className="h-full bg-gradient-to-r from-neon-cyan to-neon-lime"
+                            className="h-full bg-gradient-to-r from-neon-ice to-signal"
                             initial={{ width: '0%' }}
                             animate={{ width: `${Math.min(100, (activeStep / (data.steps.length - 1)) * 100)}%` }}
                             transition={{ duration: 0.5 }}
@@ -70,8 +70,8 @@ const AutomationDemo = () => {
                                 }}
                                 className="flex flex-col items-center gap-4"
                             >
-                                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-2xl border-2 transition-colors duration-300 bg-obsidian ${index <= activeStep
-                                    ? 'border-neon-cyan text-white shadow-[0_0_20px_rgba(0,240,255,0.3)]'
+                                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-2xl border-2 transition-colors duration-300 bg-void ${index <= activeStep
+                                    ? 'border-neon-ice text-white shadow-[0_0_20px_rgba(0,240,255,0.3)]'
                                     : 'border-white/10 text-gray-600'
                                     }`}>
                                     {step.split(' ').pop()}
@@ -90,12 +90,12 @@ const AutomationDemo = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -20 }}
-                                className="absolute inset-0 bg-obsidian/90 flex items-center justify-center z-20 backdrop-blur-sm"
+                                className="absolute inset-0 bg-void/90 flex items-center justify-center z-20 backdrop-blur-sm"
                             >
                                 <div className="text-center">
-                                    <div className="text-neon-lime text-6xl mb-4 font-bold">✓</div>
+                                    <div className="text-signal text-6xl mb-4 font-bold">✓</div>
                                     <h3 className="text-2xl font-bold text-white mb-2">Proceso Completado</h3>
-                                    <p className="text-neon-cyan text-lg font-mono">{data.impact}</p>
+                                    <p className="text-neon-ice text-lg font-mono">{data.impact}</p>
                                 </div>
                             </motion.div>
                         )}

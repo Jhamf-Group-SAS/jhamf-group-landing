@@ -34,7 +34,7 @@ const SupportProcess: React.FC = () => {
                                 transition={{ delay: index * 0.1 }}
                                 className="relative text-center group"
                             >
-                                <div className="w-16 h-16 mx-auto bg-obsidian border-2 border-white/10 rounded-full flex items-center justify-center mb-6 relative z-10 group-hover:border-signal transition-colors group-hover:shadow-[0_0_30px_rgba(0,255,157,0.2)]">
+                                <div className="w-16 h-16 mx-auto bg-void border-2 border-white/10 rounded-full flex items-center justify-center mb-6 relative z-10 group-hover:border-signal transition-colors group-hover:shadow-[0_0_30px_rgba(0,255,157,0.2)]">
                                     <span className="text-xl font-bold font-mono text-gray-400 group-hover:text-signal transition-colors">{step.step}</span>
                                 </div>
                                 <h3 className="text-xl font-bold text-white mb-4">{step.title}</h3>

@@ -66,15 +66,15 @@ const AIDiagnostic = () => {
     };
 
     return (
-        <section className="py-20 bg-obsidian relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-neon-purple/10 rounded-full blur-[120px] pointer-events-none" />
+        <section className="py-20 bg-void relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-plasma/10 rounded-full blur-[120px] pointer-events-none" />
 
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">
                             IA Aplicada. <br />
-                            <span className="text-neon-purple">No Chat Genérico.</span>
+                            <span className="text-plasma">No Chat Genérico.</span>
                         </h2>
                         <p className="text-gray-400 text-lg mb-8">
                             Un chatbot responde preguntas. Este sistema entiende tu operación, diagnostica problemas y ejecuta soluciones.
@@ -82,11 +82,11 @@ const AIDiagnostic = () => {
 
                         <div className="flex gap-4 mb-8">
                             <div className="p-4 bg-white/5 rounded-xl border border-white/10">
-                                <h4 className="text-neon-lime font-bold text-2xl mb-1">24/7</h4>
+                                <h4 className="text-signal font-bold text-2xl mb-1">24/7</h4>
                                 <p className="text-xs text-gray-500 uppercase">Disponibilidad</p>
                             </div>
                             <div className="p-4 bg-white/5 rounded-xl border border-white/10">
-                                <h4 className="text-neon-cyan font-bold text-2xl mb-1">0.2s</h4>
+                                <h4 className="text-neon-ice font-bold text-2xl mb-1">0.2s</h4>
                                 <p className="text-xs text-gray-500 uppercase">Latencia</p>
                             </div>
                         </div>
@@ -110,12 +110,12 @@ const AIDiagnostic = () => {
                                     animate={{ opacity: 1, y: 0 }}
                                     className={`flex gap-4 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}
                                 >
-                                    <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${msg.role === 'ai' ? 'bg-neon-purple/20 text-neon-purple' : 'bg-white/10 text-white'
+                                    <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${msg.role === 'ai' ? 'bg-plasma/20 text-plasma' : 'bg-white/10 text-white'
                                         }`}>
                                         {msg.role === 'ai' ? <Bot size={20} /> : <User size={20} />}
                                     </div>
                                     <div className={`p-4 rounded-2xl max-w-[80%] text-sm leading-relaxed whitespace-pre-line ${msg.role === 'ai'
-                                        ? 'bg-neon-purple/10 text-gray-200 border border-neon-purple/20 rounded-tl-none'
+                                        ? 'bg-plasma/10 text-gray-200 border border-plasma/20 rounded-tl-none'
                                         : 'bg-white/10 text-white rounded-tr-none'
                                         }`}>
                                         {msg.text}
@@ -124,13 +124,13 @@ const AIDiagnostic = () => {
                             ))}
                             {isTyping && (
                                 <div className="flex gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-neon-purple/20 flex items-center justify-center shrink-0">
-                                        <Bot size={20} className="text-neon-purple" />
+                                    <div className="w-10 h-10 rounded-full bg-plasma/20 flex items-center justify-center shrink-0">
+                                        <Bot size={20} className="text-plasma" />
                                     </div>
-                                    <div className="flex gap-1 items-center bg-neon-purple/10 p-4 rounded-2xl rounded-tl-none h-12">
-                                        <span className="w-2 h-2 bg-neon-purple rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                                        <span className="w-2 h-2 bg-neon-purple rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                                        <span className="w-2 h-2 bg-neon-purple rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                                    <div className="flex gap-1 items-center bg-plasma/10 p-4 rounded-2xl rounded-tl-none h-12">
+                                        <span className="w-2 h-2 bg-plasma rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                                        <span className="w-2 h-2 bg-plasma rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                                        <span className="w-2 h-2 bg-plasma rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                                     </div>
                                 </div>
                             )}
@@ -146,7 +146,7 @@ const AIDiagnostic = () => {
                                     onChange={(e) => setInput(e.target.value)}
                                     onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                                     placeholder="Describa un problema operativo..."
-                                    className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-4 pr-12 text-white placeholder-gray-500 focus:outline-none focus:border-neon-purple transition-colors"
+                                    className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-4 pr-12 text-white placeholder-gray-500 focus:outline-none focus:border-plasma transition-colors"
                                 />
                                 <button
                                     onClick={handleSend}

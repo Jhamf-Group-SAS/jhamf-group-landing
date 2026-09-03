@@ -4,7 +4,7 @@ import { ArrowRight, Building2, Store } from 'lucide-react';
 
 const AzureUseCases: React.FC = () => {
     return (
-        <section className="py-20 bg-obsidian">
+        <section className="py-20 bg-void">
             <div className="container px-4 mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
@@ -20,7 +20,7 @@ const AzureUseCases: React.FC = () => {
                         className="group relative overflow-hidden rounded-2xl bg-[#0F0F1A] border border-white/5 p-8"
                     >
                         <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                            <Store className="w-32 h-32 text-azure-DEFAULT" />
+                            <Store className="w-32 h-32 text-electric" />
                         </div>
 
                         <div className="relative z-10">
@@ -49,12 +49,12 @@ const AzureUseCases: React.FC = () => {
                         className="group relative overflow-hidden rounded-2xl bg-[#0F0F1A] border border-white/5 p-8"
                     >
                         <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                            <Building2 className="w-32 h-32 text-neon-purple" />
+                            <Building2 className="w-32 h-32 text-plasma" />
                         </div>
 
                         <div className="relative z-10">
-                            <div className="w-12 h-12 rounded-lg bg-neon-purple/20 flex items-center justify-center mb-6">
-                                <Building2 className="w-6 h-6 text-neon-purple" />
+                            <div className="w-12 h-12 rounded-lg bg-plasma/20 flex items-center justify-center mb-6">
+                                <Building2 className="w-6 h-6 text-plasma" />
                             </div>
 
                             <h3 className="text-2xl font-bold text-white mb-4">Grandes Empresas</h3>
@@ -63,12 +63,12 @@ const AzureUseCases: React.FC = () => {
                             </p>
 
                             <ul className="space-y-3 mb-8 text-sm text-gray-300">
-                                <li className="flex items-center gap-2"><ArrowRight className="w-4 h-4 text-neon-purple" /> Migración de Datacenters</li>
-                                <li className="flex items-center gap-2"><ArrowRight className="w-4 h-4 text-neon-purple" /> Gobernanza y Compliance</li>
-                                <li className="flex items-center gap-2"><ArrowRight className="w-4 h-4 text-neon-purple" /> IA Corporativa y Big Data</li>
+                                <li className="flex items-center gap-2"><ArrowRight className="w-4 h-4 text-plasma" /> Migración de Datacenters</li>
+                                <li className="flex items-center gap-2"><ArrowRight className="w-4 h-4 text-plasma" /> Gobernanza y Compliance</li>
+                                <li className="flex items-center gap-2"><ArrowRight className="w-4 h-4 text-plasma" /> IA Corporativa y Big Data</li>
                             </ul>
 
-                            <span className="text-neon-purple text-sm font-medium group-hover:underline cursor-pointer">Ver soluciones corporativas &rarr;</span>
+                            <span className="text-plasma text-sm font-medium group-hover:underline cursor-pointer">Ver soluciones corporativas &rarr;</span>
                         </div>
                     </motion.div>
                 </div>

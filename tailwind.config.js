@@ -50,18 +50,6 @@ export default {
         signal: '#00FF88',
         'steel': '#94A3B8',
         'steel-dark': '#475569',
-
-        // Legacy aliases (keep for backward-compat during transition)
-        azure: {
-          DEFAULT: '#0066FF',
-          glow: '#3388FF',
-        },
-        neon: {
-          cyan: '#00D4FF',
-          lime: '#00FF88',
-          purple: '#8B5CF6',
-        },
-        obsidian: '#03040E',
         glass: 'rgba(255, 255, 255, 0.04)',
       },
       fontFamily: {

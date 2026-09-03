@@ -8,7 +8,7 @@ const SupportBenefits: React.FC = () => {
     const items = t('benefits.items', { returnObjects: true }) as string[];
 
     return (
-        <section className="py-24 bg-obsidian relative overflow-hidden border-t border-b border-white/5 line-bg">
+        <section className="py-24 bg-void relative overflow-hidden border-t border-b border-white/5 line-bg">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -48,7 +48,7 @@ const SupportBenefits: React.FC = () => {
                     >
                         <div className="aspect-square rounded-full border border-white/10 flex items-center justify-center p-8 relative">
                             <div className="absolute inset-0 border border-signal/20 rounded-full animate-[spin_10s_linear_infinite]" />
-                            <div className="absolute inset-4 border border-neon-cyan/20 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
+                            <div className="absolute inset-4 border border-neon-ice/20 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
                             <div className="w-full h-full bg-void rounded-full flex items-center justify-center border border-white/5 relative z-10 shadow-[0_0_100px_rgba(0,255,157,0.1)]">
                                 <div className="text-center flex flex-col items-center">
                                     <Clock className="w-8 h-8 text-signal mb-2" />

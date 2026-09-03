@@ -16,14 +16,14 @@ const Testimonials = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {testimonials.map((t, i) => (
-                        <div key={i} className="bg-obsidian border border-white/10 p-8 rounded-2xl relative">
-                            <Quote className="w-10 h-10 text-azure-DEFAULT/20 absolute top-6 right-6" />
+                        <div key={i} className="bg-void border border-white/10 p-8 rounded-2xl relative">
+                            <Quote className="w-10 h-10 text-electric/20 absolute top-6 right-6" />
                             <p className="text-gray-300 text-lg mb-6 leading-relaxed italic">
                                 "{t.quote}"
                             </p>
                             <div>
                                 <h4 className="text-white font-bold">{t.author}</h4>
-                                <p className="text-azure-DEFAULT text-sm">{t.role}</p>
+                                <p className="text-electric text-sm">{t.role}</p>
                             </div>
                         </div>
                     ))}

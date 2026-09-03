@@ -4,14 +4,14 @@ import { Network, Workflow, BrainCircuit, BarChart3 } from 'lucide-react';
 
 const ToolsSection = () => {
     return (
-        <section className="py-24 bg-obsidian text-white">
+        <section className="py-24 bg-void text-white">
             <div className="container mx-auto px-4">
                 {/* 1. Automation */}
                 <ToolBlock
                     title="Automatización de Procesos"
                     description="Los procesos ya no se olvidan. Se ejecutan solos."
                     icon={Workflow}
-                    color="text-neon-cyan"
+                    color="text-neon-ice"
                     features={['Seguimiento automático de leads', 'Alertas de inventario', 'Validación de facturas']}
                     diagram="Formulario → n8n → Acción"
                 />
@@ -32,7 +32,7 @@ const ToolsSection = () => {
                     title="Inteligencia Artificial"
                     description="La IA no responde. Decide. Agentes autónomos que entienden el contexto."
                     icon={BrainCircuit}
-                    color="text-neon-purple"
+                    color="text-plasma"
                     features={['Clasificación de correos', 'Análisis de contratos', 'Soporte Nivel 1']}
                     diagram="Datos → LLM → Decisión"
                 />
@@ -42,7 +42,7 @@ const ToolsSection = () => {
                     title="Datos y Visibilidad"
                     description="Si no lo ves, no lo controlas. Dashboards vivos para tomar decisiones."
                     icon={BarChart3}
-                    color="text-neon-lime"
+                    color="text-signal"
                     features={['KPIs en tiempo real', 'Predicción de tendencias', 'Alertas financieras']}
                     diagram="Operación → BI → Gerencia"
                     reversed

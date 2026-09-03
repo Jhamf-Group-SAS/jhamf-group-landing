@@ -4,11 +4,11 @@ import { ArrowRight, Bot, Cpu, Sparkles } from 'lucide-react';
 
 const AutomationHero: React.FC = () => {
     return (
-        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-obsidian">
+        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-void">
             {/* Background Effects */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute top-[-20%] right-[-10%] w-[50%] h-[50%] bg-neon-purple/20 rounded-full blur-[120px] animate-pulse" />
-                <div className="absolute bottom-[-20%] left-[-10%] w-[50%] h-[50%] bg-neon-cyan/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '2s' }} />
+                <div className="absolute top-[-20%] right-[-10%] w-[50%] h-[50%] bg-plasma/20 rounded-full blur-[120px] animate-pulse" />
+                <div className="absolute bottom-[-20%] left-[-10%] w-[50%] h-[50%] bg-neon-ice/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '2s' }} />
                 <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
             </div>
 
@@ -18,10 +18,10 @@ const AutomationHero: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neon-purple/30 bg-neon-purple/10 backdrop-blur-sm"
+                        className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-plasma/30 bg-plasma/10 backdrop-blur-sm"
                     >
-                        <Bot className="w-5 h-5 text-neon-purple" />
-                        <span className="text-sm font-medium text-neon-purple tracking-wider uppercase">Intelligent Automation</span>
+                        <Bot className="w-5 h-5 text-plasma" />
+                        <span className="text-sm font-medium text-plasma tracking-wider uppercase">Intelligent Automation</span>
                     </motion.div>
 
                     <motion.h1
@@ -31,7 +31,7 @@ const AutomationHero: React.FC = () => {
                         className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight"
                     >
                         Automatizamos tu operación con <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">Inteligencia Artificial</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-ice to-plasma">Inteligencia Artificial</span>
                     </motion.h1>
 
                     <motion.p
@@ -54,13 +54,13 @@ const AutomationHero: React.FC = () => {
                             href="https://form.typeform.com/to/gxR8JkE0"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group relative px-8 py-4 bg-neon-purple text-white rounded-lg font-medium overflow-hidden transition-all hover:bg-neon-cyan hover:scale-105"
+                            className="group relative px-8 py-4 bg-plasma text-white rounded-lg font-medium overflow-hidden transition-all hover:bg-neon-ice hover:scale-105"
                         >
                             <span className="relative z-10 flex items-center gap-2">
                                 Solicitar Diagnóstico IA
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </span>
-                            <div className="absolute inset-0 bg-gradient-to-r from-neon-purple to-neon-cyan opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            <div className="absolute inset-0 bg-gradient-to-r from-plasma to-neon-ice opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </a>
 
                         <a

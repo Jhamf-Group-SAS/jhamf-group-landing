@@ -14,7 +14,7 @@ const AzureBenefits: React.FC = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
-                            ¿Por qué elegir a <span className="text-neon-cyan">Jhamf Group</span> como tu Partner?
+                            ¿Por qué elegir a <span className="text-neon-ice">Jhamf Group</span> como tu Partner?
                         </h2>
                         <p className="text-gray-400 mb-8 text-lg">
                             No somos solo un proveedor de licencias. Somos tu equipo extendido de ingeniería cloud, ubicados aquí en Colombia, hablando tu idioma y entendiendo tu mercado.
@@ -29,8 +29,8 @@ const AzureBenefits: React.FC = () => {
                             ].map((item, idx) => (
                                 <div key={idx} className="flex gap-4">
                                     <div className="mt-1">
-                                        <div className="w-10 h-10 rounded-full bg-neon-cyan/10 flex items-center justify-center">
-                                            <item.icon className="w-5 h-5 text-neon-cyan" />
+                                        <div className="w-10 h-10 rounded-full bg-neon-ice/10 flex items-center justify-center">
+                                            <item.icon className="w-5 h-5 text-neon-ice" />
                                         </div>
                                     </div>
                                     <div>
@@ -60,12 +60,12 @@ const AzureBenefits: React.FC = () => {
                             className="absolute inset-0 z-0 opacity-80"
                         />
 
-                        <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent pointer-events-none z-10" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-void via-transparent to-transparent pointer-events-none z-10" />
 
                         <div className="relative z-20 h-full flex flex-col items-center justify-end text-center p-8 mt-auto">
-                            <div className="bg-obsidian/90 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-2xl">
+                            <div className="bg-void/90 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-2xl">
                                 <h3 className="text-xl font-bold text-white mb-2 flex items-center justify-center gap-2">
-                                    <MapPin className="w-5 h-5 text-neon-cyan" />
+                                    <MapPin className="w-5 h-5 text-neon-ice" />
                                     Visítanos
                                 </h3>
                                 <p className="text-gray-300 text-sm">Calle 5b2 No 38-27<br />San Fernando, Cali</p>
@@ -73,7 +73,7 @@ const AzureBenefits: React.FC = () => {
                                     href="https://maps.app.goo.gl/2j6Z8Z8Z8Z8Z8Z8Z8" // Replace with actual shortlink if available, or just use the location
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="mt-4 inline-block text-xs text-neon-cyan hover:underline"
+                                    className="mt-4 inline-block text-xs text-neon-ice hover:underline"
                                 >
                                     Ver en Google Maps &rarr;
                                 </a>

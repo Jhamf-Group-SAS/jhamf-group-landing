@@ -19,7 +19,7 @@ const BlueprintPageContent = () => {
     };
 
     return (
-        <div className="min-h-screen bg-obsidian text-white font-sans selection:bg-neon-lime selection:text-obsidian">
+        <div className="min-h-screen bg-void text-white font-sans selection:bg-signal selection:text-void">
             <SEO
                 title="Blueprint | Jhamf Group"
                 description="La IA no se explica, se prueba. Interactúa con una operación real de IA y automatización funcionando como si fuera tu empresa."

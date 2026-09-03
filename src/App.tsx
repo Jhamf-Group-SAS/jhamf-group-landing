@@ -20,8 +20,8 @@ const CotizadorPage = lazy(() => import('./pages/CotizadorPage'));
 
 function RouteFallback() {
   return (
-    <div className="min-h-screen bg-obsidian flex items-center justify-center">
-      <div className="w-10 h-10 border-2 border-white/20 border-t-neon-cyan rounded-full animate-spin" />
+    <div className="min-h-screen bg-void flex items-center justify-center">
+      <div className="w-10 h-10 border-2 border-white/20 border-t-neon-ice rounded-full animate-spin" />
     </div>
   );
 }

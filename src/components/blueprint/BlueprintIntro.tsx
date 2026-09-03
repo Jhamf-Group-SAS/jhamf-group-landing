@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const BlueprintIntro = () => {
     return (
-        <section className="pt-16 pb-8 bg-obsidian text-white relative overflow-hidden">
+        <section className="pt-16 pb-8 bg-void text-white relative overflow-hidden">
             {/* Background Tech Mesh */}
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
 
@@ -17,7 +17,7 @@ const BlueprintIntro = () => {
                             className="text-5xl md:text-7xl font-bold font-display leading-[1.05] tracking-tight mb-6"
                         >
                             Los procesos ya no se olvidan. <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-lime">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-ice to-signal">
                                 Se ejecutan solos.
                             </span>
                         </motion.h2>
@@ -43,7 +43,7 @@ const BlueprintIntro = () => {
                                             transition={{ delay: i * 0.1 }}
                                             className="flex items-center gap-3 text-gray-200 font-medium text-sm md:text-base"
                                         >
-                                            <div className="w-1.5 h-1.5 rounded-full bg-neon-cyan shadow-[0_0_10px_rgba(0,240,255,0.5)]" />
+                                            <div className="w-1.5 h-1.5 rounded-full bg-neon-ice shadow-[0_0_10px_rgba(0,240,255,0.5)]" />
                                             {item}
                                         </motion.li>
                                     ))}

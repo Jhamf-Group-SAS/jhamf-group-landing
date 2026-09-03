@@ -96,7 +96,7 @@ const Navbar = ({ onOpenWizard }: NavbarProps) => {
 
                         <a
                             href={`/${lang}/cotizador`}
-                            className="group flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-neon-cyan rounded-xl border border-neon-cyan/40 hover:bg-neon-cyan/10 transition-all duration-200"
+                            className="group flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-neon-ice rounded-xl border border-neon-ice/40 hover:bg-neon-ice/10 transition-all duration-200"
                             aria-label="Ir al Cotizador Valora Suite"
                         >
                             Cotizar
@@ -153,7 +153,7 @@ const Navbar = ({ onOpenWizard }: NavbarProps) => {
                                 </div>
                                 <a
                                     href={`/${lang}/cotizador`}
-                                    className="w-full flex items-center justify-center gap-2 py-3 text-sm font-semibold text-neon-cyan rounded-xl border border-neon-cyan/40 hover:bg-neon-cyan/10 transition-all"
+                                    className="w-full flex items-center justify-center gap-2 py-3 text-sm font-semibold text-neon-ice rounded-xl border border-neon-ice/40 hover:bg-neon-ice/10 transition-all"
                                 >
                                     Cotizar
                                 </a>

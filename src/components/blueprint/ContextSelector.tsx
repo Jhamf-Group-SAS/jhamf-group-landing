@@ -20,7 +20,7 @@ const ContextSelector = ({ embedded }: { embedded?: boolean }) => {
                         key={persona.id}
                         onClick={() => setPersona(persona.id)}
                         className={`relative px-4 py-2 rounded-lg border text-sm transition-all duration-300 ${activePersona === persona.id
-                            ? 'bg-neon-lime/10 border-neon-lime text-neon-lime shadow-[0_0_10px_rgba(204,255,0,0.2)]'
+                            ? 'bg-signal/10 border-signal text-signal shadow-[0_0_10px_rgba(204,255,0,0.2)]'
                             : 'bg-white/5 border-white/10 text-gray-400 hover:bg-white/10 hover:border-white/20'
                             }`}
                     >
@@ -29,7 +29,7 @@ const ContextSelector = ({ embedded }: { embedded?: boolean }) => {
                             <span className="font-bold">{persona.label}</span>
                         </div>
                         {activePersona === persona.id && (
-                            <div className="absolute inset-0 rounded-lg bg-neon-lime/5 -z-10" />
+                            <div className="absolute inset-0 rounded-lg bg-signal/5 -z-10" />
                         )}
                     </button>
                 ))}
@@ -38,7 +38,7 @@ const ContextSelector = ({ embedded }: { embedded?: boolean }) => {
     }
 
     return (
-        <section className="py-10 border-b border-white/5 bg-obsidian/50 backdrop-blur-sm sticky top-20 z-40">
+        <section className="py-10 border-b border-white/5 bg-void/50 backdrop-blur-sm sticky top-20 z-40">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-6">
                     <p className="text-sm text-gray-500 font-mono uppercase tracking-widest">Selecciona tu contexto</p>
@@ -50,7 +50,7 @@ const ContextSelector = ({ embedded }: { embedded?: boolean }) => {
                             key={persona.id}
                             onClick={() => setPersona(persona.id)}
                             className={`relative px-6 py-3 rounded-lg border transition-all duration-300 ${activePersona === persona.id
-                                ? 'bg-neon-lime/10 border-neon-lime text-neon-lime shadow-[0_0_15px_rgba(204,255,0,0.2)]'
+                                ? 'bg-signal/10 border-signal text-signal shadow-[0_0_15px_rgba(204,255,0,0.2)]'
                                 : 'bg-white/5 border-white/10 text-gray-400 hover:bg-white/10 hover:border-white/20'
                                 }`}
                         >
@@ -61,7 +61,7 @@ const ContextSelector = ({ embedded }: { embedded?: boolean }) => {
                             {activePersona === persona.id && (
                                 <motion.div
                                     layoutId="activeGlow"
-                                    className="absolute inset-0 rounded-lg bg-neon-lime/5"
+                                    className="absolute inset-0 rounded-lg bg-signal/5"
                                     transition={{ duration: 0.3 }}
                                 />
                             )}

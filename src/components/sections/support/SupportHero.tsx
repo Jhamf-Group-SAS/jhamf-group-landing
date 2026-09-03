@@ -10,7 +10,7 @@ const SupportHero: React.FC = () => {
         <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
             {/* Background Effects */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-obsidian" />
+                <div className="absolute inset-0 bg-void" />
                 {/* Tech dark minimal gradient */}
                 <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_20%,rgba(0,255,157,0.08),transparent_50%)]" />
                 <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_80%,rgba(0,163,255,0.05),transparent_50%)]" />
@@ -39,7 +39,7 @@ const SupportHero: React.FC = () => {
                         className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight"
                     >
                         {t('hero.title').split(' ').map((word, i) => (
-                            <span key={i} className={word.includes('24/7') || word.includes('Crítica') ? "text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-signal" : ""}>
+                            <span key={i} className={word.includes('24/7') || word.includes('Crítica') ? "text-transparent bg-clip-text bg-gradient-to-r from-neon-ice to-signal" : ""}>
                                 {word + ' '}
                             </span>
                         ))}
@@ -60,7 +60,7 @@ const SupportHero: React.FC = () => {
                         transition={{ duration: 0.5, delay: 0.3 }}
                         className="flex flex-col sm:flex-row gap-4"
                     >
-                        <a href="https://form.typeform.com/to/gxR8JkE0" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-azure hover:bg-electric-glow text-white rounded-lg transition-all flex items-center justify-center gap-2 font-medium group relative overflow-hidden">
+                        <a href="https://form.typeform.com/to/gxR8JkE0" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-electric hover:bg-electric-glow text-white rounded-lg transition-all flex items-center justify-center gap-2 font-medium group relative overflow-hidden">
                             <span className="relative z-10">{t('hero.primary_cta')}</span>
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
                         </a>

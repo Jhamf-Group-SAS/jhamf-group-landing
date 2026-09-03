@@ -33,14 +33,14 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
     cotizadorCtaLink,
     traits,
     pillColorClass = "bg-white/5 border-white/10 text-white",
-    bgClass = "bg-obsidian"
+    bgClass = "bg-void"
 }) => {
     return (
         <section className={`relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden ${bgClass}`}>
             {/* Default Background Effects - Can be customized via generic classes later if needed */}
             <div className="absolute inset-0 z-0 pointer-events-none">
-                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-azure/20 rounded-full blur-[120px] animate-pulse" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-neon-cyan/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '2s' }} />
+                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-electric/20 rounded-full blur-[120px] animate-pulse" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-neon-ice/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '2s' }} />
                 <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-10" />
             </div>
 
@@ -90,13 +90,13 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
                                 if (!primaryCtaLink) e.preventDefault();
                                 primaryCtaOnClick(e);
                             } : undefined}
-                            className="px-8 py-4 bg-azure hover:bg-electric-glow text-white rounded-lg transition-all flex items-center justify-center gap-2 font-medium group relative overflow-hidden w-full sm:w-auto min-h-[44px]"
+                            className="px-8 py-4 bg-electric hover:bg-electric-glow text-white rounded-lg transition-all flex items-center justify-center gap-2 font-medium group relative overflow-hidden w-full sm:w-auto min-h-[44px]"
                         >
                             <span className="relative z-10">{primaryCtaText}</span>
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
                         </a>
                         {cotizadorCtaText && cotizadorCtaLink && (
-                            <a href={cotizadorCtaLink} className="px-8 py-4 bg-transparent border-2 border-neon-cyan hover:bg-neon-cyan/10 text-neon-cyan rounded-lg transition-all flex items-center justify-center gap-2 font-medium group w-full sm:w-auto min-h-[44px]">
+                            <a href={cotizadorCtaLink} className="px-8 py-4 bg-transparent border-2 border-neon-ice hover:bg-neon-ice/10 text-neon-ice rounded-lg transition-all flex items-center justify-center gap-2 font-medium group w-full sm:w-auto min-h-[44px]">
                                 <span className="relative z-10">{cotizadorCtaText}</span>
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
                             </a>

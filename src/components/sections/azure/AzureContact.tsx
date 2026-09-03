@@ -3,9 +3,9 @@ import { Send, Phone, Mail, MessageSquare } from 'lucide-react';
 
 const AzureContact: React.FC = () => {
     return (
-        <section id="contact" className="py-24 bg-gradient-to-b from-obsidian to-black relative overflow-hidden">
+        <section id="contact" className="py-24 bg-gradient-to-b from-void to-black relative overflow-hidden">
             {/* Glow effect */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-azure-DEFAULT/10 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-electric/10 blur-[120px] rounded-full pointer-events-none" />
 
             <div className="container px-4 mx-auto relative z-10">
                 <div className="max-w-4xl mx-auto bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 backdrop-blur-xl">
@@ -30,8 +30,8 @@ const AzureContact: React.FC = () => {
                             </a>
 
                             <a href="mailto:proyectos@jhamf.com" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
-                                <div className="w-10 h-10 rounded-full bg-azure-DEFAULT/10 flex items-center justify-center group-hover:bg-azure-DEFAULT/20">
-                                    <Mail className="w-5 h-5 text-azure-DEFAULT" />
+                                <div className="w-10 h-10 rounded-full bg-electric/10 flex items-center justify-center group-hover:bg-electric/20">
+                                    <Mail className="w-5 h-5 text-electric" />
                                 </div>
                                 <span>proyectos@jhamf.com</span>
                             </a>
@@ -49,18 +49,18 @@ const AzureContact: React.FC = () => {
                                 <input
                                     type="text"
                                     placeholder="Nombre de la empresa"
-                                    className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-azure-DEFAULT transition-colors"
+                                    className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-electric transition-colors"
                                 />
                             </div>
                             <div>
                                 <input
                                     type="email"
                                     placeholder="Correo corporativo"
-                                    className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-azure-DEFAULT transition-colors"
+                                    className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-electric transition-colors"
                                 />
                             </div>
                             <div>
-                                <select className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-gray-300 focus:outline-none focus:border-azure-DEFAULT transition-colors">
+                                <select className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-gray-300 focus:outline-none focus:border-electric transition-colors">
                                     <option>Interés Principal: Migración</option>
                                     <option>Interés Principal: Infraestructura</option>
                                     <option>Interés Principal: Datos e IA</option>
@@ -72,7 +72,7 @@ const AzureContact: React.FC = () => {
                                 href="https://form.typeform.com/to/gxR8JkE0"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-full bg-azure-DEFAULT hover:bg-azure-glow text-white font-medium py-3 rounded-lg transition-all flex items-center justify-center gap-2 group"
+                                className="w-full bg-electric hover:bg-electric-glow text-white font-medium py-3 rounded-lg transition-all flex items-center justify-center gap-2 group"
                             >
                                 Solicitar Asesoría
                                 <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

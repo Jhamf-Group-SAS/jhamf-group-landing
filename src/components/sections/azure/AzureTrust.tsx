@@ -9,7 +9,7 @@ const LogoPlaceholder = ({ text }: { text: string }) => (
 
 const AzureTrust: React.FC = () => {
     return (
-        <section className="py-12 border-y border-white/5 bg-obsidian">
+        <section className="py-12 border-y border-white/5 bg-void">
             <div className="container px-4 mx-auto">
                 <p className="text-center text-sm text-gray-500 uppercase tracking-widest mb-8">
                     Tecnología certificada por líderes de la industria

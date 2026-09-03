@@ -15,9 +15,9 @@ const ServiceCTA: React.FC<ServiceCTAProps> = ({
     title,
     buttonText,
     buttonLink = "https://form.typeform.com/to/gxR8JkE0",
-    bgClass = "bg-obsidian",
-    glowClass = "from-transparent to-azure/5",
-    buttonClass = "bg-azure text-white hover:bg-electric-glow"
+    bgClass = "bg-void",
+    glowClass = "from-transparent to-electric/5",
+    buttonClass = "bg-electric text-white hover:bg-electric-glow"
 }) => {
     return (
         <section className={`py-24 relative overflow-hidden ${bgClass}`}>
@@ -30,8 +30,8 @@ const ServiceCTA: React.FC<ServiceCTAProps> = ({
                     viewport={{ once: true }}
                     className="p-12 md:p-16 rounded-3xl border border-white/10 bg-void/50 backdrop-blur-md relative overflow-hidden"
                 >
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-azure/10 rounded-full blur-[100px]" />
-                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-neon-cyan/10 rounded-full blur-[100px]" />
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-electric/10 rounded-full blur-[100px]" />
+                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-neon-ice/10 rounded-full blur-[100px]" />
 
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 relative z-10">
                         {title}

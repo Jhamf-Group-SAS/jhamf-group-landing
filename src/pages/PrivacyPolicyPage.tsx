@@ -9,7 +9,7 @@ const PrivacyPolicyPage = () => {
     const { t } = useTranslation('privacy');
 
     return (
-        <div className="bg-obsidian min-h-screen text-white font-sans flex flex-col">
+        <div className="bg-void min-h-screen text-white font-sans flex flex-col">
             <SEO
                 title={t('seo.title')}
                 description={t('seo.description')}
@@ -24,7 +24,7 @@ const PrivacyPolicyPage = () => {
                     transition={{ duration: 0.5 }}
                 >
                     <div className="text-center mb-16">
-                        <span className="text-neon-cyan font-mono mb-4 block">{t('header.subtitle')}</span>
+                        <span className="text-neon-ice font-mono mb-4 block">{t('header.subtitle')}</span>
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('header.title')}</h1>
                         <p className="text-gray-400">{t('header.updated')} {new Date().getFullYear()}</p>
                     </div>
@@ -32,8 +32,8 @@ const PrivacyPolicyPage = () => {
                     <div className="bg-white/5 border border-white/10 rounded-2xl p-8 mb-12 backdrop-blur-sm">
                         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                             <div className="flex items-center gap-4">
-                                <div className="w-16 h-16 bg-neon-cyan/10 rounded-xl flex items-center justify-center border border-neon-cyan/20">
-                                    <FileText className="w-8 h-8 text-neon-cyan" />
+                                <div className="w-16 h-16 bg-neon-ice/10 rounded-xl flex items-center justify-center border border-neon-ice/20">
+                                    <FileText className="w-8 h-8 text-neon-ice" />
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-bold text-white mb-1">{t('document.title')}</h3>
@@ -44,7 +44,7 @@ const PrivacyPolicyPage = () => {
                                 href="/Politica-Tratamiento-de-datos-002.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-full md:w-auto px-8 py-3 bg-azure hover:bg-electric-glow text-white rounded-lg transition-all flex items-center justify-center gap-2 font-medium group"
+                                className="w-full md:w-auto px-8 py-3 bg-electric hover:bg-electric-glow text-white rounded-lg transition-all flex items-center justify-center gap-2 font-medium group"
                             >
                                 <Download className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
                                 {t('document.download')}

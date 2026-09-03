@@ -10,11 +10,11 @@ const CaseStudiesHero = () => {
     };
 
     return (
-        <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-obsidian pt-20">
+        <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-void pt-20">
             {/* Background Effects */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-azure/10 blur-[100px] rounded-full mix-blend-screen" />
-                <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-neon-purple/10 blur-[100px] rounded-full mix-blend-screen" />
+                <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-electric/10 blur-[100px] rounded-full mix-blend-screen" />
+                <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-plasma/10 blur-[100px] rounded-full mix-blend-screen" />
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 bg-repeat mix-blend-overlay" />
             </div>
 
@@ -25,11 +25,11 @@ const CaseStudiesHero = () => {
                     transition={{ duration: 0.6 }}
                     className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm"
                 >
-                    <Cloud className="w-4 h-4 text-azure" />
+                    <Cloud className="w-4 h-4 text-electric" />
                     <span className="text-xs md:text-sm font-medium text-gray-300 uppercase tracking-widest">
                         Infraestructura & Automatización
                     </span>
-                    <Cpu className="w-4 h-4 text-neon-purple" />
+                    <Cpu className="w-4 h-4 text-plasma" />
                 </motion.div>
 
                 <motion.h1
@@ -39,7 +39,7 @@ const CaseStudiesHero = () => {
                     className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-tight"
                 >
                     Casos de Éxito: <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-azure via-neon-cyan to-neon-purple text-glow">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric via-neon-ice to-plasma text-glow">
                         Soluciones Cloud & Automatización
                     </span>
                 </motion.h1>
@@ -62,7 +62,7 @@ const CaseStudiesHero = () => {
                 >
                     <button
                         onClick={scrollToCases}
-                        className="group px-8 py-4 bg-azure hover:bg-azure-glow text-white font-semibold rounded-lg transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(0,127,255,0.4)] flex items-center gap-2"
+                        className="group px-8 py-4 bg-electric hover:bg-electric-glow text-white font-semibold rounded-lg transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(0,127,255,0.4)] flex items-center gap-2"
                     >
                         Explorar Casos
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

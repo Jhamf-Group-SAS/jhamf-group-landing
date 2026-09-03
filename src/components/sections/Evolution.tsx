@@ -6,7 +6,7 @@ const Evolution = () => {
     const navigate = useNavigate();
 
     return (
-        <section id="evolution" className="relative py-24 bg-obsidian overflow-hidden">
+        <section id="evolution" className="relative py-24 bg-void overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Section Header */}
@@ -22,8 +22,8 @@ const Evolution = () => {
                         <span className="text-gray-400">es su ventaja competitiva</span>
                     </h2>
                     <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                        Durante años, hemos construido las bases más sólidas en <span className="text-azure font-semibold">Microsoft Azure</span>.
-                        Hoy, usamos esa experiencia para construir el futuro: sistemas que no solo funcionan, sino que <span className="text-neon-cyan font-semibold">piensan</span> y <span className="text-neon-cyan font-semibold">gestionan</span> por sí mismos.
+                        Durante años, hemos construido las bases más sólidas en <span className="text-electric font-semibold">Microsoft Azure</span>.
+                        Hoy, usamos esa experiencia para construir el futuro: sistemas que no solo funcionan, sino que <span className="text-neon-ice font-semibold">piensan</span> y <span className="text-neon-ice font-semibold">gestionan</span> por sí mismos.
                     </p>
                 </motion.div>
 
@@ -32,7 +32,7 @@ const Evolution = () => {
 
                     {/* Connector Line (Desktop) */}
                     <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                        <div className="w-12 h-12 bg-obsidian border border-white/10 rounded-full flex items-center justify-center">
+                        <div className="w-12 h-12 bg-void border border-white/10 rounded-full flex items-center justify-center">
                             <ArrowRight className="text-gray-500" />
                         </div>
                     </div>
@@ -44,23 +44,23 @@ const Evolution = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                         onClick={() => { navigate('/azure'); window.scrollTo(0, 0); }}
-                        className="group relative p-8 rounded-2xl border border-white/5 bg-gradient-to-br from-white/5 to-transparent hover:border-azure/30 transition-all duration-500 cursor-pointer"
+                        className="group relative p-8 rounded-2xl border border-white/5 bg-gradient-to-br from-white/5 to-transparent hover:border-electric/30 transition-all duration-500 cursor-pointer"
                     >
-                        <div className="absolute inset-0 bg-azure/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+                        <div className="absolute inset-0 bg-electric/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
                         <div className="relative z-10">
-                            <div className="w-14 h-14 bg-azure/10 rounded-xl flex items-center justify-center mb-6 border border-azure/20">
-                                <Database className="w-8 h-8 text-azure" />
+                            <div className="w-14 h-14 bg-electric/10 rounded-xl flex items-center justify-center mb-6 border border-electric/20">
+                                <Database className="w-8 h-8 text-electric" />
                             </div>
                             <h3 className="text-2xl font-display font-bold text-white mb-4">Infraestructura & Cloud</h3>
                             <ul className="space-y-3 text-gray-400">
                                 <li className="flex items-center gap-2">
-                                    <Layers className="w-4 h-4 text-azure" /> Microsoft Azure Partners
+                                    <Layers className="w-4 h-4 text-electric" /> Microsoft Azure Partners
                                 </li>
                                 <li className="flex items-center gap-2">
-                                    <Layers className="w-4 h-4 text-azure" /> Arquitectura Hybrida & Multi-cloud
+                                    <Layers className="w-4 h-4 text-electric" /> Arquitectura Hybrida & Multi-cloud
                                 </li>
                                 <li className="flex items-center gap-2">
-                                    <Layers className="w-4 h-4 text-azure" /> Seguridad y Compliance
+                                    <Layers className="w-4 h-4 text-electric" /> Seguridad y Compliance
                                 </li>
                             </ul>
                         </div>
@@ -73,23 +73,23 @@ const Evolution = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                         onClick={() => { navigate('/automatizacion-ia'); window.scrollTo(0, 0); }}
-                        className="group relative p-8 rounded-2xl border border-white/5 bg-gradient-to-br from-white/5 to-transparent hover:border-neon-cyan/30 transition-all duration-500 cursor-pointer"
+                        className="group relative p-8 rounded-2xl border border-white/5 bg-gradient-to-br from-white/5 to-transparent hover:border-neon-ice/30 transition-all duration-500 cursor-pointer"
                     >
-                        <div className="absolute inset-0 bg-neon-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+                        <div className="absolute inset-0 bg-neon-ice/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
                         <div className="relative z-10">
-                            <div className="w-14 h-14 bg-neon-cyan/10 rounded-xl flex items-center justify-center mb-6 border border-neon-cyan/20">
-                                <Cpu className="w-8 h-8 text-neon-cyan" />
+                            <div className="w-14 h-14 bg-neon-ice/10 rounded-xl flex items-center justify-center mb-6 border border-neon-ice/20">
+                                <Cpu className="w-8 h-8 text-neon-ice" />
                             </div>
                             <h3 className="text-2xl font-display font-bold text-white mb-4">Automatización & IA</h3>
                             <ul className="space-y-3 text-gray-400">
                                 <li className="flex items-center gap-2">
-                                    <SparklesIcon className="w-4 h-4 text-neon-cyan" /> Automatización de Procesos (RPA)
+                                    <SparklesIcon className="w-4 h-4 text-neon-ice" /> Automatización de Procesos (RPA)
                                 </li>
                                 <li className="flex items-center gap-2">
-                                    <SparklesIcon className="w-4 h-4 text-neon-cyan" /> Agentes Cognitivos & Chatbots
+                                    <SparklesIcon className="w-4 h-4 text-neon-ice" /> Agentes Cognitivos & Chatbots
                                 </li>
                                 <li className="flex items-center gap-2">
-                                    <SparklesIcon className="w-4 h-4 text-neon-cyan" /> Análisis Predictivo de Datos
+                                    <SparklesIcon className="w-4 h-4 text-neon-ice" /> Análisis Predictivo de Datos
                                 </li>
                             </ul>
                         </div>

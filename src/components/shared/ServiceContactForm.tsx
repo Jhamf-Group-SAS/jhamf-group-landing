@@ -35,9 +35,9 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({
     ],
     formSelect,
     formCtaText,
-    bgClass = "bg-gradient-to-b from-obsidian to-black",
-    glowClass = "bg-azure/10",
-    buttonClass = "bg-azure hover:bg-azure-glow"
+    bgClass = "bg-gradient-to-b from-void to-black",
+    glowClass = "bg-electric/10",
+    buttonClass = "bg-electric hover:bg-electric-glow"
 }) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
@@ -83,8 +83,8 @@ const ServiceContactForm: React.FC<ServiceContactFormProps> = ({
                             </a>
 
                             <a href={emailLink} className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
-                                <div className="w-10 h-10 rounded-full bg-azure/10 flex items-center justify-center group-hover:bg-azure/20">
-                                    <Mail className="w-5 h-5 text-azure" />
+                                <div className="w-10 h-10 rounded-full bg-electric/10 flex items-center justify-center group-hover:bg-electric/20">
+                                    <Mail className="w-5 h-5 text-electric" />
                                 </div>
                                 <span>{emailText}</span>
                             </a>

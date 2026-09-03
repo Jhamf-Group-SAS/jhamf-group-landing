@@ -19,7 +19,7 @@ const AzurePage: React.FC = () => {
     const SITE = 'https://www.jhamf.com';
 
     return (
-        <div className="bg-obsidian min-h-screen">
+        <div className="bg-void min-h-screen">
             <SEOHead
                 title={t('seo.title')}
                 description={t('seo.description')}
@@ -36,7 +36,7 @@ const AzurePage: React.FC = () => {
                     title={
                         <Trans i18nKey="hero.headline_1" ns="azure">
                             Escala tu negocio con <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-azure-DEFAULT to-neon-cyan">Microsoft Azure</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-neon-ice">Microsoft Azure</span>
                         </Trans>
                     }
                     description={t('hero.description')}
@@ -54,24 +54,24 @@ const AzurePage: React.FC = () => {
 
                 {/* Services Grid */}
                 <div id="services" className="relative group">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-azure-DEFAULT to-transparent opacity-50 z-10" />
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-electric to-transparent opacity-50 z-10" />
                 </div>
                 <ServiceBenefits
                     layout="grid"
-                    bgClass="bg-obsidian relative z-0"
+                    bgClass="bg-void relative z-0"
                     title={
                         <Trans i18nKey="services.title_1" ns="azure">
-                            Soluciones Integrales <span className="text-azure-DEFAULT">Microsoft Azure</span>
+                            Soluciones Integrales <span className="text-electric">Microsoft Azure</span>
                         </Trans>
                     }
                     description={t('services.description')}
                     items={[
-                        { icon: <Server className="w-7 h-7 text-azure-DEFAULT" />, title: t('services.items.0.title'), description: t('services.items.0.description') },
-                        { icon: <RefreshCw className="w-7 h-7 text-azure-DEFAULT" />, title: t('services.items.1.title'), description: t('services.items.1.description') },
-                        { icon: <Shield className="w-7 h-7 text-azure-DEFAULT" />, title: t('services.items.2.title'), description: t('services.items.2.description') },
-                        { icon: <Database className="w-7 h-7 text-azure-DEFAULT" />, title: t('services.items.3.title'), description: t('services.items.3.description') },
-                        { icon: <Brain className="w-7 h-7 text-azure-DEFAULT" />, title: t('services.items.4.title'), description: t('services.items.4.description') },
-                        { icon: <LifeBuoy className="w-7 h-7 text-azure-DEFAULT" />, title: t('services.items.5.title'), description: t('services.items.5.description') }
+                        { icon: <Server className="w-7 h-7 text-electric" />, title: t('services.items.0.title'), description: t('services.items.0.description') },
+                        { icon: <RefreshCw className="w-7 h-7 text-electric" />, title: t('services.items.1.title'), description: t('services.items.1.description') },
+                        { icon: <Shield className="w-7 h-7 text-electric" />, title: t('services.items.2.title'), description: t('services.items.2.description') },
+                        { icon: <Database className="w-7 h-7 text-electric" />, title: t('services.items.3.title'), description: t('services.items.3.description') },
+                        { icon: <Brain className="w-7 h-7 text-electric" />, title: t('services.items.4.title'), description: t('services.items.4.description') },
+                        { icon: <LifeBuoy className="w-7 h-7 text-electric" />, title: t('services.items.5.title'), description: t('services.items.5.description') }
                     ]}
                 />
 
@@ -81,15 +81,15 @@ const AzurePage: React.FC = () => {
                     bgClass="bg-void"
                     title={
                         <Trans i18nKey="benefits.title_1" ns="azure">
-                            ¿Por qué elegir a <span className="text-neon-cyan">Jhamf Group</span> como tu Partner?
+                            ¿Por qué elegir a <span className="text-neon-ice">Jhamf Group</span> como tu Partner?
                         </Trans>
                     }
                     description={t('benefits.description')}
                     items={[
-                        { icon: <Award className="w-5 h-5 text-neon-cyan" />, title: t('benefits.items.0.title'), description: t('benefits.items.0.description') },
-                        { icon: <MapPin className="w-5 h-5 text-neon-cyan" />, title: t('benefits.items.1.title'), description: t('benefits.items.1.description') },
-                        { icon: <Users className="w-5 h-5 text-neon-cyan" />, title: t('benefits.items.2.title'), description: t('benefits.items.2.description') },
-                        { icon: <CheckCircle2 className="w-5 h-5 text-neon-cyan" />, title: t('benefits.items.3.title'), description: t('benefits.items.3.description') }
+                        { icon: <Award className="w-5 h-5 text-neon-ice" />, title: t('benefits.items.0.title'), description: t('benefits.items.0.description') },
+                        { icon: <MapPin className="w-5 h-5 text-neon-ice" />, title: t('benefits.items.1.title'), description: t('benefits.items.1.description') },
+                        { icon: <Users className="w-5 h-5 text-neon-ice" />, title: t('benefits.items.2.title'), description: t('benefits.items.2.description') },
+                        { icon: <CheckCircle2 className="w-5 h-5 text-neon-ice" />, title: t('benefits.items.3.title'), description: t('benefits.items.3.description') }
                     ]}
                     sideContent={
                         <div className="relative h-full min-h-[400px] rounded-2xl overflow-hidden border border-white/10 bg-glass backdrop-blur-sm p-2">
@@ -104,15 +104,15 @@ const AzurePage: React.FC = () => {
                                 className="absolute inset-0 z-0 opacity-80"
                                 title="Google Maps"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent pointer-events-none z-10" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-void via-transparent to-transparent pointer-events-none z-10" />
                             <div className="relative z-20 h-full flex flex-col items-center justify-end text-center p-8 mt-auto">
-                                <div className="bg-obsidian/90 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-2xl">
+                                <div className="bg-void/90 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-2xl">
                                     <h3 className="text-xl font-bold text-white mb-2 flex items-center justify-center gap-2">
-                                        <MapPin className="w-5 h-5 text-neon-cyan" />
+                                        <MapPin className="w-5 h-5 text-neon-ice" />
                                         {t('benefits.map_title')}
                                     </h3>
                                     <p className="text-gray-300 text-sm whitespace-pre-line">{t('benefits.map_address')}</p>
-                                    <a href="https://maps.app.goo.gl/2j6Z8Z8Z8Z8Z8Z8Z8" target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-xs text-neon-cyan hover:underline">
+                                    <a href="https://maps.app.goo.gl/2j6Z8Z8Z8Z8Z8Z8Z8" target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-xs text-neon-ice hover:underline">
                                         {t('benefits.map_link_text')}
                                     </a>
                                 </div>
@@ -124,7 +124,7 @@ const AzurePage: React.FC = () => {
                 {/* Use Cases Grid Custom (Or we can use ServiceBenefits but format differently) */}
                 <ServiceBenefits
                     layout="grid"
-                    bgClass="bg-obsidian"
+                    bgClass="bg-void"
                     title={t('use_cases.title')}
                     description={t('use_cases.description')}
                     items={[
@@ -147,7 +147,7 @@ const AzurePage: React.FC = () => {
                             )
                         },
                         {
-                            icon: <Building2 className="w-6 h-6 text-neon-purple" />,
+                            icon: <Building2 className="w-6 h-6 text-plasma" />,
                             title: t('use_cases.card2.title'),
                             description: (
                                 <>
@@ -155,12 +155,12 @@ const AzurePage: React.FC = () => {
                                     <ul className="space-y-3 mb-8 text-sm text-gray-300">
                                         {(t('use_cases.card2.points', { returnObjects: true }) as string[]).map((point, idx) => (
                                             <li key={idx} className="flex items-center gap-2">
-                                                <ArrowRight className="w-4 h-4 text-neon-purple flex-shrink-0" />
+                                                <ArrowRight className="w-4 h-4 text-plasma flex-shrink-0" />
                                                 <span>{point}</span>
                                             </li>
                                         ))}
                                     </ul>
-                                    <span className="text-neon-purple text-sm font-medium hover:underline cursor-pointer">{t('use_cases.card2.link')}</span>
+                                    <span className="text-plasma text-sm font-medium hover:underline cursor-pointer">{t('use_cases.card2.link')}</span>
                                 </>
                             )
                         }

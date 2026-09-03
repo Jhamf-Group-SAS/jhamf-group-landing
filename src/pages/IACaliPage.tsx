@@ -17,7 +17,7 @@ const IACaliPage: React.FC = () => {
     const SITE = 'https://www.jhamf.com';
 
     return (
-        <div className="bg-obsidian min-h-screen">
+        <div className="bg-void min-h-screen">
             <SEOHead
                 title={t('seo.title')}
                 description={t('seo.description')}
@@ -50,7 +50,7 @@ const IACaliPage: React.FC = () => {
 
             <main>
                 <ServiceHero
-                    badgeIcon={<MapPin className="w-4 h-4 text-neon-lime" />}
+                    badgeIcon={<MapPin className="w-4 h-4 text-signal" />}
                     badgeText={t('hero.badge')}
                     title={
                         <h1 dangerouslySetInnerHTML={{ __html: t('hero.headline_1') }} />
@@ -71,22 +71,22 @@ const IACaliPage: React.FC = () => {
                     title=""
                     items={[
                         {
-                            icon: <Cpu className="w-10 h-10 text-neon-lime" />,
+                            icon: <Cpu className="w-10 h-10 text-signal" />,
                             title: t('services.items.0.title'),
                             description: t('services.items.0.description'),
-                            iconColorClass: "border-neon-lime/30 hover:border-neon-lime"
+                            iconColorClass: "border-signal/30 hover:border-signal"
                         },
                         {
-                            icon: <Server className="w-10 h-10 text-azure-DEFAULT" />,
+                            icon: <Server className="w-10 h-10 text-electric" />,
                             title: t('services.items.1.title'),
                             description: t('services.items.1.description'),
-                            iconColorClass: "border-azure-DEFAULT/30 hover:border-azure-DEFAULT"
+                            iconColorClass: "border-electric/30 hover:border-electric"
                         },
                         {
-                            icon: <Shield className="w-10 h-10 text-neon-purple" />,
+                            icon: <Shield className="w-10 h-10 text-plasma" />,
                             title: t('services.items.2.title'),
                             description: t('services.items.2.description'),
-                            iconColorClass: "border-neon-purple/30 hover:border-neon-purple"
+                            iconColorClass: "border-plasma/30 hover:border-plasma"
                         }
                     ]}
                 />

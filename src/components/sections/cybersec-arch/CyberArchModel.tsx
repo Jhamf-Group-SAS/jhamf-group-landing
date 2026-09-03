@@ -18,7 +18,7 @@ const CyberArchModel: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-electric-glow to-neon-cyan mb-6"
+                        className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-electric-glow to-neon-ice mb-6"
                     >
                         {t('model.title')}
                     </motion.h2>
@@ -26,7 +26,7 @@ const CyberArchModel: React.FC = () => {
 
                 <div className="relative">
                     {/* Connecting line for desktop */}
-                    <div className="hidden lg:block absolute top-12 left-10 right-10 h-0.5 bg-gradient-to-r from-transparent via-neon-cyan/20 to-transparent" />
+                    <div className="hidden lg:block absolute top-12 left-10 right-10 h-0.5 bg-gradient-to-r from-transparent via-neon-ice/20 to-transparent" />
 
                     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 relative z-10">
                         {pillars.map((pillar, index) => {
@@ -40,11 +40,11 @@ const CyberArchModel: React.FC = () => {
                                     transition={{ delay: index * 0.1 }}
                                     className="relative flex flex-col items-center text-center group"
                                 >
-                                    <div className="w-24 h-24 rounded-full bg-obsidian border border-white/10 flex items-center justify-center mb-6 group-hover:border-neon-cyan/50 group-hover:shadow-[0_0_30px_rgba(0,255,157,0.15)] transition-all relative">
-                                        <div className="absolute inset-0 rounded-full border border-neon-cyan/0 group-hover:border-neon-cyan/20 animate-[spin_4s_linear_infinite]" />
-                                        <Icon className="w-10 h-10 text-gray-400 group-hover:text-neon-cyan transition-colors relative z-10" />
+                                    <div className="w-24 h-24 rounded-full bg-void border border-white/10 flex items-center justify-center mb-6 group-hover:border-neon-ice/50 group-hover:shadow-[0_0_30px_rgba(0,255,157,0.15)] transition-all relative">
+                                        <div className="absolute inset-0 rounded-full border border-neon-ice/0 group-hover:border-neon-ice/20 animate-[spin_4s_linear_infinite]" />
+                                        <Icon className="w-10 h-10 text-gray-400 group-hover:text-neon-ice transition-colors relative z-10" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-neon-cyan transition-colors">{pillar.name}</h3>
+                                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-neon-ice transition-colors">{pillar.name}</h3>
                                     <p className="text-gray-400 text-sm leading-relaxed">{pillar.desc}</p>
                                 </motion.div>
                             );

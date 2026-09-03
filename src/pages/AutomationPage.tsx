@@ -21,7 +21,7 @@ const AutomationPage: React.FC = () => {
     const SITE = 'https://www.jhamf.com';
 
     return (
-        <div className="bg-obsidian min-h-screen">
+        <div className="bg-void min-h-screen">
             <SEOHead
                 title={t('seo.title')}
                 description={t('seo.description')}
@@ -38,7 +38,7 @@ const AutomationPage: React.FC = () => {
                     title={
                         <Trans i18nKey="hero.headline_1" ns="automation">
                             Automatizamos tu operación con <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">Inteligencia Artificial</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-ice to-plasma">Inteligencia Artificial</span>
                         </Trans>
                     }
                     description={t('hero.description')}
@@ -70,17 +70,17 @@ const AutomationPage: React.FC = () => {
                         { icon: <TrendingDown className="w-6 h-6 text-orange-500" />, title: t('problems.items.2.title'), description: t('problems.items.2.description') }
                     ]}
                     sideContent={
-                        <div className="h-full min-h-[400px] rounded-2xl border border-white/5 bg-gradient-to-br from-obsidian to-transparent p-8 flex flex-col justify-center relative overflow-hidden">
+                        <div className="h-full min-h-[400px] rounded-2xl border border-white/5 bg-gradient-to-br from-void to-transparent p-8 flex flex-col justify-center relative overflow-hidden">
                             <Bot className="w-64 h-64 text-white/5 absolute -right-10 -bottom-10" />
                             <div className="relative z-10 space-y-6">
-                                <div className="p-4 rounded-xl bg-obsidian/80 backdrop-blur-md border border-white/5 shadow-lg animate-float">
+                                <div className="p-4 rounded-xl bg-void/80 backdrop-blur-md border border-white/5 shadow-lg animate-float">
                                     <div className="flex items-center gap-3 mb-2">
                                         <div className="w-2 h-2 rounded-full bg-red-400" />
                                         <p className="text-sm font-medium text-gray-300">Reporte con errores detectado</p>
                                     </div>
                                     <p className="text-xs text-gray-500">Operación Manual</p>
                                 </div>
-                                <div className="p-4 rounded-xl bg-obsidian/80 backdrop-blur-md border border-white/5 shadow-lg animate-float" style={{ animationDelay: '1s' }}>
+                                <div className="p-4 rounded-xl bg-void/80 backdrop-blur-md border border-white/5 shadow-lg animate-float" style={{ animationDelay: '1s' }}>
                                     <div className="flex items-center gap-3 mb-2">
                                         <div className="w-2 h-2 rounded-full bg-orange-400" />
                                         <p className="text-sm font-medium text-gray-300">Retraso en respuesta al cliente</p>
@@ -95,16 +95,16 @@ const AutomationPage: React.FC = () => {
                 <div id="solutions" className="relative">
                     <ServiceBenefits
                         layout="grid"
-                        bgClass="bg-obsidian"
+                        bgClass="bg-void"
                         title={
                             <Trans i18nKey="solutions.title_1" ns="automation">
-                                Nuestras Soluciones de <span className="text-neon-cyan">Inteligencia Artificial</span>
+                                Nuestras Soluciones de <span className="text-neon-ice">Inteligencia Artificial</span>
                             </Trans>
                         }
                         description={t('solutions.description')}
                         items={[
                             {
-                                icon: <Workflow className="w-8 h-8 text-azure-DEFAULT" />,
+                                icon: <Workflow className="w-8 h-8 text-electric" />,
                                 title: t('solutions.card1.title'),
                                 description: (
                                     <>
@@ -112,7 +112,7 @@ const AutomationPage: React.FC = () => {
                                         <ul className="space-y-3 mb-8">
                                             {(t('solutions.card1.points', { returnObjects: true }) as string[]).map((point, idx) => (
                                                 <li key={idx} className="flex items-center gap-3 text-sm text-gray-300">
-                                                    <span className="w-1.5 h-1.5 rounded-full bg-azure-DEFAULT flex-shrink-0"></span>
+                                                    <span className="w-1.5 h-1.5 rounded-full bg-electric flex-shrink-0"></span>
                                                     {point}
                                                 </li>
                                             ))}
@@ -121,7 +121,7 @@ const AutomationPage: React.FC = () => {
                                 )
                             },
                             {
-                                icon: <MessageSquare className="w-8 h-8 text-neon-purple" />,
+                                icon: <MessageSquare className="w-8 h-8 text-plasma" />,
                                 title: t('solutions.card2.title'),
                                 description: (
                                     <>
@@ -129,7 +129,7 @@ const AutomationPage: React.FC = () => {
                                         <ul className="space-y-3 mb-8">
                                             {(t('solutions.card2.points', { returnObjects: true }) as string[]).map((point, idx) => (
                                                 <li key={idx} className="flex items-center gap-3 text-sm text-gray-300">
-                                                    <span className="w-1.5 h-1.5 rounded-full bg-neon-purple flex-shrink-0"></span>
+                                                    <span className="w-1.5 h-1.5 rounded-full bg-plasma flex-shrink-0"></span>
                                                     {point}
                                                 </li>
                                             ))}
@@ -141,7 +141,7 @@ const AutomationPage: React.FC = () => {
                     />
 
                     {/* Solutions Integration Logos */}
-                    <div className="pb-24 pt-4 border-t border-white/5 text-center bg-obsidian">
+                    <div className="pb-24 pt-4 border-t border-white/5 text-center bg-void">
                         <div className="container px-4 mx-auto">
                             <p className="text-sm text-gray-500 uppercase tracking-widest mb-8">{t('solutions.integration_title')}</p>
                             <div className="flex flex-wrap justify-center gap-8 md:gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
@@ -163,7 +163,7 @@ const AutomationPage: React.FC = () => {
                     title={t('use_cases.title')}
                     items={[
                         {
-                            icon: <FileCheck className="w-6 h-6 text-azure-DEFAULT" />,
+                            icon: <FileCheck className="w-6 h-6 text-electric" />,
                             title: t('use_cases.items.0.title'),
                             description: (
                                 <div className="space-y-4">
@@ -182,7 +182,7 @@ const AutomationPage: React.FC = () => {
                             )
                         },
                         {
-                            icon: <Users className="w-6 h-6 text-azure-DEFAULT" />,
+                            icon: <Users className="w-6 h-6 text-electric" />,
                             title: t('use_cases.items.1.title'),
                             description: (
                                 <div className="space-y-4">
@@ -201,7 +201,7 @@ const AutomationPage: React.FC = () => {
                             )
                         },
                         {
-                            icon: <TrendingUp className="w-6 h-6 text-azure-DEFAULT" />,
+                            icon: <TrendingUp className="w-6 h-6 text-electric" />,
                             title: t('use_cases.items.2.title'),
                             description: (
                                 <div className="space-y-4">
@@ -223,12 +223,12 @@ const AutomationPage: React.FC = () => {
                 />
 
                 {/* Inline Architecture/Process */}
-                <section className="py-20 bg-obsidian border-y border-white/5">
+                <section className="py-20 bg-void border-y border-white/5">
                     <div className="container px-4 mx-auto text-center">
                         <h2 className="text-3xl font-display font-bold text-white mb-16">{t('process.title')}</h2>
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
                             {/* Connection Line (Desktop) */}
-                            <div className="hidden md:block absolute top-[2.5rem] left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-neon-purple/20 via-neon-cyan/20 to-neon-purple/20 z-0" />
+                            <div className="hidden md:block absolute top-[2.5rem] left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-plasma/20 via-neon-ice/20 to-plasma/20 z-0" />
                             {[
                                 { icon: ClipboardList, step: "01", title: t('process.items.0.title'), desc: t('process.items.0.description') },
                                 { icon: PenTool, step: "02", title: t('process.items.1.title'), desc: t('process.items.1.description') },
@@ -236,8 +236,8 @@ const AutomationPage: React.FC = () => {
                                 { icon: BarChart3, step: "04", title: t('process.items.3.title'), desc: t('process.items.3.description') }
                             ].map((item, idx) => (
                                 <div key={idx} className="relative z-10 flex flex-col items-center group">
-                                    <div className="w-20 h-20 rounded-2xl bg-obsidian border border-white/10 flex items-center justify-center mb-6 group-hover:border-neon-cyan/50 group-hover:shadow-[0_0_20px_rgba(0,240,255,0.1)] transition-all duration-300">
-                                        <item.icon className="w-10 h-10 text-white group-hover:text-neon-cyan transition-colors" />
+                                    <div className="w-20 h-20 rounded-2xl bg-void border border-white/10 flex items-center justify-center mb-6 group-hover:border-neon-ice/50 group-hover:shadow-[0_0_20px_rgba(0,240,255,0.1)] transition-all duration-300">
+                                        <item.icon className="w-10 h-10 text-white group-hover:text-neon-ice transition-colors" />
                                     </div>
                                     <span className="text-4xl font-display font-bold text-white/5 absolute -top-4 -z-10">{item.step}</span>
                                     <h4 className="text-xl font-bold text-white mb-2">{item.title}</h4>

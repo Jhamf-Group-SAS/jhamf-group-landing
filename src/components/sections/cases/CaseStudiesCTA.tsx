@@ -6,7 +6,7 @@ const CaseStudiesCTA = () => {
     const { t } = useTranslation('casestudies');
 
     return (
-        <section className="py-24 bg-gradient-to-b from-obsidian to-azure-DEFAULT/10 border-t border-white/5">
+        <section className="py-24 bg-gradient-to-b from-void to-electric/10 border-t border-white/5">
             <div className="max-w-4xl mx-auto px-4 text-center">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -14,8 +14,8 @@ const CaseStudiesCTA = () => {
                     viewport={{ once: true }}
                     className="bg-white/5 border border-white/10 rounded-3xl p-12 backdrop-blur-xl relative overflow-hidden"
                 >
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-neon-purple/20 blur-[80px] rounded-full mix-blend-screen" />
-                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-azure-DEFAULT/20 blur-[80px] rounded-full mix-blend-screen" />
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-plasma/20 blur-[80px] rounded-full mix-blend-screen" />
+                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-electric/20 blur-[80px] rounded-full mix-blend-screen" />
 
                     <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 relative z-10">
                         {t('cta.title')}
@@ -28,7 +28,7 @@ const CaseStudiesCTA = () => {
                         href="https://form.typeform.com/to/gxR8JkE0"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-8 py-4 bg-azure-DEFAULT hover:bg-electric-glow text-white font-bold rounded-lg shadow-lg hover:shadow-[0_0_30px_rgba(0,127,255,0.4)] transition-all transform hover:scale-105 relative z-10"
+                        className="inline-flex items-center gap-2 px-8 py-4 bg-electric hover:bg-electric-glow text-white font-bold rounded-lg shadow-lg hover:shadow-[0_0_30px_rgba(0,127,255,0.4)] transition-all transform hover:scale-105 relative z-10"
                     >
                         {t('cta.button')}
                         <ArrowRight className="w-5 h-5" />

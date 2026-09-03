@@ -95,7 +95,7 @@ const PQRSPage = () => {
     };
 
     return (
-        <div className="bg-obsidian min-h-screen text-white font-sans flex flex-col">
+        <div className="bg-void min-h-screen text-white font-sans flex flex-col">
             <SEO
                 title={t('seo.title')}
                 description={t('seo.description')}
@@ -109,7 +109,7 @@ const PQRSPage = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-12"
                 >
-                    <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neon-cyan to-azure mb-6">
+                    <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neon-ice to-electric mb-6">
                         {t('hero.title')}
                     </h1>
                     <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
@@ -117,7 +117,7 @@ const PQRSPage = () => {
                     </p>
                     <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-gray-400">
                         <span className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10">
-                            <FileText size={16} className="text-neon-cyan" />
+                            <FileText size={16} className="text-neon-ice" />
                             {t('hero.response_time')}
                         </span>
                     </div>
@@ -129,20 +129,20 @@ const PQRSPage = () => {
                             key="success"
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            className="bg-white/5 border border-neon-cyan/30 rounded-2xl p-8 text-center"
+                            className="bg-white/5 border border-neon-ice/30 rounded-2xl p-8 text-center"
                         >
-                            <div className="w-20 h-20 bg-neon-cyan/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <CheckCircle className="text-neon-cyan w-10 h-10" />
+                            <div className="w-20 h-20 bg-neon-ice/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <CheckCircle className="text-neon-ice w-10 h-10" />
                             </div>
                             <h2 className="text-2xl font-bold text-white mb-4">{t('messages.success.title')}</h2>
                             <p className="text-gray-300 mb-6">
                                 {t('messages.success.desc1')}
-                                <span className="text-neon-cyan font-medium"> coordinacionsgt@jhamf.com</span>
+                                <span className="text-neon-ice font-medium"> coordinacionsgt@jhamf.com</span>
                                 {t('messages.success.desc2')}
                             </p>
                             <div className="bg-black/40 rounded-lg p-4 inline-block mb-8 border border-white/10">
                                 <p className="text-sm text-gray-400 mb-1">{t('messages.success.ref')}</p>
-                                <p className="text-2xl font-mono text-neon-cyan tracking-wider">{referenceNumber}</p>
+                                <p className="text-2xl font-mono text-neon-ice tracking-wider">{referenceNumber}</p>
                             </div>
                             <div>
                                 <button
@@ -159,7 +159,7 @@ const PQRSPage = () => {
                                             acceptedPolicy: false
                                         });
                                     }}
-                                    className="px-8 py-3 bg-azure hover:bg-azure/80 text-white rounded-lg transition-colors font-medium"
+                                    className="px-8 py-3 bg-electric hover:bg-electric/80 text-white rounded-lg transition-colors font-medium"
                                 >
                                     {t('messages.success.new_request')}
                                 </button>
@@ -197,7 +197,7 @@ const PQRSPage = () => {
                             {/* Personal Information */}
                             <div>
                                 <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2 border-b border-white/10 pb-2">
-                                    <span className="text-neon-cyan">01.</span> {t('form.section_1')}
+                                    <span className="text-neon-ice">01.</span> {t('form.section_1')}
                                 </h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
@@ -209,7 +209,7 @@ const PQRSPage = () => {
                                             required
                                             value={formData.fullName}
                                             onChange={handleChange}
-                                            className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all placeholder:text-gray-600"
+                                            className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-ice focus:ring-1 focus:ring-neon-ice outline-none transition-all placeholder:text-gray-600"
                                         />
                                     </div>
                                     <div className="space-y-2">
@@ -221,7 +221,7 @@ const PQRSPage = () => {
                                             required
                                             value={formData.companyName}
                                             onChange={handleChange}
-                                            className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all placeholder:text-gray-600"
+                                            className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-ice focus:ring-1 focus:ring-neon-ice outline-none transition-all placeholder:text-gray-600"
                                         />
                                     </div>
                                     <div className="space-y-2">
@@ -233,7 +233,7 @@ const PQRSPage = () => {
                                             required
                                             value={formData.email}
                                             onChange={handleChange}
-                                            className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all placeholder:text-gray-600"
+                                            className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-ice focus:ring-1 focus:ring-neon-ice outline-none transition-all placeholder:text-gray-600"
                                         />
                                     </div>
                                     <div className="space-y-2">
@@ -244,7 +244,7 @@ const PQRSPage = () => {
                                             name="phone"
                                             value={formData.phone}
                                             onChange={handleChange}
-                                            className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all placeholder:text-gray-600"
+                                            className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-ice focus:ring-1 focus:ring-neon-ice outline-none transition-all placeholder:text-gray-600"
                                         />
                                     </div>
                                 </div>
@@ -253,7 +253,7 @@ const PQRSPage = () => {
                             {/* PQRS Details */}
                             <div>
                                 <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2 border-b border-white/10 pb-2">
-                                    <span className="text-neon-cyan">02.</span> {t('form.section_2')}
+                                    <span className="text-neon-ice">02.</span> {t('form.section_2')}
                                 </h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                     <div className="space-y-2">
@@ -264,7 +264,7 @@ const PQRSPage = () => {
                                             required
                                             value={formData.type}
                                             onChange={handleChange}
-                                            className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all appearance-none cursor-pointer"
+                                            className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-ice focus:ring-1 focus:ring-neon-ice outline-none transition-all appearance-none cursor-pointer"
                                         >
                                             <option value="" disabled className="text-gray-500">{t('form.types.placeholder')}</option>
                                             <option value={t('form.types.peticion')}>{t('form.types.peticion')}</option>
@@ -281,7 +281,7 @@ const PQRSPage = () => {
                                             required
                                             value={formData.service}
                                             onChange={handleChange}
-                                            className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all appearance-none cursor-pointer"
+                                            className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-ice focus:ring-1 focus:ring-neon-ice outline-none transition-all appearance-none cursor-pointer"
                                         >
                                             <option value="" disabled>{t('form.services.placeholder')}</option>
                                             <option value={t('form.services.consultoria')}>{t('form.services.consultoria')}</option>
@@ -301,7 +301,7 @@ const PQRSPage = () => {
                                         value={formData.description}
                                         onChange={handleChange}
                                         rows={5}
-                                        className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all placeholder:text-gray-600 resize-none"
+                                        className="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-neon-ice focus:ring-1 focus:ring-neon-ice outline-none transition-all placeholder:text-gray-600 resize-none"
                                         placeholder={t('form.fields.description_placeholder')}
                                     ></textarea>
                                 </div>
@@ -310,7 +310,7 @@ const PQRSPage = () => {
                             {/* Attachments Section - Visual Only */}
                             <div>
                                 <div className="border border-dashed border-white/20 rounded-lg p-6 text-center hover:bg-white/5 transition-colors cursor-pointer group">
-                                    <Upload className="mx-auto h-8 w-8 text-gray-400 group-hover:text-neon-cyan mb-3 transition-colors" />
+                                    <Upload className="mx-auto h-8 w-8 text-gray-400 group-hover:text-neon-ice mb-3 transition-colors" />
                                     <p className="text-sm text-gray-300 font-medium">{t('form.attachments.title')}</p>
                                     <p className="text-xs text-gray-500 mt-1">{t('form.attachments.subtitle')}</p>
                                 </div>
@@ -327,7 +327,7 @@ const PQRSPage = () => {
                                             name="acceptedPolicy"
                                             checked={formData.acceptedPolicy}
                                             onChange={handleCheckboxChange}
-                                            className="peer h-5 w-5 cursor-pointer appearance-none rounded border border-gray-500 transition-all checked:border-neon-cyan checked:bg-neon-cyan group-hover:border-neon-cyan"
+                                            className="peer h-5 w-5 cursor-pointer appearance-none rounded border border-gray-500 transition-all checked:border-neon-ice checked:bg-neon-ice group-hover:border-neon-ice"
                                         />
                                         <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity peer-checked:opacity-100">
                                             <svg className="h-3.5 w-3.5 text-black" viewBox="0 0 20 20" fill="currentColor">
@@ -336,7 +336,7 @@ const PQRSPage = () => {
                                         </div>
                                     </div>
                                     <span className="text-sm text-gray-400 select-none">
-                                        {t('form.policy.text1')} <Link to={lang === 'es' ? `/${lang}/politica-privacidad` : `/${lang}/privacy-policy`} target="_blank" className="text-neon-cyan underline hover:text-white transition-colors">{t('form.policy.link')}</Link> {t('form.policy.text2')}
+                                        {t('form.policy.text1')} <Link to={lang === 'es' ? `/${lang}/politica-privacidad` : `/${lang}/privacy-policy`} target="_blank" className="text-neon-ice underline hover:text-white transition-colors">{t('form.policy.link')}</Link> {t('form.policy.text2')}
                                     </span>
                                 </label>
 
@@ -346,7 +346,7 @@ const PQRSPage = () => {
                                     className={`w-full py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 transition-all
                     ${isSubmitting || !formData.acceptedPolicy
                                             ? 'bg-gray-700 text-gray-400 cursor-not-allowed'
-                                            : 'bg-gradient-to-r from-azure to-electric-glow hover:shadow-lg hover:shadow-neon-cyan/25 text-white'
+                                            : 'bg-gradient-to-r from-electric to-electric-glow hover:shadow-lg hover:shadow-neon-ice/25 text-white'
                                         }`}
                                 >
                                     {isSubmitting ? (
