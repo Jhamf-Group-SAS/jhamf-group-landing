@@ -115,7 +115,18 @@
         "subtext": "Reserve una revisión de arquitectura gratuita de 30 minutos con nuestros ingenieros certificados. Analizaremos su stack actual y entregaremos una hoja de ruta de modernización a medida — sin costo.",
         "cta_primary": "Agendar Consultoría Gratis",
         "cta_secondary": "Contactar Nuestro Equipo",
-        "trust_line": "Sin compromiso · Respuesta en 24hs · Certificados Azure y Google Cloud"
+        "trust_line": "Sin compromiso · Respuesta en 24hs · Certificados Azure y Google Cloud",
+        "review_panel": {
+            "label": "Su Revisión Incluye",
+            "items": [
+                "Diagnóstico completo del stack actual",
+                "Identificación de cuellos de botella",
+                "Hoja de ruta de modernización a medida",
+                "Estimación de ahorro potencial"
+            ],
+            "duration": "30 min",
+            "duration_label": "Sesión con ingenieros certificados"
+        }
     },
     "about": {
         "eyebrow": "Sobre Nosotros",

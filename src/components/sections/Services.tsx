@@ -87,6 +87,10 @@ const Services = () => {
         },
     ], [tSvc, lang]);
 
+    const indexed = services.map((service, idx) => ({ ...service, idx }));
+    const featured = indexed.slice(0, 2);
+    const standard = indexed.slice(2);
+
     return (
         <section
             id="services"
@@ -121,11 +125,11 @@ const Services = () => {
                     </p>
                 </motion.div>
 
-                {/* Services grid — 3 columns x 2 rows */}
-                <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
-                    {services.map((service, index) => {
+                {/* Featured services — Cloud/Azure & AI, the two differentiators */}
+                <div className="grid md:grid-cols-2 gap-5">
+                    {featured.map((service) => {
                         const Icon = service.icon;
-                        const isHovered = hoveredIndex === index;
+                        const isHovered = hoveredIndex === service.idx;
 
                         return (
                             <motion.article
@@ -133,11 +137,11 @@ const Services = () => {
                                 initial={{ opacity: 0, y: 32 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                onMouseEnter={() => setHoveredIndex(index)}
+                                transition={{ duration: 0.5, delay: service.idx * 0.1 }}
+                                onMouseEnter={() => setHoveredIndex(service.idx)}
                                 onMouseLeave={() => setHoveredIndex(null)}
                                 onClick={() => { if (service.link) { navigate(service.link); window.scrollTo(0, 0); } }}
-                                className={`group relative flex flex-col p-6 rounded-2xl glass-card transition-all duration-300 ${service.link ? 'cursor-pointer' : ''}`}
+                                className={`group relative flex flex-col p-8 rounded-2xl glass-card transition-all duration-300 ${service.link ? 'cursor-pointer' : ''}`}
                                 style={{
                                     borderColor: isHovered ? service.borderColor : 'rgba(255,255,255,0.07)',
                                     boxShadow: isHovered ? `0 0 40px ${service.accentColor}` : 'none',
@@ -165,15 +169,15 @@ const Services = () => {
 
                                 {/* Icon */}
                                 <div
-                                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
+                                    className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
                                     style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
                                 >
-                                    <Icon className={`w-6 h-6 ${service.iconColor}`} aria-hidden="true" />
+                                    <Icon className={`w-7 h-7 ${service.iconColor}`} aria-hidden="true" />
                                 </div>
 
                                 {/* Title */}
                                 <div className="relative z-10">
-                                    <h3 className="text-lg font-display font-bold text-white leading-tight">
+                                    <h3 className="text-2xl font-display font-bold text-white leading-tight">
                                         {service.title}
                                     </h3>
                                     <p className="text-sm text-steel-dark mt-0.5 font-medium">{service.subtitle}</p>
@@ -206,7 +210,7 @@ const Services = () => {
                                                 animate={{ opacity: 1 }}
                                                 exit={{ opacity: 0 }}
                                                 transition={{ duration: 0.2 }}
-                                                className="text-sm text-steel leading-relaxed font-light"
+                                                className="text-base text-steel leading-relaxed font-light"
                                             >
                                                 {service.description}
                                             </motion.p>
@@ -219,6 +223,37 @@ const Services = () => {
                                     <span>{service.link ? tCommon('learn_more') : tCommon('included')}</span>
                                     {service.link && (
                                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                                    )}
+                                </div>
+                            </motion.article>
+                        );
+                    })}
+                </div>
+
+                {/* Standard services — supporting capabilities, lighter treatment */}
+                <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-4 divide-y divide-white/[0.06] sm:divide-y-0 border-t border-white/[0.06]">
+                    {standard.map((service) => {
+                        const Icon = service.icon;
+                        return (
+                            <motion.article
+                                key={service.num}
+                                initial={{ opacity: 0, y: 16 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.2 + service.idx * 0.06 }}
+                                onClick={() => { if (service.link) { navigate(service.link); window.scrollTo(0, 0); } }}
+                                className={`group py-6 px-4 sm:border-r sm:border-white/[0.06] last:border-r-0 transition-colors hover:bg-white/[0.02] ${service.link ? 'cursor-pointer' : ''}`}
+                                aria-label={`${service.title} — ${service.subtitle}`}
+                            >
+                                <Icon className={`w-6 h-6 ${service.iconColor} mb-4 transition-transform duration-300 group-hover:scale-110`} aria-hidden="true" />
+                                <h3 className="text-base font-display font-bold text-white leading-tight">
+                                    {service.title}
+                                </h3>
+                                <p className="text-sm text-steel-dark mt-0.5 font-medium">{service.subtitle}</p>
+                                <div className="mt-4 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-steel-dark group-hover:text-electric transition-colors">
+                                    <span>{service.link ? tCommon('learn_more') : tCommon('included')}</span>
+                                    {service.link && (
+                                        <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                                     )}
                                 </div>
                             </motion.article>

@@ -115,7 +115,18 @@
         "subtext": "Book a free 30-minute architecture review with our certified engineers. We'll analyze your current stack and deliver a tailored modernization roadmap — at no cost.",
         "cta_primary": "Schedule Free Consultation",
         "cta_secondary": "Contact Our Team",
-        "trust_line": "No commitment required · Reply within 24 hours · Microsoft Azure & Google Cloud certified"
+        "trust_line": "No commitment required · Reply within 24 hours · Microsoft Azure & Google Cloud certified",
+        "review_panel": {
+            "label": "Your Review Includes",
+            "items": [
+                "Full diagnostic of your current stack",
+                "Bottleneck identification",
+                "Tailored modernization roadmap",
+                "Potential savings estimate"
+            ],
+            "duration": "30 min",
+            "duration_label": "Session with certified engineers"
+        }
     },
     "about": {
         "eyebrow": "About Us",
