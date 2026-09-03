@@ -15,7 +15,14 @@ const routes = [
     { path: '/es/automatizacion-ia', title: 'Automatización con IA | JHAMF Group', desc: 'Implementación de Agentes de IA y pipelines automatizados para eficiencia operativa.' },
     { path: '/en/ai-automation', title: 'AI Automation | JHAMF Group', desc: 'Implementation of AI Agents and automated pipelines for operational efficiency.' },
     { path: '/es/ciberseguridad/arquitectura-y-proteccion', title: 'Ciberseguridad Avanzada | JHAMF Group', desc: 'Arquitecturas Zero-Trust y protección perimetral contra amenazas persistentes.' },
-    { path: '/es/servicios-ti-gestionados/soporte-empresarial-24-7', title: 'Soporte TI 24/7 | JHAMF Group', desc: 'Mesa de ayuda gestionada y soporte técnico continuo para continuidad de negocio.' }
+    { path: '/es/servicios-ti-gestionados/soporte-empresarial-24-7', title: 'Soporte TI 24/7 | JHAMF Group', desc: 'Mesa de ayuda gestionada y soporte técnico continuo para continuidad de negocio.' },
+    { path: '/es/pqrs', title: 'Radicar PQRS | JHAMF Group', desc: 'Canal oficial para radicar Peticiones, Quejas, Reclamos y Sugerencias (PQRS) de Jhamf Group SAS. Estamos comprometidos con la mejora continua.' },
+    { path: '/es/politica-privacidad', title: 'Política de Privacidad | JHAMF Group', desc: 'Conozca nuestra política de privacidad y tratamiento de datos personales. En Jhamf Group SAS protegemos su información conforme a la ley.' },
+    { path: '/es/blueprint', title: 'Blueprint | JHAMF Group', desc: 'La IA no se explica, se prueba. Interactúa con una operación real de IA y automatización funcionando como si fuera tu empresa.' },
+    { path: '/es/ia-cali', title: 'Inteligencia Artificial en Cali & Valle del Cauca | JHAMF Group', desc: 'Empresa líder en desarrollo de IA, Automatización de Procesos y Soporte TI en Cali. Transformamos empresas del Valle del Cauca con tecnología de punta.' },
+    { path: '/es/infraestructura-redes', title: 'Infraestructura y Redes de Alto Rendimiento | JHAMF Group', desc: 'Diseñamos, implementamos y gestionamos infraestructuras de red empresariales que garantizan conectividad, seguridad y disponibilidad 24/7 para su operación crítica.' },
+    { path: '/es/activos-licencias', title: 'Activos Tecnológicos y Licenciamiento Empresarial | JHAMF Group', desc: 'Optimice la adquisición, gestión y ciclo de vida de sus activos IT con consultoría especializada que reduce costos y maximiza el retorno de inversión.' },
+    { path: '/es/cotizador', title: 'Cotizador de Servicios TI | JHAMF Group', desc: 'Calcula en minutos una cotización estimada de nuestros planes de servicios TI gestionados, ciberseguridad y automatización con IA.' }
 ];
 
 try {
